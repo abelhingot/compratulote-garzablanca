@@ -76,7 +76,7 @@ export default function CUbicacion() {
                         <div className="accordion " id="accordionExample">
                             <div className="accordion-item border border-top-1 border-bottom-0 p-1"><br />
                                 {datos.map((fila, index) => (
-                                    <h4 className="accordion-header">
+                                    <h4 className="accordion-header" key={index}>
                                         <button
                                             className="accordion-button-no-icon collapsed rounded-5 bg-body border-0 focus-ring focus-ring-light px-4"
                                             type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"

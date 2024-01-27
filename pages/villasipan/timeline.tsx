@@ -33,7 +33,7 @@ export default function EstructuraInicio() {
                 <div className='container'>
                   <div className='row'>
                     {datos.map((fila, index) => (
-                      <Accordion>
+                      <Accordion key={index}>
                         <Accordion.Item eventKey="0" style={{ border: 'none', marginBottom: '10px' }}>
                           <Accordion.Header style={{ border: '1px solid lightgray', borderRadius: '7px', paddingTop: '3px', paddingBottom: '3px' }}>
                             <strong> {fila.title}</strong>
