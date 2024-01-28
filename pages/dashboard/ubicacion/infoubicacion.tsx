@@ -163,7 +163,7 @@ const Infoubicacion = () => {
 
                         <Card.Body>
                             {datos.map((fila, index) => (
-                                <div className='row'>
+                                <div key={"dubikey"+index} className='row'>
                                     <div className="col-md-7 col-lg-8">
                                         <h2 className="fw-bold cProyect">{fila.titulo}</h2>
                                         <div className="container mt-4">

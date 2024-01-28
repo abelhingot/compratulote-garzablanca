@@ -29,7 +29,7 @@ export default function EstructuraInicio() {
             <div className="container">
               <div className="row g-5">
                 {datos.map((fila, index) => (
-                  <div className="col-md-7 col-lg-8">
+                  <div key={"ubi"+index} className="col-md-7 col-lg-8">
                     <h2 className="fw-bold cProyect">{fila.titulo}</h2>
                     <div className="container mt-4">
                       <div className="row">

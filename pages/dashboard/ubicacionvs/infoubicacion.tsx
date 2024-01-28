@@ -163,7 +163,7 @@ const VSinformacion = () => {
 
                         <Card.Body>
                             {datos.map((fila, index) => (
-                                <div className='row'>
+                                <div className='row' key={"dt"+index}>
                                     <div className="col-md-7 col-lg-8">
                                         <h2 className="fw-bold cProyect2">{fila.titulo}</h2>
                                         <div className="container mt-4">
