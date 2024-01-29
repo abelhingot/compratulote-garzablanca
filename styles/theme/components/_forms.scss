@@ -4,52 +4,57 @@
 .bg-red {
   background-color: red;
 }
-.bg-dark-subtle{
-background-color: #CED4DA;
+
+.bg-dark-subtle {
+  background-color: #CED4DA;
 }
+
 .bgProyectOpaco {
-  background-color: #195493;
+  background-color: #6f1c21;
 }
 
 .bgProyect {
-  background-color: #3292F7;
-  
+  background-color: #E30613;
 }
 
+.btnProyect {
+  background-color: #E30613;
+  color: white;
+}
+
+.btnProyect:hover {
+  background-color: #E30613;
+  opacity: 0.8;
+}
+
+
 .cProyect {
-  color: #0881FF;
+  color: #E30613;
 }
 
 .borderProyect {
-  border: 2px solid #0881FF;
+  border: 2px solid #E30613;
 }
 
-.bgProyect2 {
-  background-color: #fdcd68;
+.custom-sombra:hover {
+  background-color: #8e8e8e57;
+  border-radius: 4px;
+  border-bottom: 2px solid #E30613;
 }
 
-.bgProyectOpaco2 {
-  background-color: #b08833;
-}
+.modal-plano {
+  // height: '80vh';
+  border-left: 2px solid #e30615aa;
+  border-right: 2px solid #e30615aa;
+  border-bottom: 2px solid #e30615aa;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 
-.borderProyect2 {
-  border: 2px solid #fdcd68;
-}
-
-.cProyect2 {
-  color: #fdcd68;
-  //rgba(220, 53, 70, 0.504)
-  //rgba(77, 203, 92, 0.497)//verde
-  //rgba(99, 115, 129, 0.51)//plomo
 }
 
 .titulo-Intro {
   font-family: 'Anton', sans-serif;
   font-size: 35px;
-}
-
-.bgGreen{
-  background-color: rgb(77, 203, 91);
 }
 
 /////////////////////////////////////////
@@ -138,8 +143,6 @@ background-color: #CED4DA;
     width: 355px;
   }
 }
-
-
 
 ///////////////////////////////////
 .custom-bg {
@@ -816,18 +819,6 @@ ol.breadcrumb {
   color: #f5e17a;
 }
 
-.custom-sombra:hover {
-  background-color: #8e8e8e57;
-  border-radius: 4px;
-  border-bottom: 2px solid #0881ff;
-}
-
-.custom-sombra2:hover {
-  background-color: #8e8e8e57;
-  border-radius: 4px;
-  border-bottom: 2px solid #399e57;
-}
-
 .custom-redsocial:hover {
   background-color: rgba(0, 0, 0, 0.704);
   border-bottom: 3px solid rgb(255, 255, 255);
@@ -842,22 +833,24 @@ ol.breadcrumb {
   position: relative;
 }
 
-.alinear-img{
+.alinear-img {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.ql-align-center{
+
+.ql-align-center {
   justify-content: center !important;
   align-items: center !important;
   text-align: center !important;
 }
+
 .image-row {
   display: inline-block;
   width: 100%;
 }
 
-.image-row > *:not(p) {
+.image-row>*:not(p) {
   grid-column: span 1;
 }
 
@@ -876,54 +869,58 @@ ol.breadcrumb {
 
 @media (max-width: 470px) {
   .flex-nowrap {
-    flex-wrap: nowrap !important; 
-    }
-    .cfs-adorno {
-      font-family: 'Konkhmer Sleokchher', system-ui;
-      font-size: 14px !important;
-      padding: 20px !important;
-      vertical-align: middle !important;
-    }
-    .fondo {
-      width: 100%;
-      max-height: 60vh;
-      transform: scale(var(--escala, 1));
-      transition: transform 0.25s;
-    }
-    .contenedor-imagen{
-      margin: 5px;
-      padding: 2.5px;
-    }
+    flex-wrap: nowrap !important;
+  }
 
-    .fondo:hover {
-      --escala: 0;
-      cursor: none;
-    }
-    
-    .texto-superpuesto {
-      position: absolute;
-      top: 50%;
-      left: 0%;
-      margin-right: 0px;
-      transform: translateY(-50%);
-      padding: 40px;
-      color: #fff;
-      margin-top: 0px;
-      margin-bottom: 0px;
+  .cfs-adorno {
+    font-family: 'Konkhmer Sleokchher', system-ui;
+    font-size: 14px !important;
+    padding: 20px !important;
+    vertical-align: middle !important;
+  }
 
-    }
-    
-    .icono-reproducir {
-      position: absolute;
-      top: 50%;
-      right: 60px;
-      transform: translateY(-50%);
-      color: #fff;
-      cursor: pointer;
-    }
-    
+  .fondo {
+    width: 100%;
+    max-height: 60vh;
+    transform: scale(var(--escala, 1));
+    transition: transform 0.25s;
+  }
+
+  .contenedor-imagen {
+    margin: 5px;
+    padding: 2.5px;
+  }
+
+  .fondo:hover {
+    --escala: 0;
+    cursor: none;
+  }
+
+  .texto-superpuesto {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    margin-right: 0px;
+    transform: translateY(-50%);
+    padding: 40px;
+    color: #fff;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+  }
+
+  .icono-reproducir {
+    position: absolute;
+    top: 50%;
+    right: 60px;
+    transform: translateY(-50%);
+    color: #fff;
+    cursor: pointer;
+  }
+
 }
+
 /////////////////////////////
-.imageContainer{
+.imageContainer {
   overflow-x: auto;
 }

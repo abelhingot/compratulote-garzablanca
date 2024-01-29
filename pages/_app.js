@@ -4,17 +4,13 @@ import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
 import SSRProvider from 'react-bootstrap/SSRProvider';
 import { Analytics } from '@vercel/analytics/react';
-
-// import theme style scss file
 import 'styles/theme.scss';
-
-// import default layouts
 import DefaultDashboardLayout from 'layouts/DefaultDashboardLayout';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const pageURL = process.env.baseURL + router.pathname;
-  const title = "Dashboard";
+  const title = "Estructura";
   const description = " Nextjs Snippet "
   const keywords = "e"
 

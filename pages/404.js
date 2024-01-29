@@ -16,7 +16,7 @@ const Error404 = () => {
             <p className="mb-4">
               Or simply leverage the expertise of our consultation team.
             </p>
-            <Link href="/" className="btn btn-primary">
+            <Link href="/" className="btn btnProyect">
               Go Home
             </Link>
           </div>

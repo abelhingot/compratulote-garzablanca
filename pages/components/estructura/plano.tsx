@@ -18,8 +18,8 @@ export default function CPlano() {
         precioFormato: '',
         precioFinal: '',
         estado: '',
-        coordenadas:'',
-        color:''
+        coordenadas: '',
+        color: ''
 
     });
     const [cantidadInicial, setCantidadInicial] = useState(0);
@@ -63,8 +63,8 @@ export default function CPlano() {
                 precioFormato: precioOriginal,
                 precioFinal: precioconFormato,
                 estado: infoEncontrada.estado,
-                coordenadas:infoEncontrada.coordenadas,
-                color:infoEncontrada.color
+                coordenadas: infoEncontrada.coordenadas,
+                color: infoEncontrada.color
             });
             setMostrarResultados(true);
         }
@@ -128,11 +128,11 @@ export default function CPlano() {
                 confirmButtonText: "Volver a intentar"
             });
         } else {
-        const interes = 0.015;
-        const precioTotal = parseFloat(formData.precio);
-        const calcularResta = precioTotal - cantidadInicialIntereses;
-        const calcularPagoMensual = calcularResta * ((interes * (1 + interes) ** cuotasintereses) / ((1 + interes) ** cuotasintereses - 1));
-        setPagoMensual(calcularPagoMensual);
+            const interes = 0.015;
+            const precioTotal = parseFloat(formData.precio);
+            const calcularResta = precioTotal - cantidadInicialIntereses;
+            const calcularPagoMensual = calcularResta * ((interes * (1 + interes) ** cuotasintereses) / ((1 + interes) ** cuotasintereses - 1));
+            setPagoMensual(calcularPagoMensual);
         }
     }
     return (
@@ -166,20 +166,21 @@ export default function CPlano() {
                 <div className=" py-3 px-5">
                     <div id="info-Plano">
                         {mostrarResultados && (
-                            <span> <div className="row fw-bold text-center ">
-                                <div className="col">
-                                    Manzana:
+                            <span>
+                                <div className="row fw-bold text-center ">
+                                    <div className="col">
+                                        Manzana:
+                                    </div>
+                                    <div className="col">
+                                        Lote:
+                                    </div>
+                                    <div className="col">
+                                        Área del Lote:
+                                    </div>
+                                    <div className="col">
+                                        Costo del Lote:
+                                    </div>
                                 </div>
-                                <div className="col">
-                                    Lote:
-                                </div>
-                                <div className="col">
-                                    Área del Lote:
-                                </div>
-                                <div className="col">
-                                    Costo del Lote:
-                                </div>
-                            </div>
                                 <div className="row text-center">
                                     <div className="col p-1">
                                         {formData.manzana}
