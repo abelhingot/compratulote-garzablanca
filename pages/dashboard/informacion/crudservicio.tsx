@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { FormSelect, DropFiles } from "widgets";
 import { Col, Row, Form, Card, Button, Image, Table, Modal } from "react-bootstrap";
 import React, { Fragment, useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
@@ -29,9 +28,15 @@ const CrudServicio = () => {
         (fila.texto.toLowerCase().includes(searchTerm.toLowerCase()) || fila.titulo.toLowerCase().includes(searchTerm.toLowerCase())));
 
     useEffect(() => {
+        const verificador = window.location.pathname.split('/');
+        const rptAPI = verificador[verificador.length - 1];
         fetch('http://localhost:3001/serviciosES')
             .then(response => response.json())
-            .then(data => setDatos(data))
+            .then(data => {
+                const filtrado = data.filter(fila => fila.categoria === rptAPI);
+                setDatos(filtrado);
+            })
+            
             .catch(error => console.error('Error al obtener datos:', error));
     }, []);
 

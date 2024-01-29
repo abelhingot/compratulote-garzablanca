@@ -716,18 +716,18 @@
     {
       "id": "LAN1",
       "coordenadas": "10,92,11,161,111,161,110,95,64,93",
-      "color": "rgba(220, 53, 70, 0.505)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "01",
       "manzana": "A",
       "areaLote": "230.90 mts2",
       "referencia": "Esquina/Frente a parque",
-      "precio": "197547.65",
+      "precio": 75000.00,
       "estado": "VENDIDO"
     },
     {
       "id": "LAN2",
       "coordenadas": "111,199,11,199,11,162,111,161",
-      "color": "rgba(220, 53, 70, 0.505)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "02",
       "manzana": "A",
       "areaLote": "129.32 mts2",
@@ -738,7 +738,7 @@
     {
       "id": "LAN3",
       "coordenadas": "112,231,12,233,11,199,111,199",
-      "color": "rgba(220, 53, 70, 0.505)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "03",
       "manzana": "A",
       "areaLote": "158.60 mts2",
@@ -749,7 +749,7 @@
     {
       "id": "LAN4",
       "coordenadas": "112,269,12,271,12,233,112,231",
-      "color": "rgba(220, 53, 70, 0.505)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "04",
       "manzana": "A",
       "areaLote": "150.54 mts2",
@@ -760,7 +760,7 @@
     {
       "id": "LAN5",
       "coordenadas": "12,271,112,269,113,302,14,304",
-      "color": "rgba(220, 53, 70, 0.505)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "05",
       "manzana": "A",
       "areaLote": "126.05 mts2",
@@ -771,7 +771,7 @@
     {
       "id": "LAN6",
       "coordenadas": "113,335,13,336,13,304,113,302",
-      "color": "rgba(220, 53, 70, 0.505)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "06",
       "manzana": "A",
       "areaLote": "116.61 mts2",
@@ -782,40 +782,40 @@
     {
       "id": "LAN7",
       "coordenadas": "113,334,14,336,15,371,113,371",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "07",
       "manzana": "A",
       "areaLote": "136.85 mts2",
       "referencia": "Doble frontera",
       "precio": 117082.7,
-      "estado": "VENDIDO"
+      "estado": "DISPONIBLE"
     },
     {
       "id": "LAN8",
       "coordenadas": "115,410,15,411,13,371,114,371",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "08",
       "manzana": "A",
       "areaLote": "144.60 mts2",
       "referencia": "Doble frontera",
       "precio": 123713.25,
-      "estado": "VENDIDO"
+      "estado": "DISPONIBLE"
     },
     {
       "id": "LAN9",
       "coordenadas": "114,410,14,411,15,453,116,451",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "09",
       "manzana": "A",
       "areaLote": "163.13 mts2",
       "referencia": "Doble frontera",
       "precio": 139566.69,
-      "estado": "VENDIDO"
+      "estado": "DISPONIBLE"
     },
     {
       "id": "LAN10",
       "coordenadas": "115,451,16,453,20,549,116,492",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "10",
       "manzana": "A",
       "areaLote": "244.35 mts2",
@@ -824,9 +824,20 @@
       "estado": "VENDIDO"
     },
     {
+      "id": "LBN1",
+      "coordenadas": "762,70,684,137,643,159,533,226,480,118,528,109,606,101,653,93,684,89",
+      "color": "rgba(99, 115, 129, 0.51)",
+      "lote": "1",
+      "manzana": "B",
+      "areaLote": "574.19 mts2",
+      "referencia": "GARZA CLUB",
+      "precio": "0",
+      "estado": "SEPARADO"
+    },
+    {
       "id": "LBN2",
       "coordenadas": "479,118,445,118,507,242,534,227,509,176",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "02",
       "manzana": "B",
       "areaLote": "138.21 mts2",
@@ -837,7 +848,7 @@
     {
       "id": "LBN3",
       "coordenadas": "475,262,507,243,466,162,427,161",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "03",
       "manzana": "B",
       "areaLote": "113.82 mts2",
@@ -848,18 +859,18 @@
     {
       "id": "LBN4",
       "coordenadas": "475,263,442,281,382,155,426,161",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "04",
       "manzana": "B",
       "areaLote": "148.79 mts2",
       "referencia": "Frente a la vía",
       "precio": 127298.03,
-      "estado": "VENDIDO"
+      "estado": "DISPONIBLE"
     },
     {
       "id": "LBN5",
       "coordenadas": "442,282,411,300,350,190,391,176",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "05",
       "manzana": "B",
       "areaLote": "141.77 mts2",
@@ -870,7 +881,7 @@
     {
       "id": "LBN6",
       "coordenadas": "411,301,376,320,310,200,350,189",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "06",
       "manzana": "B",
       "areaLote": "153.03 mts2",
@@ -881,7 +892,7 @@
     {
       "id": "LBN7",
       "coordenadas": "376,320,341,342,261,199,309,200",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "07",
       "manzana": "B",
       "areaLote": "199.95 mts2",
@@ -892,7 +903,7 @@
     {
       "id": "LBN8",
       "coordenadas": "341,342,305,364,213,197,260,199",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "08",
       "manzana": "B",
       "areaLote": "210.40 mts2",
@@ -903,7 +914,7 @@
     {
       "id": "LBN9",
       "coordenadas": "263,286,228,307,270,384,305,365",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "09",
       "manzana": "B",
       "areaLote": "119.13 mts2",
@@ -914,7 +925,7 @@
     {
       "id": "LBN10",
       "coordenadas": "192,328,227,307,270,385,235,405",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "10",
       "manzana": "B",
       "areaLote": "119.13 mts2",
@@ -925,7 +936,7 @@
     {
       "id": "LBN11",
       "coordenadas": "192,328,165,343,166,447,235,406",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "11",
       "manzana": "B",
       "areaLote": "210.36 mts2",
@@ -936,7 +947,7 @@
     {
       "id": "LBN12",
       "coordenadas": "247,261,164,275,166,343,262,286",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "12",
       "manzana": "B",
       "areaLote": "120.27 mts2",
@@ -946,8 +957,8 @@
     },
     {
       "id": "LBN13",
-      "coordenadas": "785,265,733,297,775,362,829,330",
-      "color": "rgba(255, 255, 255, 0)",
+      "coordenadas": "235,238,164,237,165,276,248,261",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "13",
       "manzana": "B",
       "areaLote": "90.53 mts2",
@@ -958,7 +969,7 @@
     {
       "id": "LBN14",
       "coordenadas": "213,197,164,196,164,236,235,238",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "14",
       "manzana": "B",
       "areaLote": "99.03 mts2",
@@ -969,7 +980,7 @@
     {
       "id": "LBN15",
       "coordenadas": "381,155,312,146,309,200,350,189,392,175",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "15",
       "manzana": "B",
       "areaLote": "101.69 mts2",
@@ -980,7 +991,7 @@
     {
       "id": "LBN16",
       "coordenadas": "393,119,313,113,312,146,391,156",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "16",
       "manzana": "B",
       "areaLote": "103.17 mts2",
@@ -991,7 +1002,7 @@
     {
       "id": "LBN17",
       "coordenadas": "444,118,394,118,391,158,427,161,466,161",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "17",
       "manzana": "B",
       "areaLote": "90.00 mts2",
@@ -1002,7 +1013,7 @@
     {
       "id": "LCN1",
       "coordenadas": "211,609,170,633,171,698,220,683,251,674",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "01",
       "manzana": "C",
       "areaLote": "189.68 mts2",
@@ -1013,7 +1024,7 @@
     {
       "id": "LCN2",
       "coordenadas": "255,582,211,608,251,674,295,648",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "02",
       "manzana": "C",
       "areaLote": "155.75 mts2",
@@ -1024,7 +1035,7 @@
     {
       "id": "LCN3",
       "coordenadas": "290,562,255,582,296,648,329,626",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "03",
       "manzana": "C",
       "areaLote": "103.28 mts2",
@@ -1035,7 +1046,7 @@
     {
       "id": "LCN4",
       "coordenadas": "361,607,323,541,290,562,330,626",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "04",
       "manzana": "C",
       "areaLote": "90.60 mts2",
@@ -1046,7 +1057,7 @@
     {
       "id": "LCN5",
       "coordenadas": "324,542,345,577,362,608,424,570,387,505",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "05",
       "manzana": "C",
       "areaLote": "210.49 mts2",
@@ -1057,18 +1068,18 @@
     {
       "id": "LCN6",
       "coordenadas": "387,505,402,530,424,570,474,541,435,476",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "06",
       "manzana": "C",
       "areaLote": "151.00 mts2",
       "referencia": "Frente a la vía",
       "precio": 129188.81,
-      "estado": "VENDIDO"
+      "estado": "DISPONIBLE"
     },
     {
       "id": "LCN7",
       "coordenadas": "486,445,435,476,474,541,525,511",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "07",
       "manzana": "C",
       "areaLote": "151.00 mts2",
@@ -1079,7 +1090,7 @@
     {
       "id": "LCN8",
       "coordenadas": "534,417,487,445,526,511,574,481",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "08",
       "manzana": "C",
       "areaLote": "151.00 mts2",
@@ -1090,7 +1101,7 @@
     {
       "id": "LCN9",
       "coordenadas": "586,385,534,417,574,481,627,451",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "09",
       "manzana": "C",
       "areaLote": "179.79 mts2",
@@ -1101,7 +1112,7 @@
     {
       "id": "LCN10",
       "coordenadas": "636,355,588,384,627,451,676,421",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "10",
       "manzana": "C",
       "areaLote": "179.71 mts2",
@@ -1112,7 +1123,7 @@
     {
       "id": "LCN11",
       "coordenadas": "696,320,636,355,677,421,738,384",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "11",
       "manzana": "C",
       "areaLote": "179.30 mts2",
@@ -1123,7 +1134,7 @@
     {
       "id": "LCN12",
       "coordenadas": "733,297,696,320,738,384,775,361",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "12",
       "manzana": "C",
       "areaLote": "120.80 mts2",
@@ -1138,14 +1149,14 @@
       "areaLote": "180.03 mts2",
       "referencia": "Frente a la vía",
       "precio": 154025.57,
-      "coordenadas": "787,259,734,292,776,357,832,324",
-      "color": "rgba(255, 255, 255, 0)",
+      "coordenadas": "785,265,732,298,776,362,829,330",
+      "color": "rgba(77, 203, 92, 0.497)",
       "estado": "DISPONIBLE"
     },
     {
       "id": "LCN14",
       "coordenadas": "824,241,786,265,829,331,869,306",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "14",
       "manzana": "C",
       "areaLote": "120.80 mts2",
@@ -1156,7 +1167,7 @@
     {
       "id": "LCN15",
       "coordenadas": "860,216,824,241,869,305,906,284",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "15",
       "manzana": "C",
       "areaLote": "120.80 mts2",
@@ -1167,7 +1178,7 @@
     {
       "id": "LCN16",
       "coordenadas": "906,284,845,321,888,385,949,348",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "16",
       "manzana": "C",
       "areaLote": "211.40 mts2",
@@ -1178,7 +1189,7 @@
     {
       "id": "LCN17",
       "coordenadas": "861,401,887,384,845,322,817,337",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "17",
       "manzana": "C",
       "areaLote": "95.13 mts2",
@@ -1189,7 +1200,7 @@
     {
       "id": "LCN18",
       "coordenadas": "833,417,860,401,817,337,792,352",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "18",
       "manzana": "C",
       "areaLote": "90.60 mts2",
@@ -1200,7 +1211,7 @@
     {
       "id": "LCN19",
       "coordenadas": "791,352,767,367,806,433,832,417",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "19",
       "manzana": "C",
       "areaLote": "90.60 mts2",
@@ -1210,8 +1221,8 @@
     },
     {
       "id": "LCN20",
-      "coordenadas": "805,492,769,512,809,578,844,557",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "coordenadas": "767,367,739,384,779,450,806,434",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "20",
       "manzana": "C",
       "areaLote": "95.13 mts2",
@@ -1221,8 +1232,8 @@
     },
     {
       "id": "LCN21",
-      "coordenadas": "978,389,812,488,890,618,1064,514",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "coordenadas": "739,384,704,405,744,471,779,449",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "21",
       "manzana": "C",
       "areaLote": "120.80 mts2",
@@ -1233,7 +1244,7 @@
     {
       "id": "LCN22",
       "coordenadas": "669,425,704,405,744,470,707,491",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "22",
       "manzana": "C",
       "areaLote": "120.80 mts2",
@@ -1244,7 +1255,7 @@
     {
       "id": "LCN23",
       "coordenadas": "669,425,642,442,682,507,707,491",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "23",
       "manzana": "C",
       "areaLote": "91.35 mts2",
@@ -1255,7 +1266,7 @@
     {
       "id": "LCN24",
       "coordenadas": "616,457,642,442,682,507,656,523",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "24",
       "manzana": "C",
       "areaLote": "91.35 mts2",
@@ -1266,7 +1277,7 @@
     {
       "id": "LCN25",
       "coordenadas": "616,457,590,473,629,539,656,523",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "25",
       "manzana": "C",
       "areaLote": "91.35 mts2",
@@ -1276,8 +1287,8 @@
     },
     {
       "id": "LCN26",
-      "coordenadas": "707,638,679,654,720,721,747,704",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "coordenadas": "589,472,558,492,597,558,629,539",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "26",
       "manzana": "C",
       "areaLote": "98.15 mts2",
@@ -1288,7 +1299,7 @@
     {
       "id": "LCN27",
       "coordenadas": "558,492,526,510,565,577,597,557",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "27",
       "manzana": "C",
       "areaLote": "90.60 mts2",
@@ -1299,7 +1310,7 @@
     {
       "id": "LCN28",
       "coordenadas": "525,510,492,531,530,597,564,576",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "28",
       "manzana": "C",
       "areaLote": "94.38 mts2",
@@ -1310,7 +1321,7 @@
     {
       "id": "LCN29",
       "coordenadas": "491,531,462,548,501,614,530,597",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "29",
       "manzana": "C",
       "areaLote": "90.60 mts2",
@@ -1320,8 +1331,8 @@
     },
     {
       "id": "LCN30",
-      "coordenadas": "580,713,553,729,593,795,620,780",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "coordenadas": "462,549,433,565,472,633,501,615",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "30",
       "manzana": "C",
       "areaLote": "90.60 mts2",
@@ -1331,8 +1342,8 @@
     },
     {
       "id": "LCN31",
-      "coordenadas": "553,728,512,755,551,822,593,796",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "coordenadas": "432,565,400,586,440,651,472,633",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "31",
       "manzana": "C",
       "areaLote": "90.60 mts2",
@@ -1342,19 +1353,19 @@
     },
     {
       "id": "LCN32",
-      "coordenadas": "512,755,471,781,510,846,551,822",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "coordenadas": "400,586,370,604,409,669,439,651,419,617",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "32",
       "manzana": "C",
       "areaLote": "90.60 mts2",
       "referencia": "Calle",
       "precio": 75499.97,
-      "estado": "VENDIDO"
+      "estado": "DISPONIBLE"
     },
     {
       "id": "LCN33",
       "coordenadas": "369,603,339,621,378,687,409,669",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "33",
       "manzana": "C",
       "areaLote": "90.60 mts2",
@@ -1364,8 +1375,8 @@
     },
     {
       "id": "LCN34",
-      "coordenadas": "441,796,415,813,454,879,481,863",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "coordenadas": "339,622,312,639,352,703,377,687",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "34",
       "manzana": "C",
       "areaLote": "90.60 mts2",
@@ -1375,19 +1386,19 @@
     },
     {
       "id": "LCN35",
-      "coordenadas": "414,812,386,830,423,896,453,879",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "coordenadas": "312,639,282,656,324,721,352,704",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "35",
       "manzana": "C",
       "areaLote": "90.60 mts2",
       "referencia": "Calle",
       "precio": 75499.97,
-      "estado": "VENDIDO"
+      "estado": "DISPONIBLE"
     },
     {
       "id": "LCN36",
-      "coordenadas": "386,830,356,847,395,913,423,897",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "coordenadas": "251,672,257,683,290,739,323,721,281,656,251,672",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "36",
       "manzana": "C",
       "areaLote": "90.60 mts2",
@@ -1398,7 +1409,7 @@
     {
       "id": "LCN37",
       "coordenadas": "251,674,220,684,263,756,289,740",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "37",
       "manzana": "C",
       "areaLote": "98.15 mts2",
@@ -1408,8 +1419,8 @@
     },
     {
       "id": "LCN38",
-      "coordenadas": "328,864,299,881,338,947,367,931",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "coordenadas": "192,690,206,712,240,771,264,756,221,683,198,689",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "38",
       "manzana": "C",
       "areaLote": "114.50 mts2",
@@ -1420,7 +1431,7 @@
     {
       "id": "LCN39",
       "coordenadas": "193,690,171,698,172,811,238,772",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "39",
       "manzana": "C",
       "areaLote": "217.61 mts2",
@@ -1431,7 +1442,7 @@
     {
       "id": "LDN1",
       "coordenadas": "210,846,173,867,174,956,248,911",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "01",
       "manzana": "D",
       "areaLote": "196.87 mts2",
@@ -1442,7 +1453,7 @@
     {
       "id": "LDN2",
       "coordenadas": "243,825,211,846,248,911,281,892",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "02",
       "manzana": "D",
       "areaLote": "105.67 mts2",
@@ -1453,7 +1464,7 @@
     {
       "id": "LDN3",
       "coordenadas": "276,806,243,825,281,892,315,872",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "03",
       "manzana": "D",
       "areaLote": "103.78 mts2",
@@ -1464,7 +1475,7 @@
     {
       "id": "LDN4",
       "coordenadas": "304,790,276,807,315,871,342,856",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "04",
       "manzana": "D",
       "areaLote": "90.00 mts2",
@@ -1475,7 +1486,7 @@
     {
       "id": "LDN5",
       "coordenadas": "335,772,304,789,343,855,373,837",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "05",
       "manzana": "D",
       "areaLote": "90.90 mts2",
@@ -1486,7 +1497,7 @@
     {
       "id": "LDN6",
       "coordenadas": "366,753,335,771,373,837,404,818",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "06",
       "manzana": "D",
       "areaLote": "90.90 mts2",
@@ -1497,7 +1508,7 @@
     {
       "id": "LDN7",
       "coordenadas": "395,735,367,753,405,818,435,799",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "07",
       "manzana": "D",
       "areaLote": "90.00 mts2",
@@ -1508,7 +1519,7 @@
     {
       "id": "LDN8",
       "coordenadas": "426,716,396,735,436,799,466,782",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "08",
       "manzana": "D",
       "areaLote": "90.90 mts2",
@@ -1519,18 +1530,18 @@
     {
       "id": "LDN9",
       "coordenadas": "458,699,427,716,467,782,497,764",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "09",
       "manzana": "D",
       "areaLote": "90.90 mts2",
       "referencia": "Calle",
       "precio": 75749.97,
-      "estado": "VENDIDO"
+      "estado": "DISPONIBLE"
     },
     {
       "id": "LDN10",
       "coordenadas": "485,682,458,698,498,764,512,754,524,746",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "10",
       "manzana": "D",
       "areaLote": "90.90 mts2",
@@ -1541,7 +1552,7 @@
     {
       "id": "LDN11",
       "coordenadas": "515,664,486,682,525,746,552,729",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "11",
       "manzana": "D",
       "areaLote": "90.90 mts2",
@@ -1552,7 +1563,7 @@
     {
       "id": "LDN12",
       "coordenadas": "540,649,515,664,553,729,580,713",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "12",
       "manzana": "D",
       "areaLote": "90.90 mts2",
@@ -1563,7 +1574,7 @@
     {
       "id": "LDN13",
       "coordenadas": "577,628,541,649,580,713,616,692",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rrgba(220, 53, 70, 0.504)",
       "lote": "13",
       "manzana": "D",
       "areaLote": "136.35 mts2",
@@ -1574,7 +1585,7 @@
     {
       "id": "LDN14",
       "coordenadas": "603,612,577,627,616,692,642,676",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "14",
       "manzana": "D",
       "areaLote": "90.90 mts2",
@@ -1585,7 +1596,7 @@
     {
       "id": "LDN15",
       "coordenadas": "636,591,603,612,643,676,676,657",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "15",
       "manzana": "D",
       "areaLote": "118.17 mts2",
@@ -1596,7 +1607,7 @@
     {
       "id": "LDN16",
       "coordenadas": "673,569,636,591,676,656,711,636",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "16",
       "manzana": "D",
       "areaLote": "121.20 mts2",
@@ -1607,7 +1618,7 @@
     {
       "id": "LDN17",
       "coordenadas": "673,568,692,601,711,635,746,615,709,549",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "17",
       "manzana": "D",
       "areaLote": "121.20 mts2",
@@ -1618,7 +1629,7 @@
     {
       "id": "LDN18",
       "coordenadas": "734,533,709,549,746,615,774,600",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "18",
       "manzana": "D",
       "areaLote": "90.90 mts2",
@@ -1629,7 +1640,7 @@
     {
       "id": "LDN19",
       "coordenadas": "769,512,735,534,774,599,808,578",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "19",
       "manzana": "D",
       "areaLote": "121.05 mts2",
@@ -1639,8 +1650,8 @@
     },
     {
       "id": "LDN20",
-      "coordenadas": "",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "coordenadas": "804,491,770,512,809,579,844,558",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "20",
       "manzana": "D",
       "areaLote": "121.20 mts2",
@@ -1651,7 +1662,7 @@
     {
       "id": "LDN22",
       "coordenadas": "844,558,795,585,834,652,882,623",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "22",
       "manzana": "D",
       "areaLote": "148.09 mts2",
@@ -1662,7 +1673,7 @@
     {
       "id": "LDN23",
       "coordenadas": "795,586,763,604,803,671,833,652",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "23",
       "manzana": "D",
       "areaLote": "120.24 mts2",
@@ -1673,7 +1684,7 @@
     {
       "id": "LDN24",
       "coordenadas": "764,604,735,621,774,688,801,671",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "24",
       "manzana": "D",
       "areaLote": "94.31 mts2",
@@ -1684,7 +1695,7 @@
     {
       "id": "LDN25",
       "coordenadas": "735,621,707,637,747,704,774,688",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "25",
       "manzana": "D",
       "areaLote": "90.90 mts2",
@@ -1694,8 +1705,8 @@
     },
     {
       "id": "LDN26",
-      "coordenadas": "",
-      "color": "rgba(220, 53, 70, 0.505)",
+      "coordenadas": "708,639,680,656,719,720,748,704",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "26",
       "manzana": "D",
       "areaLote": "93.55 mts2",
@@ -1706,18 +1717,18 @@
     {
       "id": "LDN27",
       "coordenadas": "680,655,646,675,686,741,720,720",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "27",
       "manzana": "D",
       "areaLote": "116.68 mts2",
       "referencia": "Calle",
       "precio": 97233.29,
-      "estado": "VENDIDO"
+      "estado": "DISPONIBLE"
     },
     {
       "id": "LDN28",
       "coordenadas": "645,675,606,698,646,764,686,741",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "28",
       "manzana": "D",
       "areaLote": "136.35 mts2",
@@ -1728,7 +1739,7 @@
     {
       "id": "LDN29",
       "coordenadas": "606,698,580,713,620,780,644,764",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "29",
       "manzana": "D",
       "areaLote": "90.90 mts2",
@@ -1738,8 +1749,8 @@
     },
     {
       "id": "LDN30",
-      "coordenadas": "",
-      "color": "rgba(220, 53, 70, 0.505)",
+      "coordenadas": "580,715,553,730,593,795,620,780",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "30",
       "manzana": "D",
       "areaLote": "90.90 mts2",
@@ -1749,8 +1760,8 @@
     },
     {
       "id": "LDN31",
-      "coordenadas": "",
-      "color": "rgba(220, 53, 70, 0.505)",
+      "coordenadas": "553,730,512,755,551,821,593,795",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "31",
       "manzana": "D",
       "areaLote": "135.25 mts2",
@@ -1760,8 +1771,8 @@
     },
     {
       "id": "LDN32",
-      "coordenadas": "",
-      "color": "rgba(220, 53, 70, 0.505)",
+      "coordenadas": "512,755,471,780,510,846,551,821",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "32",
       "manzana": "D",
       "areaLote": "136.35 mts2",
@@ -1772,7 +1783,7 @@
     {
       "id": "LDN33",
       "coordenadas": "470,780,442,796,481,862,510,846",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "33",
       "manzana": "D",
       "areaLote": "90.90 mts2",
@@ -1782,8 +1793,8 @@
     },
     {
       "id": "LDN34",
-      "coordenadas": "",
-      "color": "rgba(220, 53, 70, 0.505)",
+      "coordenadas": "441,796,413,814,453,879,481,862",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "34",
       "manzana": "D",
       "areaLote": "93.93 mts2",
@@ -1793,8 +1804,8 @@
     },
     {
       "id": "LDN35",
-      "coordenadas": "",
-      "color": "rgba(220, 53, 70, 0.505)",
+      "coordenadas": "413,813,385,830,424,896,454,880",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "35",
       "manzana": "D",
       "areaLote": "93.00 mts2",
@@ -1804,8 +1815,8 @@
     },
     {
       "id": "LDN36",
-      "coordenadas": "",
-      "color": "rgba(220, 53, 70, 0.505)",
+      "coordenadas": "385,831,356,847,395,913,424,897",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "36",
       "manzana": "D",
       "areaLote": "93.04 mts2",
@@ -1816,7 +1827,7 @@
     {
       "id": "LDN37",
       "coordenadas": "357,848,329,864,367,931,395,913",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "37",
       "manzana": "D",
       "areaLote": "92.87 mts2",
@@ -1826,8 +1837,8 @@
     },
     {
       "id": "LDN38",
-      "coordenadas": "",
-      "color": "rgba(220, 53, 70, 0.505)",
+      "coordenadas": "328,865,300,882,338,947,367,931",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "38",
       "manzana": "D",
       "areaLote": "91.04 mts2",
@@ -1838,7 +1849,7 @@
     {
       "id": "LDN39",
       "coordenadas": "272,896,299,881,338,947,312,964",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "39",
       "manzana": "D",
       "areaLote": "90.00 mts2",
@@ -1849,7 +1860,7 @@
     {
       "id": "LDN40",
       "coordenadas": "272,897,244,913,283,978,311,964",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "40",
       "manzana": "D",
       "areaLote": "90.90 mts2",
@@ -1860,7 +1871,7 @@
     {
       "id": "LDN41",
       "coordenadas": "243,913,217,930,257,995,283,980",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "41",
       "manzana": "D",
       "areaLote": "90.00 mts2",
@@ -1871,7 +1882,7 @@
     {
       "id": "LDN42",
       "coordenadas": "217,930,174,955,175,1033,182,1041,257,995",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "42",
       "manzana": "D",
       "areaLote": "194.00 mts2",
@@ -1882,7 +1893,7 @@
     {
       "id": "LEN1",
       "coordenadas": "1183,391,1080,453,1106,491,1186,442,1185,416",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "01",
       "manzana": "E",
       "areaLote": "129.83 mts2",
@@ -1893,7 +1904,7 @@
     {
       "id": "LEN2",
       "coordenadas": "1178,350,1059,422,1080,453,1185,389,1183,357",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "02",
       "manzana": "E",
       "areaLote": "105.98 mts2",
@@ -1904,7 +1915,7 @@
     {
       "id": "LEN3",
       "coordenadas": "1161,314,1036,389,1059,422,1178,350",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "03",
       "manzana": "E",
       "areaLote": "105.94 mts2",
@@ -1915,7 +1926,7 @@
     {
       "id": "LEN4",
       "coordenadas": "1144,277,1012,354,1037,389,1162,314",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "04",
       "manzana": "E",
       "areaLote": "102.88 mts2",
@@ -1925,8 +1936,8 @@
     },
     {
       "id": "LEN5",
-      "coordenadas": "976,624,950,641,987,701,1013,687",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "coordenadas": "1119,207,975,299,1013,355,1144,277,1130,237",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "05",
       "manzana": "E",
       "areaLote": "195.65 mts2",
@@ -1937,7 +1948,7 @@
     {
       "id": "LEN6",
       "coordenadas": "1081,153,940,247,975,299,1119,205",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "06",
       "manzana": "E",
       "areaLote": "199.50 mts2",
@@ -1948,7 +1959,7 @@
     {
       "id": "LEN7",
       "coordenadas": "968,161,912,204,940,247,1000,207",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "07",
       "manzana": "E",
       "areaLote": "90.96 mts2",
@@ -1959,7 +1970,7 @@
     {
       "id": "LEN8",
       "coordenadas": "939,118,886,167,911,204,968,161",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "08",
       "manzana": "E",
       "areaLote": "97.55 mts2",
@@ -1970,7 +1981,7 @@
     {
       "id": "LEN9",
       "coordenadas": "974,85,939,118,1000,208,1044,178",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "09",
       "manzana": "E",
       "areaLote": "121.10 mts2",
@@ -1981,7 +1992,7 @@
     {
       "id": "LEN10",
       "coordenadas": "1010,50,973,84,1044,178,1079,153",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "010",
       "manzana": "E",
       "areaLote": "119.30 mts2",
@@ -1992,7 +2003,7 @@
     {
       "id": "LFN1",
       "coordenadas": "1045,751,980,790,992,809,1017,805,1048,788,1065,778",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "01",
       "manzana": "F",
       "areaLote": "147.52 mts2",
@@ -2003,7 +2014,7 @@
     {
       "id": "LFN2",
       "coordenadas": "1010,730,961,759,981,790,1027,760",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "02",
       "manzana": "F",
       "areaLote": "98.92 mts2",
@@ -2014,7 +2025,7 @@
     {
       "id": "LFN3",
       "coordenadas": "991,700,943,728,961,758,1010,732",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "03",
       "manzana": "F",
       "areaLote": "99.79 mts2",
@@ -2025,7 +2036,7 @@
     {
       "id": "LFN4",
       "coordenadas": "949,641,905,667,943,728,987,702",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "04",
       "manzana": "F",
       "areaLote": "170.74 mts2",
@@ -2035,8 +2046,8 @@
     },
     {
       "id": "LFN5",
-      "coordenadas": "",
-      "color": "",
+      "coordenadas": "976,625,949,641,987,702,1012,686",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "05",
       "manzana": "F",
       "areaLote": "106.41 mts2",
@@ -2047,7 +2058,7 @@
     {
       "id": "LFN6",
       "coordenadas": "1006,607,976,624,1013,687,1044,667",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "06",
       "manzana": "F",
       "areaLote": "122.28 mts2",
@@ -2058,7 +2069,7 @@
     {
       "id": "LFN7",
       "coordenadas": "1044,668,991,699,1010,730,1063,699",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "07",
       "manzana": "F",
       "areaLote": "107.85 mts2",
@@ -2069,7 +2080,7 @@
     {
       "id": "LFN8",
       "coordenadas": "1063,699,1009,730,1028,760,1081,727",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "08",
       "manzana": "F",
       "areaLote": "104.52 mts2",
@@ -2080,7 +2091,7 @@
     {
       "id": "LFN9",
       "coordenadas": "1116,707,1045,750,1065,777,1097,758,1121,738",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "09",
       "manzana": "F",
       "areaLote": "157.67 mts2",
@@ -2091,7 +2102,7 @@
     {
       "id": "LFN10",
       "coordenadas": "1185,637,1104,685,1116,707,1187,662",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "10",
       "manzana": "F",
       "areaLote": "113.31 mts2",
@@ -2102,7 +2113,7 @@
     {
       "id": "LFN11",
       "coordenadas": "1181,610,1091,665,1104,686,1183,637",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "11",
       "manzana": "F",
       "areaLote": "95.37 mts2",
@@ -2113,7 +2124,7 @@
     {
       "id": "LFN12",
       "coordenadas": "1178,583,1077,642,1091,664,1180,610",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "12",
       "manzana": "F",
       "areaLote": "114.52 mts2",
@@ -2124,7 +2135,7 @@
     {
       "id": "LFN13",
       "coordenadas": "1069,569,1044,585,1077,641,1105,626",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "13",
       "manzana": "F",
       "areaLote": "94.96 mts2",
@@ -2135,7 +2146,7 @@
     {
       "id": "LFN14",
       "coordenadas": "1097,553,1070,570,1105,626,1130,611",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "14",
       "manzana": "F",
       "areaLote": "100.81 mts2",
@@ -2146,7 +2157,7 @@
     {
       "id": "LFN15",
       "coordenadas": "1123,538,1097,553,1130,612,1155,595",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "15",
       "manzana": "F",
       "areaLote": "99.95 mts2",
@@ -2157,7 +2168,7 @@
     {
       "id": "LFN16",
       "coordenadas": "1181,503,1123,539,1157,596,1178,582,1175,555",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "16",
       "manzana": "F",
       "areaLote": "160.05 mts2",
@@ -2168,7 +2179,7 @@
     {
       "id": "LGN1",
       "coordenadas": "969,850,809,946,828,977,966,930,989,880",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "01",
       "manzana": "G",
       "areaLote": "496.67 mts2",
@@ -2179,7 +2190,7 @@
     {
       "id": "LGN2",
       "coordenadas": "871,877,793,922,808,946,885,900",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "02",
       "manzana": "G",
       "areaLote": "101.84 mts2",
@@ -2190,7 +2201,7 @@
     {
       "id": "LGN3",
       "coordenadas": "858,854,780,901,794,922,872,877",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "03",
       "manzana": "G",
       "areaLote": "102.64 mts2",
@@ -2201,7 +2212,7 @@
     {
       "id": "LGN4",
       "coordenadas": "844,832,767,879,780,901,857,854",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "04",
       "manzana": "G",
       "areaLote": "102.02 mts2",
@@ -2212,7 +2223,7 @@
     {
       "id": "LGN5",
       "coordenadas": "830,810,753,855,768,878,844,833",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "05",
       "manzana": "G",
       "areaLote": "103.03 mts2",
@@ -2223,7 +2234,7 @@
     {
       "id": "LGN6",
       "coordenadas": "816,787,735,826,753,854,830,810",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "06",
       "manzana": "G",
       "areaLote": "119.48 mts2",
@@ -2234,7 +2245,7 @@
     {
       "id": "LGN7",
       "coordenadas": "786,739,709,784,735,825,816,787",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "07",
       "manzana": "G",
       "areaLote": "170.00 mts2",
@@ -2245,7 +2256,7 @@
     {
       "id": "LGN8",
       "coordenadas": "832,711,785,738,816,787,864,761",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "08",
       "manzana": "G",
       "areaLote": "122.61 mts2",
@@ -2256,7 +2267,7 @@
     {
       "id": "LGN9",
       "coordenadas": "870,688,832,711,864,761,901,740",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "09",
       "manzana": "G",
       "areaLote": "136.68 mts2",
@@ -2267,7 +2278,7 @@
     {
       "id": "LGN10",
       "coordenadas": "901,740,817,787,830,810,916,761",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "10",
       "manzana": "G",
       "areaLote": "131.12 mts2",
@@ -2278,7 +2289,7 @@
     {
       "id": "LGN11",
       "coordenadas": "915,762,829,810,844,833,929,782",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "11",
       "manzana": "G",
       "areaLote": "113.74 mts2",
@@ -2289,7 +2300,7 @@
     {
       "id": "LGN12",
       "coordenadas": "928,782,845,832,857,855,941,805",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "12",
       "manzana": "G",
       "areaLote": "113.23 mts2",
@@ -2300,7 +2311,7 @@
     {
       "id": "LGN13",
       "coordenadas": "941,805,858,855,872,878,956,828",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "13",
       "manzana": "G",
       "areaLote": "115.66 mts2",
@@ -2311,7 +2322,7 @@
     {
       "id": "LGN14",
       "coordenadas": "956,829,871,878,885,899,969,849",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "14",
       "manzana": "G",
       "areaLote": "113.81 mts2",
@@ -2322,7 +2333,7 @@
     {
       "id": "LHN1",
       "coordenadas": "464,1067,399,1107,416,1133,492,1109",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "01",
       "manzana": "H",
       "areaLote": "107.64 mts2",
@@ -2333,7 +2344,7 @@
     {
       "id": "LHN2",
       "coordenadas": "444,1038,379,1076,399,1106,463,1068",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "02",
       "manzana": "H",
       "areaLote": "95.39 mts2",
@@ -2344,7 +2355,7 @@
     {
       "id": "LHN3",
       "coordenadas": "369,987,334,1007,379,1077,413,1055",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "03",
       "manzana": "H",
       "areaLote": "110.10 mts2",
@@ -2355,7 +2366,7 @@
     {
       "id": "LHN4",
       "coordenadas": "399,968,369,986,415,1056,444,1039",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "04",
       "manzana": "H",
       "areaLote": "102.69 mts2",
@@ -2366,7 +2377,7 @@
     {
       "id": "LHN5",
       "coordenadas": "428,951,399,968,456,1056,484,1038",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "05",
       "manzana": "H",
       "areaLote": "127.14 mts2",
@@ -2377,7 +2388,7 @@
     {
       "id": "LHN6",
       "coordenadas": "498,910,428,951,449,984,518,944",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "06",
       "manzana": "H",
       "areaLote": "92.38 mts2",
@@ -2388,7 +2399,7 @@
     {
       "id": "LHN7",
       "coordenadas": "518,943,449,984,469,1013,537,973",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "07",
       "manzana": "H",
       "areaLote": "95.77 mts2",
@@ -2399,7 +2410,7 @@
     {
       "id": "LHN8",
       "coordenadas": "537,974,470,1014,484,1038,551,997",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "08",
       "manzana": "H",
       "areaLote": "95.66 mts2",
@@ -2410,7 +2421,7 @@
     {
       "id": "LHN9",
       "coordenadas": "551,997,457,1056,476,1087,571,1029",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "09",
       "manzana": "H",
       "areaLote": "109.63 mts2",
@@ -2426,13 +2437,13 @@
       "referencia": "Esquina/Parque",
       "precio": 95745.16,
       "coordenadas": "572,1031,476,1089,492,1113,598,1076",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "estado": "DISPONIBLE"
     },
     {
       "id": "LIN1",
-      "coordenadas": "298,1029,235,1065,260,1110,324,1071",
-      "color": "rgba(255, 255, 255, 0)",
+      "coordenadas": "205,1084,176,1101,177,1223,220,1209,263,1193",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "01",
       "manzana": "I",
       "areaLote": "155.58 mts2",
@@ -2443,7 +2454,7 @@
     {
       "id": "LIN2",
       "coordenadas": "235,1066,205,1084,263,1190,296,1178",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "02",
       "manzana": "I",
       "areaLote": "114.87 mts2",
@@ -2454,7 +2465,7 @@
     {
       "id": "LIN3",
       "coordenadas": "298,1029,235,1065,260,1110,324,1071",
-      "color": "rgba(220, 53, 70, 0.505)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "03",
       "manzana": "I",
       "areaLote": "123.71 mts2",
@@ -2465,7 +2476,7 @@
     {
       "id": "LIN4",
       "coordenadas": "324,1070,258,1109,279,1146,348,1106",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "04",
       "manzana": "I",
       "areaLote": "96.54 mts2",
@@ -2476,7 +2487,7 @@
     {
       "id": "LIN5",
       "coordenadas": "374,1146,348,1106,280,1146,297,1178",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "05",
       "manzana": "I",
       "areaLote": "108.38 mts2",
@@ -2487,7 +2498,7 @@
     {
       "id": "LJN1",
       "coordenadas": "121,663,18,723,18,753,122,757",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "01",
       "manzana": "J",
       "areaLote": "242.39 mts2",
@@ -2498,7 +2509,7 @@
     {
       "id": "LJN2",
       "coordenadas": "122,758,18,753,18,789,122,792",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "02",
       "manzana": "J",
       "areaLote": "132.98 mts2",
@@ -2509,7 +2520,7 @@
     {
       "id": "LJN3",
       "coordenadas": "122,792,18,790,20,824,122,827",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "03",
       "manzana": "J",
       "areaLote": "127.37 mts2",
@@ -2520,7 +2531,7 @@
     {
       "id": "LJN4",
       "coordenadas": "123,826,20,824,21,869,123,874",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "04",
       "manzana": "J",
       "areaLote": "186.78 mts2",
@@ -2531,7 +2542,7 @@
     {
       "id": "LJN5",
       "coordenadas": "124,874,20,870,21,906,124,909",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "05",
       "manzana": "J",
       "areaLote": "124.89 mts2",
@@ -2542,7 +2553,7 @@
     {
       "id": "LJN6",
       "coordenadas": "124,909,21,906,22,941,124,945",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "06",
       "manzana": "J",
       "areaLote": "124.30 mts2",
@@ -2553,7 +2564,7 @@
     {
       "id": "LJN7",
       "coordenadas": "124,944,21,941,23,977,126,982",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "07",
       "manzana": "J",
       "areaLote": "129.82 mts2",
@@ -2564,7 +2575,7 @@
     {
       "id": "LJN8",
       "coordenadas": "126,981,22,978,22,1009,126,1011",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "08",
       "manzana": "J",
       "areaLote": "122.86 mts2",
@@ -2575,7 +2586,7 @@
     {
       "id": "LJN9",
       "coordenadas": "126,1012,22,1008,23,1040,126,1042",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "09",
       "manzana": "J",
       "areaLote": "122.15 mts2",
@@ -2586,7 +2597,7 @@
     {
       "id": "LJN10",
       "coordenadas": "126,1042,23,1040,23,1070,126,1073",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "10",
       "manzana": "J",
       "areaLote": "121.46 mts2",
@@ -2597,7 +2608,7 @@
     {
       "id": "LJN11",
       "coordenadas": "23,1070,126,1073,126,1104,23,1100",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "11",
       "manzana": "J",
       "areaLote": "120.85 mts2",
@@ -2608,7 +2619,7 @@
     {
       "id": "LJN12",
       "coordenadas": "23,1100,127,1103,126,1140,25,1136",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "12",
       "manzana": "J",
       "areaLote": "131.55 mts2",
@@ -2619,7 +2630,7 @@
     {
       "id": "LJN13",
       "coordenadas": "23,1136,127,1141,127,1171,24,1169",
-      "color": "rgba(50, 145, 247, 0.486)",
+      "color": "rgba(220, 53, 70, 0.504)",
       "lote": "13",
       "manzana": "J",
       "areaLote": "139.65 mts2",
@@ -2630,7 +2641,7 @@
     {
       "id": "LJN14",
       "coordenadas": "127,1172,23,1169,26,1199,128,1201",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "14",
       "manzana": "J",
       "areaLote": "139.40 mts2",
@@ -2641,25 +2652,15 @@
     {
       "id": "LJN15",
       "coordenadas": "127,1202,25,1198,26,1233,128,1240",
-      "color": "rgba(255, 255, 255, 0)",
+      "color": "rgba(77, 203, 92, 0.497)",
       "lote": "15",
       "manzana": "J",
       "areaLote": "135.11 mts2",
       "referencia": "Doble frontera/Esquina",
       "precio": 115594.04,
       "estado": "DISPONIBLE"
-    },
-    {
-      "id": "LBN1",
-      "coordenadas": "762,70,684,137,643,159,533,226,480,118,528,109,606,101,653,93,684,89",
-      "color": "rgba(50, 145, 247, 0.486)",
-      "lote": "1",
-      "manzana": "B",
-      "areaLote": "574.19 mts2",
-      "referencia": "GARZA CLUB",
-      "precio": "0",
-      "estado": "VENDIDO"
     }
+  
   ],
   "pgubicaciongb": [
     {

@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { FormSelect, DropFiles } from "widgets";
 import { Col, Row, Form, Card, Button, Image, Table, Modal, Accordion } from "react-bootstrap";
 import React, { Fragment, useEffect, useState } from 'react';
 import { useQuill } from 'react-quilljs';
@@ -114,7 +113,7 @@ const Servicioeditable = () => {
     useEffect(() => {
         const verificador = window.location.pathname.split('/');
         const rptAPI = verificador[verificador.length - 1];
-        fetch('http://localhost:3001/pginformacionvs')
+        fetch('http://localhost:3001/pginformacion')
             .then(response => response.json())
             .then(data => {
                 const filtrado = data.filter(fila => fila.categoria === rptAPI);
@@ -128,12 +127,12 @@ const Servicioeditable = () => {
         return contenidoQuill;
     };
     const handleDeleteClick = (id) => {
-        fetch(`http://localhost:3001/pginformacionvs/${id}`, {
+        fetch(`http://localhost:3001/pginformacion/${id}`, {
             method: 'DELETE',
         })
             .then(response => {
                 if (response.ok) {
-                    fetch('http://localhost:3001/pginformacionvs')
+                    fetch('http://localhost:3001/pginformacion')
                         .then(response => response.json())
                         .then(data => setDatos(data))
                         .catch(error => console.error('Error al obtener datos:', error));
@@ -225,7 +224,7 @@ const Servicioeditable = () => {
                                     <form onSubmit={handleSubmit}>
                                         <Row className="mb-3">
                                             <div className="col-md-4 col-4">
-                                                <label htmlFor='title'>Identificador Único:</label>
+                                                <label htmlFor='title'>Id:</label>
                                                 <input type='text' className='form-control' id='id' value={selectedId} onChange={handleChange}></input>
                                             </div>
 
@@ -248,7 +247,7 @@ const Servicioeditable = () => {
                                         </Row>
                                         <Row className="mb-3">
                                             <div className="col-md-6 col-6 ">
-                                                <label htmlFor='recurso1'>Imagen o Video:</label>
+                                                <label htmlFor='recurso1'>Imágenes <small><code>delimitador ( , )</code></small></label>
                                                 <input
                                                     type='text'
                                                     placeholder='para la 1 columna'

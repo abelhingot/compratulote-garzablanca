@@ -8,38 +8,56 @@ export const DashboardMenu = [
 	},
 	{
 		id: uuid(),
-		title: 'PAGINAS EDITABLES',
+		title: 'PAGINA EDITABLE',
 		grouptitle: true
 	},
 	{
 		id: uuid(),
-		title: 'Garza Blanca',
-		icon: 'code',
-		children: [
-			{ id: uuid(), link: '/dashboard/navBar', name: 'Navbar' },
-			{ id: uuid(), link: '/dashboard/bannergb', name: 'Banner Central' },
-			{ id: uuid(), link: '/dashboard/informacion', name: 'Informacion' },
-			{ id: uuid(), link: '/dashboard/ubicacion', name: 'Ubicacion' },
-			{ id: uuid(), link: '/dashboard/plano', name: 'Plano' },
-			{ id: uuid(), link: '/dashboard/timeline', name: 'TimeLine' },
-			{ id: uuid(), link: '/dashboard/empresa', name: 'Empresa' },
-			{ id: uuid(), link: '/dashboard/contactame', name: 'Contactame' }
-		]
+		title: 'Navbar',
+		icon: 'layers',
+		link: '/dashboard/navBar'
 	},
 	{
 		id: uuid(),
-		title: 'Villa Sipan',
-		icon: 'code',
-		children: [
-			{ id: uuid(), link: '/dashboard/navBarvs', name: 'Navbar' },
-			{ id: uuid(), link: '/dashboard/bannervs', name: 'Banner Central' },
-			{ id: uuid(), link: '/dashboard/informacionvs', name: 'Informacion' },
-			{ id: uuid(), link: '/dashboard/ubicacionvs', name: 'Ubicacion' },
-			{ id: uuid(), link: '/dashboard/planovs', name: 'Plano' },
-			{ id: uuid(), link: '/dashboard/timeline', name: 'TimeLine' },
-			{ id: uuid(), link: '/dashboard/empresavs', name: 'Empresa' },
-			{ id: uuid(), link: '/dashboard/contactame', name: 'Contactame' }
-		]
+		title: 'Banner Central',
+		icon: 'image',
+		link: '/dashboard/bannergb'
+	},
+	{
+		id: uuid(),
+		title: 'Informacion',
+		icon: 'list',
+		link: '/dashboard/informacion'
+	},
+	{
+		id: uuid(),
+		title: 'Ubicacion',
+		icon: 'map-pin',
+		link: '/dashboard/ubicacion'
+	},
+	{
+		id: uuid(),
+		title: 'Plano',
+		icon: 'map',
+		link: '/dashboard/plano'
+	},
+	{
+		id: uuid(),
+		title: 'Time Line',
+		icon: 'trending-up',
+		link: '/dashboard/timeline'
+	},
+	{
+		id: uuid(),
+		title: 'Empresa',
+		icon: 'life-buoy',
+		link: '/dashboard/empresa'
+	},
+	{
+		id: uuid(),
+		title: 'Contactame',
+		icon: 'mail',
+		link: '/dashboard/contactame'
 	},
 	{
 		id: uuid(),
