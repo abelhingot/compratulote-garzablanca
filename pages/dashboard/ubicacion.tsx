@@ -1,13 +1,12 @@
 import Link from 'next/link';
 import DefaultDashboardLayout from '../../layouts/DefaultDashboardLayout'
-import { FormSelect, DropFiles } from "widgets";
 import { Col, Row, Form, Card, Button, Image, Table, Modal, Accordion } from "react-bootstrap";
 import React, { Fragment, useEffect, useState } from 'react';
 import Crudubicacion from './ubicacion/crudubicacion';
 import Infoubicacion from './ubicacion/infoubicacion';
 
 
-const ubicacion = () => {
+const Ubicacion = () => {
     const [seccionActiva, setSeccionActiva] = useState('home');
 
     const ocultarMantenimiento = (seccion) => {
@@ -81,4 +80,4 @@ const ubicacion = () => {
     )
 }
 
-export default ubicacion
+export default Ubicacion

@@ -1,10 +1,9 @@
 import Link from 'next/link';
-import { FormSelect, DropFiles } from "widgets";
 import { Col, Row, Form, Card, Button, Image, Table, Modal } from "react-bootstrap";
 import React, { Fragment, useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 
-const crudubicacion = () => {
+const Crudubicacion = () => {
     const [datos, setDatos] = useState([]);
     const [lgShow, setLgShow] = useState(false);
     const [ubicacion, setUbicacion] = useState('');
@@ -234,11 +233,7 @@ const crudubicacion = () => {
                                         <div className="accordion " id="accordionExample">
                                             <div className="accordion-item border border-top-1 border-bottom-0 p-1"><br />
                                                 {datos.map((fila, index) => (
-<<<<<<< HEAD
-                                                    <h4 className="accordion-header">
-=======
                                                     <h4 key={"datos"+index} className="accordion-header">
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
                                                         <button
                                                             className="accordion-button-no-icon collapsed rounded-5 bg-body border-0 focus-ring focus-ring-light px-4"
                                                             type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
@@ -380,4 +375,4 @@ const crudubicacion = () => {
     )
 }
 
-export default crudubicacion
+export default Crudubicacion

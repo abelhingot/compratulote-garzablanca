@@ -1,9 +1,8 @@
 import Link from 'next/link';
-import { FormSelect, DropFiles } from "widgets";
 import { Col, Row, Form, Card, Button, Image, Table, Modal, Accordion } from "react-bootstrap";
 import React, { Fragment, useEffect, useState } from 'react';
 import { useQuill } from 'react-quilljs';
-import toolbar from '../../dashboard/timeline/toolbar'
+import toolbar from '../../../config/toolbar'
 import 'quill/dist/quill.snow.css'
 
 const Crudempresa = () => {
@@ -109,7 +108,7 @@ const Crudempresa = () => {
             <Row className="mb-5 m-1 mt-3">
                 <Col xl={12} lg={12} md={12} xs={12}>
                     {datos.map((fila, index) => (
-                        <Card className='mb-3'>
+                        <Card className='mb-3' key={index}>
                             <Card.Body>
                                 <div className='row '>
                                     <Row className="mb-1 align-items-center justify-content-end">

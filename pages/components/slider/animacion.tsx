@@ -1,5 +1,6 @@
 "use client"
 import React, {useState, useEffect} from 'react'
+import {Image} from "react-bootstrap"
 export default function CAnimacion(props:any) {
    //let imagenesslider:any=[];
    const [imgslider, setImgslider] = useState([]);
@@ -33,7 +34,7 @@ useEffect(() => {
                   imgslider.map((itemp:any,key:any)=>{
                      return(                       
                         <div className="carousel-item active" key={'imageslider_'+key}>
-                           <img src={itemp.imagen} className="d-block w-100" alt="Proyecto 01" />
+                           <Image src={itemp.imagen} className="d-block w-100" alt="Proyecto 01" />
                            <h2 className='textoslider'>{itemp.texto}</h2>
                         </div>                       
                      )

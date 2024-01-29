@@ -1,7 +1,9 @@
 import { ReactElement } from "react";
+import {Image} from "react-bootstrap"
 import CMenus from "../menus/menus1";
 import CRedes from "../redes-sociales/redes1";
 import CFooter1 from "./footer1";
+import { Link } from "react-bootstrap-icons";
 
 export default function CFooter2() {
     return (
@@ -9,7 +11,7 @@ export default function CFooter2() {
             <div className="container footer">
                 <div className="row" >
                     <div className="col-sm-12 col-md-4 text-center">
-                        <a href="/" title="logo"><img src="/logo1.png" /></a>
+                       <Link href="/"> <a title="logo"><Image src="/logo1.png" alt=""/></a></Link>
                         <br />
                         <div className="slogan text-center">
                             ¡El lote perfecto a un solo clic!

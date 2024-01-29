@@ -1,6 +1,8 @@
 import CMenusTop from "../menus/menutop";
 import CAnimacion from "../slider/animacion";
+import {Image} from "react-bootstrap"
 import CTop1 from "./top1";
+import { Link } from "react-bootstrap-icons";
 
 export default function CTop2(props:any) {
   const menu=props.menu||'inicio';
@@ -11,7 +13,7 @@ export default function CTop2(props:any) {
       <div className="container topbarlogo">
         <div className="row">
           <div className="text-center text-md-start col-sm-12 col-md-4">
-              <a href="/" title="logo"><img src="/logo1.png" /></a>
+              <Link href="/"><a title="logo"><Image src="/logo1.png" alt="Imagen Logo"/></a></Link>
           </div>
           <div className="text-center text-md-end col-sm-12 col-md-8 ">     
               <div className="row infocontact text-dark">

@@ -3,6 +3,7 @@ import React from "react";
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import {Image} from "react-bootstrap"
 
 export default function CAuspiciadores() {
   var settings = {
@@ -50,22 +51,22 @@ export default function CAuspiciadores() {
         <Slider {...settings}>
          
         <div>
-            <img src="auspiciadores1.jpg" className="img-fluid" />
+            <Image src="auspiciadores1.jpg" className="img-fluid" alt="Verificar texto"/>
         </div>
         <div>
-            <img src="auspiciadores2.jpg" className="img-fluid" />
+            <Image src="auspiciadores2.jpg" className="img-fluid" alt="Verificar texto"/>
         </div>
         <div>
-            <img src="auspiciadores3.jpg" className="img-fluid" />
+            <Image src="auspiciadores3.jpg" className="img-fluid" alt="Verificar texto"/>
         </div>
         <div>
-            <img src="auspiciadores4.jpg" className="img-fluid" />
+            <Image src="auspiciadores4.jpg" className="img-fluid" alt="Verificar texto"/>
         </div>
         <div>
-            <img src="auspiciadores1.jpg" className="img-fluid" />
+            <Image src="auspiciadores1.jpg" className="img-fluid" alt="Verificar texto"/>
         </div>
         <div>
-            <img src="auspiciadores2.jpg" className="img-fluid" />
+            <Image src="auspiciadores2.jpg" className="img-fluid" alt="Verificar texto"/>
         </div>      
         </Slider>
     </div>

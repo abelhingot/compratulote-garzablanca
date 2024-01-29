@@ -1,3 +1,4 @@
+import { Image } from "react-bootstrap"
 export default function CFormcontactanos(props:any) {
     return(
         <>
@@ -6,7 +7,7 @@ export default function CFormcontactanos(props:any) {
                     <div className='container '>
                         <div className='row'>
                             <div className='col-xs-12 col-sm-4 col-md-3'>
-                                <img src="/images/servicios/contactanos/personaje.png" className="img-fluid" />
+                                <Image src="/images/servicios/contactanos/personaje.png" className="img-fluid" alt=""/>
                             </div>
                             <div className="col-xs-12 col-sm-8 col-md-9 formulariocontacto">
                            <div className="row">

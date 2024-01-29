@@ -3,7 +3,7 @@ import DefaultDashboardLayout from '../../layouts/DefaultDashboardLayout'
 import { Col, Row, Form, Card, Button, Image, Table, Modal, Accordion } from "react-bootstrap";
 import React, { Fragment, useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
-const plano = () => {
+const Plano = () => {
     const [seccionActiva, setSeccionActiva] = useState('home');
 
     const ocultarMantenimiento = (seccion) => {
@@ -374,4 +374,4 @@ const plano = () => {
     )
 }
 
-export default plano
+export default Plano

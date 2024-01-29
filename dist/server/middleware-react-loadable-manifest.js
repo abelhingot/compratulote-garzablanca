@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-self.__REACT_LOADABLE_MANIFEST={}
-=======
-self.__REACT_LOADABLE_MANIFEST="{}"
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956

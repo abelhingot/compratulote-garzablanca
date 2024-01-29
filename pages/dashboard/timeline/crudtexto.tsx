@@ -1,9 +1,8 @@
 import Link from 'next/link';
-import { FormSelect, DropFiles } from "widgets";
 import { Col, Row, Form, Card, Button, Image, Table, Modal, Accordion } from "react-bootstrap";
 import React, { Fragment, useEffect, useState } from 'react';
 import { useQuill } from 'react-quilljs';
-import toolbar from './toolbar'
+import toolbar from '../../../config/toolbar'
 import 'quill/dist/quill.snow.css'
 
 const Crudtexto = () => {
@@ -116,7 +115,7 @@ const Crudtexto = () => {
             <Row className="mb-8 m-1">
                 <Col xl={6} lg={6} md={6} xs={12}>
                     {datos.map((fila, index) => (
-                        <Card className='mb-3'>
+                        <Card className='mb-3' key={index}>
                             <Card.Body>
                                 <div className='row'>
                                     <Row className="mb-1 align-items-center justify-content-end">

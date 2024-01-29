@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Row } from "react-bootstrap";
+import { Row, Image } from "react-bootstrap";
 export default function CAnuncio() {
   const [datos, setDatos] = useState([]);
   const [banners, setBanners] = useState('');
@@ -24,11 +24,11 @@ export default function CAnuncio() {
             <>
               <p className="txt-jf" dangerouslySetInnerHTML={{ __html: fila.content }} /> <Row className="mb-1">
                 <div className="col-md-6 col-6">
-                  <img src={fila.recurso1} className='img-thumbnail rounded-4' alt='' />
+                  <Image src={fila.recurso1} className='img-thumbnail rounded-4' alt='' />
                 </div>
 
                 <div className="col-md-6 col-6">
-                  <img src={fila.recurso2} className='img-thumbnail rounded-4' alt='' />
+                  <Image src={fila.recurso2} className='img-thumbnail rounded-4' alt='' />
                 </div>
               </Row>
             </>

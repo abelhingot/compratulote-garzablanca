@@ -7,23 +7,13 @@ import { Accordion, Card, Row } from 'react-bootstrap'
 import CAnuncio from './components/estructura/anuncio'
 import { useEffect, useState } from 'react'
 
-<<<<<<< HEAD
 export default function EstructuraInicio() {
   const [datos, setDatos] = useState([]);
   const [banners, setBanners] = useState('');
-=======
-
-
-export default function EstructuraInicio() {
-  const [datos, setDatos] = useState([]);
-  const [banners, setBanners] = useState('');
-
-
 
   /*function cambiarColor() {console.log(this);if (textoResaltado) {
      textoResaltado.classList.remove("p-red");} texto.classList.add("p-red");textoResaltado = texto; }*/
 
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
   useEffect(() => {
     const verificador = window.location.pathname.split('/');
     const rptAPI = verificador[verificador.length - 1];
@@ -38,11 +28,7 @@ export default function EstructuraInicio() {
 
     <Row className='bg-white m-0'>
       <Card className='p-0'>
-<<<<<<< HEAD
-        <CTop  />
-=======
-        <CTop selMenu="timeline" pagenav="./../" />
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
+        <CTop />
         <div className="x_content" >
           <CAdorno />
           <div className="container">
@@ -53,11 +39,7 @@ export default function EstructuraInicio() {
                 <div className='container'>
                   <div className='row'>
                     {datos.map((fila, index) => (
-<<<<<<< HEAD
-                      <Accordion key={index}>
-=======
                       <Accordion key={"aco"+index}>
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
                         <Accordion.Item eventKey="0" style={{ border: 'none', marginBottom: '10px' }}>
                           <Accordion.Header style={{ border: '1px solid lightgray', borderRadius: '7px', paddingTop: '3px', paddingBottom: '3px' }}>
                             <strong> {fila.title}</strong>

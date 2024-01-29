@@ -1,11 +1,10 @@
 import Link from 'next/link';
 import DefaultDashboardLayout from '../../layouts/DefaultDashboardLayout'
-import { FormSelect, DropFiles } from "widgets";
 import { Col, Row, Form, Card, Button, Image, Table, Modal } from "react-bootstrap";
 import React, { Fragment, useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 import { useQuill } from 'react-quilljs';
-import toolbar from '../dashboard/timeline/toolbar'
+import toolbar from '../../config/toolbar'
 import 'quill/dist/quill.snow.css'
 import Textarea from 'react-textarea-autosize'
 

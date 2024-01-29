@@ -1,8 +1,9 @@
+import {Image} from "react-bootstrap"
 export default function CProyectovista1(itemp:any) {
     return(
         <div key={'divp'+itemp.id}>           
             <div className="card" key={'cardp'+itemp.id}>
-                <img key={'imgp'+itemp.id} src={itemp.image} className="card-img-top" alt={'Foto '+itemp.titulo}/>
+                <Image key={'imgp'+itemp.id} src={itemp.image} className="card-img-top" alt={'Foto '+itemp.titulo}/>
                 <div className="card-body">
                     <span className="h4 card-title">{itemp.titulo}</span>
                     <div className="card-text txtdescripcion my-1">
@@ -23,10 +24,10 @@ export default function CProyectovista1(itemp:any) {
                         </div>
                         <div className="col-6">
                             <div className="row">
-                                <div className="col-md-3 iconproy"><img src="/images/icons/1.png" className='img-fluid'/></div>
-                                <div className="col-md-3 iconproy"><img src="/images/icons/2.png" className='img-fluid'/></div>
-                                <div className="col-md-3 iconproy"><img src="/images/icons/3.png" className='img-fluid'/></div>
-                                <div className="col-md-3 iconproy"><img src="/images/icons/4.png" className='img-fluid'/></div>
+                                <div className="col-md-3 iconproy"><Image alt="iconos" src="/images/icons/1.png" className='img-fluid'/></div>
+                                <div className="col-md-3 iconproy"><Image alt="iconos" src="/images/icons/2.png" className='img-fluid'/></div>
+                                <div className="col-md-3 iconproy"><Image alt="iconos" src="/images/icons/3.png" className='img-fluid'/></div>
+                                <div className="col-md-3 iconproy"><Image alt="iconos" src="/images/icons/4.png" className='img-fluid'/></div>
                             </div>
                         </div>
                     </div>

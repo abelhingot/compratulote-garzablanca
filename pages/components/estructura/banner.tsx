@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
-import { Button, Modal, Row } from "react-bootstrap";
+import { Button, Modal, Row, Image } from "react-bootstrap";
 
 export default function CBanner() {
     const [showText, setShowText] = useState(true);
@@ -30,7 +30,7 @@ export default function CBanner() {
             {datos.map((fila, index) => (
                 <div className="container-fluid contenedor-imagen p-0" key={index}>
                     <div className="position-relative">
-                        <img src={fila.imagen} className="fondo img-fluid" alt={fila.categoria} />
+                        <Image src={fila.imagen} className="fondo img-fluid" alt={fila.categoria} />
                         <div className="position-absolute w-100 texto-superpuesto">
                             <div className="transicion-container bg-custom-colordk p-3">
                                 <h2 className="text-white mb-3 titulo-Intro">{fila.titulo}</h2>

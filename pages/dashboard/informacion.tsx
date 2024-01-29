@@ -1,9 +1,5 @@
 import Link from 'next/link';
 import DefaultDashboardLayout from '../../layouts/DefaultDashboardLayout'
-<<<<<<< HEAD
-=======
-import { FormSelect, DropFiles } from "widgets";
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
 import { Col, Row, Form, Card, Button, Image, Table, Modal } from "react-bootstrap";
 import React, { Fragment, useEffect, useState } from 'react';
 import Swal from 'sweetalert2';

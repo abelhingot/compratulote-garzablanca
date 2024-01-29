@@ -1,8 +1,4 @@
 import Link from 'next/link';
-<<<<<<< HEAD
-=======
-import { FormSelect, DropFiles } from "widgets";
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
 import { Col, Row, Form, Card, Button, Image, Table, Modal } from "react-bootstrap";
 import React, { Fragment, useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
@@ -32,21 +28,9 @@ const CrudServicio = () => {
         (fila.texto.toLowerCase().includes(searchTerm.toLowerCase()) || fila.titulo.toLowerCase().includes(searchTerm.toLowerCase())));
 
     useEffect(() => {
-<<<<<<< HEAD
-        const verificador = window.location.pathname.split('/');
-        const rptAPI = verificador[verificador.length - 1];
-        fetch('http://localhost:3001/serviciosES')
-            .then(response => response.json())
-            .then(data => {
-                const filtrado = data.filter(fila => fila.categoria === rptAPI);
-                setDatos(filtrado);
-            })
-            
-=======
         fetch('http://localhost:3001/serviciosES')
             .then(response => response.json())
             .then(data => setDatos(data))
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
             .catch(error => console.error('Error al obtener datos:', error));
     }, []);
 
@@ -210,7 +194,7 @@ const CrudServicio = () => {
                                                 <td>{fila.categoria}</td>
                                                 <td>{fila.titulo}</td>
                                                 <td><textarea className='form-control no-scroll' value={fila.texto} style={{ width: '350px', border: 'none', overflowY: 'hidden', backgroundColor: 'white' }} disabled /></td>
-                                                <td><img src={fila.imagen} className='img-thumbnail' /></td>
+                                                <td><Image src={fila.imagen} className='img-thumbnail' alt=''/></td>
                                                 <td>
                                                     <Button onClick={() => handleEditClick(fila.id)} >  <i className="fe fe-edit fa-lg text-light"></i>   </Button>{' '}
                                                     <Button onClick={() => handleDeleteClick(fila.id)} className='btn-danger'><i className="fe fe-trash fa-lg"></i></Button>{' '}

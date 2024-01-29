@@ -1,9 +1,8 @@
 import Link from 'next/link';
-import { FormSelect, DropFiles } from "widgets";
 import { Col, Row, Form, Card, Button, Image, Table, Modal, Accordion } from "react-bootstrap";
 import React, { Fragment, useEffect, useState } from 'react';
 import { useQuill } from 'react-quilljs';
-import toolbar from './toolbar'
+import toolbar from '../../../config/toolbar'
 import 'quill/dist/quill.snow.css'
 
 const Textoeditable = () => {
@@ -109,7 +108,7 @@ const Textoeditable = () => {
             <Row className="mb-8 m-1">
                 <Col xl={12} lg={12} md={12} xs={12}>
                     {datos.map((fila, index) => (
-                        <Card className='mb-3'>
+                        <Card className='mb-3' key={index}>
                             <Card.Body>
                                 <div className='row'>
                                     <Row className="mb-1 align-items-center justify-content-end">
@@ -157,6 +156,7 @@ const Textoeditable = () => {
                                                 <input type='text' className='p-2 border-0 rounded-2' id='id' value={selectedId} onChange={handleChange}></input>
                                             </div>
                                         </Row>
+                                        
                                         <Row className="mb-3">
                                             <div className="col-md-12 col-12">
                                                 <input type='text' placeholder='Escriba un título' className='p-2 bg-secondary text-light accordion-button rounded-2' id='value' value={title} onChange={handleChange}></input>

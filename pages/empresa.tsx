@@ -17,8 +17,6 @@ export default function EstructuraInicio() {
     fetch('http://localhost:3001/pgempresa')
       .then(response => response.json())
       .then(data => setDatos(data))
-<<<<<<< HEAD
-=======
 
       /* {
        const filtrado = data.filter(fila => fila.categoria === rptAPI);
@@ -26,7 +24,6 @@ export default function EstructuraInicio() {
        setBanners(rptAPI);
      })*/
 
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
       .catch(error => console.error('Tenemos un error', error));
   }, []);
 
@@ -35,11 +32,7 @@ export default function EstructuraInicio() {
 
       <Row className='bg-white m-0'>
         <Card className='p-0'>
-<<<<<<< HEAD
           <CTop />
-=======
-          <CTop selMenu="empresa" pagenav="./../" />
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
           <div className="x_content" >
             <CAdorno />
             <div className="container">

@@ -1,5 +1,6 @@
 // Importa React, useState y useEffect
 import React, { useState, useEffect } from 'react';
+import {Image} from "react-bootstrap"
 
 // Define tu componente CVernoticias
 export default function CVernoticias(props: any) {
@@ -56,7 +57,7 @@ export default function CVernoticias(props: any) {
       <div>
         <div className="row bg-blanco rounded">
           <div className="col-md-12 ">
-            <img className="img-fluid noticiasimagen" src={noticia.imagen} alt={noticia.titulo} />
+            <Image className="img-fluid noticiasimagen" src={noticia.imagen} alt={noticia.titulo} />
           </div>
           <div className="col-md-12 noticiadescipcion" dangerouslySetInnerHTML={{ __html: noticia.descripcion }}></div>
         </div>

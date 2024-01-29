@@ -21,43 +21,14 @@
     height: 100% !important;
     overflow-y: auto;
   }
-<<<<<<< HEAD
-
-=======
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
   .nav-scroller {
     height: 100% !important;
     overflow-y: auto;
   }
-<<<<<<< HEAD
-
-=======
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
   .navbar-brand {
     padding: 1rem 1.5rem 1.5rem;
     margin-right: 0px;
     display: block;
-<<<<<<< HEAD
-    border-bottom: 1px double #195794;
-    background-color: #1c242d;
-
-    img {
-      height: 1.85rem;
-      zoom: 1.3;
-
-    }
-  }
-
-  .navbar-heading {
-    color: $gray-700;
-    padding: 1rem 1.5rem;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08rem;
-    font-weight: 700;
-  }
-
-=======
     img {
       height: 1.875rem;
     }
@@ -70,7 +41,6 @@
       letter-spacing: 0.08rem;
       font-weight: 700;
   }
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
   .navbar-nav {
     .nav-item {
       .nav-link {
@@ -83,10 +53,6 @@
         -webkit-transition: all 0.5s;
         white-space: nowrap;
         transition: all 0.5s;
-<<<<<<< HEAD
-
-=======
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
         &:hover {
           color: $gray-200;
         }
@@ -106,23 +72,12 @@
           opacity: 1;
         }
       }
-<<<<<<< HEAD
-
-      .nav-link[data-bs-toggle="collapse"] {
-        position: relative;
-
-        &:after {
-          display: block;
-          content: "";
-          background: url(../../../public/fonts/feather-icons/icons/chevron-down.svg);
-=======
       .nav-link[data-bs-toggle="collapse"]{
         position: relative;
         &:after {
           display: block;
           content: "";
           background: url(../../../public/fonts/feather-icons/icons/chevron-down.svg);          
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
           font-family: Feather;
           margin-left: auto;
           transition: 0.5s ease;
@@ -139,54 +94,29 @@
 
 
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
     .nav-icon {
       opacity: 0.6;
       font-size: .875rem;
       -webkit-transition: all 0.5s;
       transition: all 0.5s;
     }
-<<<<<<< HEAD
-
-    .sub-nav-icon {
-=======
     .sub-nav-icon{
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
       font-size: .35rem;
       margin-right: .5rem;
 
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
     .nav {
       .nav-item {
         .nav-link {
           color: $gray-500;
           padding: 0.25rem 3rem;
-<<<<<<< HEAD
-
           &:hover {
             color: $white;
           }
-
-=======
-          &:hover {
-            color: $white;
-          }
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
           &.active {
             color: $white;
           }
         }
-<<<<<<< HEAD
-
-=======
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
         .nav {
           .nav-item {
             .nav-link {
@@ -196,38 +126,17 @@
               &:hover {
                 color: $white;
               }
-<<<<<<< HEAD
-
-=======
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
               &.active {
                 color: $white;
               }
             }
-<<<<<<< HEAD
-
-=======
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
-            .nav {
-              .nav-item {
-                .nav-link {
-                  color: $gray-500;
                   padding: 0.25rem 4.2rem;
-<<<<<<< HEAD
 
                   &:hover {
                     color: $white;
-                  }
-
-=======
-                  &:hover {
-                    color: $white;
-                  }
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
                   &.active {
                     color: $white;
                   }
-                }
               }
             }
           }
@@ -235,21 +144,13 @@
       }
     }
   }
-}
+
 
 
 .collapse.in {
-<<<<<<< HEAD
-  display: block;
-=======
     display: block;
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
 
 
 
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956

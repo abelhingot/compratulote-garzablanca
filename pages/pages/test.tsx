@@ -1,6 +1,7 @@
 // import node module libraries
 import { Col, Row, Container } from 'react-bootstrap';
 import React from 'react';
+import {Image} from "react-bootstrap"
 // import widget as custom components
 import Link from 'next/link';
 
@@ -62,7 +63,7 @@ const Test = () => {
 
                             <ul className="nav justify-content-center bg-white">
                                 <li className="nav-item">
-                                    <img src="Imagenes/Img01.pg" alt="Logo" />
+                                    <Image src="Imagenes/Img01.pg" alt="Logo" />
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link active btn btn-danger mx-2 rounded-5" aria-current="page"
@@ -83,7 +84,7 @@ const Test = () => {
                                         Empresa</strong></a>
                                 </li>
                                 <li className="nav-item">
-                                    <img src="Imagenes/Img2.png" alt="Logo" />
+                                    <Image src="Imagenes/Img2.png" alt="Logo" />
                                 </li>
                             </ul>
 
@@ -92,7 +93,7 @@ const Test = () => {
 
                     <div className="x_content">
                         <div className="container-fluid p-0 contenedor-imagen">
-                            <img src="https://images.unsplash.com/photo-1628744448840-55bdb2497bd4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" className="fondo" alt="Imagen de fondo" />
+                            <Image src="https://images.unsplash.com/photo-1628744448840-55bdb2497bd4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" className="fondo" alt="Imagen de fondo" />
                             <div className="position-absolute w-100 texto-superpuesto">
                                 <h1 className="text-white fw-bold">Lorem Ipsum dolor sit amet</h1>
                                 <p className="text-white">Lorem ipsum dolor sit amet, consectetuer adipis-cing elit, sed diam
@@ -176,7 +177,7 @@ const Test = () => {
                                                 <div className="album-item text-center">
                                                     <button type="button"
                                                         className="btn border border-danger border-2 p-3 rounded-4 ">
-                                                        <img src="Imagenes/Recurso1.png" />
+                                                        <Image src="Imagenes/Recurso1.png" alt='Imagen'/>
                                                     </button><br />
                                                     <label className="text-danger fw-bold">Desague</label>
                                                 </div>
@@ -339,17 +340,17 @@ const Test = () => {
                                     <div id="carouselExampleSlidesOnly" className="carousel slide border border-danger border-2 p-2 h-100" data-bs-ride="carousel">
                                         <div className="carousel-inner object-fit-cover">
                                             <div className="carousel-item active">
-                                                <img src="Imagenes/Img3.png" className="w-100" alt="..." />
+                                                <Image src="Imagenes/Img3.png" className="w-100" alt="..." />
                                             </div>
                                             <div className="carousel-item">
-                                                <img src="Imagenes/Img2.png" className="w-100" alt="..." />
+                                                <Image src="Imagenes/Img2.png" className="w-100" alt="..." />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-md-5 col-lg-5">
                                     <div className="border border-danger border-2 p-2 position-relative h-100">
-                                        <video src="Imagenes/video1.m4" className="w-100" autoplay id="play"></video>
+                                        <video src="Imagenes/video1.m4" className="w-100" id="play"></video>
                                         <span id="pauseButton" className="position-absolute top-50 start-50 translate-middle">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" className="bi bi-play-circle-fill text-light" viewBox="0 0 16 16">
                                                 <path

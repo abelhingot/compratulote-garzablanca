@@ -1,10 +1,11 @@
+import {Image} from "react-bootstrap"
 export default function CProyectovista1(itemp:any) {
     return(
         <div key={'divp'+itemp.id}>           
             <div className="card" key={'cardp'+itemp.id}>
                 <div className="row">
                  <div  className="col-md-5">
-                <img key={'imgp'+itemp.id} src={itemp.image} className="card-img-top" alt={'Foto '+itemp.titulo}/>
+                <Image key={'imgp'+itemp.id} src={itemp.image} className="card-img-top" alt={'Foto '+itemp.titulo}/>
                         <div className="lotesdesde">Lotes desde <strong>{itemp.lotesdesdem2}</strong></div>    
                 </div>
                 <div className="col-md-7">
@@ -27,10 +28,10 @@ export default function CProyectovista1(itemp:any) {
                         <div className="row card-footer">
                                 <div className="col-6">
                                     <div className="row">
-                                        <div className="col-md-3 iconproy"><img src="/images/icons/1.png" className='img-fluid' /></div>
-                                        <div className="col-md-3 iconproy"><img src="/images/icons/2.png" className='img-fluid' /></div>
-                                        <div className="col-md-3 iconproy"><img src="/images/icons/3.png" className='img-fluid' /></div>
-                                        <div className="col-md-3 iconproy"><img src="/images/icons/4.png" className='img-fluid' /></div>
+                                        <div className="col-md-3 iconproy"><Image src="/images/icons/1.png" className='img-fluid' alt=""/></div>
+                                        <div className="col-md-3 iconproy"><Image src="/images/icons/2.png" className='img-fluid' alt=""/></div>
+                                        <div className="col-md-3 iconproy"><Image src="/images/icons/3.png" className='img-fluid' alt=""/></div>
+                                        <div className="col-md-3 iconproy"><Image src="/images/icons/4.png" className='img-fluid' alt=""/></div>
                                     </div>
                                 </div>
                             <div className="col-6 text-end">

@@ -1,3 +1,4 @@
+import {Image} from "react-bootstrap"
 export default function CNosotros(){
     return (
         <>
@@ -19,7 +20,7 @@ export default function CNosotros(){
                     </div>
                 </div>
                 <div className="col-md-6 col-sm-12">
-                  <img src="responsive.png" className="img-fluid" />
+                  <Image src="responsive.png" className="img-fluid" alt=""/>
                 </div>
             </div>    
         </div>

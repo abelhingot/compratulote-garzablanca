@@ -1,9 +1,8 @@
 import Link from 'next/link';
-import { FormSelect, DropFiles } from "widgets";
 import { Col, Row, Form, Card, Button, Image, Table, Modal, Accordion } from "react-bootstrap";
 import React, { Fragment, useEffect, useState } from 'react';
 import { useQuill } from 'react-quilljs';
-import toolbar from '../../dashboard/timeline/toolbar'
+import toolbar from '../../../config/toolbar'
 import 'quill/dist/quill.snow.css'
 
 const Infoeditable = () => {
@@ -161,11 +160,11 @@ const Infoeditable = () => {
                                                     <form >
                                                         <Row className="mb-1">
                                                             <div className="col-md-6 col-6">
-                                                                <img src={fila.recurso1} className='img-thumbnail rounded-4' alt='Text' />
+                                                                <Image src={fila.recurso1} className='img-thumbnail rounded-4' alt='Text' />
                                                             </div>
 
                                                             <div className="col-md-6 col-6">
-                                                                <img src={fila.recurso2} className='img-thumbnail rounded-4' alt='Text2' />
+                                                                <Image src={fila.recurso2} className='img-thumbnail rounded-4' alt='Text2' />
                                                             </div>
                                                         </Row>
                                                     </form>

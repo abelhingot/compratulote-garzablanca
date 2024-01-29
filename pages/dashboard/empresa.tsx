@@ -1,13 +1,12 @@
 import Link from 'next/link';
 import DefaultDashboardLayout from '../../layouts/DefaultDashboardLayout'
-import { FormSelect, DropFiles } from "widgets";
 import { Col, Row, Form, Card, Button, Image, Table, Modal, Accordion } from "react-bootstrap";
 import React, { Fragment, useEffect, useState } from 'react';
 import Crudempresa from './empresa/crudempresa';
 import Infoeditable from './empresa/infoeditable';
 
 
-const especificaciones = () => {
+const Especificaciones = () => {
     const [seccionActiva, setSeccionActiva] = useState('home');
 
     const ocultarMantenimiento = (seccion) => {
@@ -81,4 +80,4 @@ const especificaciones = () => {
     )
 }
 
-export default especificaciones
+export default Especificaciones

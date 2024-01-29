@@ -1,4 +1,4 @@
-import { Row } from "react-bootstrap";
+import { Row, Image } from "react-bootstrap";
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -42,7 +42,7 @@ export default function Videosinfo() {
                         <Slider ref={sliderRef} {...settings}>
                             {item.recurso1 && item.recurso1.split(',').map((path, i) => (
                                 <div key={i}>
-                                    <img src={path.trim()} alt={item.texto} className="w-100 h-100" />
+                                    <Image src={path.trim()} alt={item.texto} className="w-100 h-100" />
                                 </div>
                             ))}
                         </Slider>

@@ -1,12 +1,11 @@
 import Link from 'next/link';
 import DefaultDashboardLayout from '../../layouts/DefaultDashboardLayout'
-import { FormSelect, DropFiles } from "widgets";
 import { Col, Row, Form, Card, Button, Image, Table, Modal } from "react-bootstrap";
 import React, { Fragment, useEffect, useState } from 'react';
 import CNavbar from '../components/estructura/navbar';
 import Swal from 'sweetalert2';
 
-const navbar = () => {
+const Navbar = () => {
     const [datos, setDatos] = useState([]);
     const [lgShow, setLgShow] = useState(false);
     const [idToDelete, setIdToDelete] = useState(null);
@@ -25,13 +24,8 @@ const navbar = () => {
             [field]: value,
         }));
     };
-<<<<<<< HEAD
-  //  const filteredMenus = datos.filter((fila) =>
-       // (fila.texto.toLowerCase().includes(searchTerm.toLowerCase()) || fila.href.toLowerCase().includes(searchTerm.toLowerCase())));
-=======
     const filteredMenus = datos.filter((fila) =>
         (fila.texto.toLowerCase().includes(searchTerm.toLowerCase()) || fila.href.toLowerCase().includes(searchTerm.toLowerCase())));
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
 
     useEffect(() => {
         fetch('http://localhost:3001/pgmenugb')
@@ -171,18 +165,14 @@ const navbar = () => {
                 <Row className="mb-5 m-1">
                     <Col xl={12} lg={12} md={12} xs={12}>
                         <Card>
-<<<<<<< HEAD
-                            <Card.Header className='fw-bold'>VISTA PREVIA DEL NAVBAR</Card.Header>
-=======
                             <Card.Header className=' fw-bold'>VISTA PREVIA DEL NAVBAR</Card.Header>
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
                             <Card.Body>
                                 <ul className="nav flex-column flex-sm-row justify-content-center bg-white p-2 overflow-auto">
                                     <div className="d-flex flex-nowrap align-items-center justify-content-center justify-content-lg-start">
                                         {datos.map((fila, index) => (
                                             <li key={index} className="nav-item fw-bold">
                                                 {fila.texto === 'Logo' ? (
-                                                    <img src={fila.href} alt="Logo" style={{ zoom: '0.5' }} />
+                                                    <Image src={fila.href} alt="Logo" style={{ zoom: '0.5' }} />
                                                 ) : (
                                                     <a className={`nav-link custom-sombra fs-4 ${selMenu.toLowerCase() === fila.texto.toLowerCase() ? 'text-light active bgProyect mx-2 rounded-5' : 'text-dark'}`} href="#">
                                                         {fila.texto}
@@ -200,10 +190,6 @@ const navbar = () => {
                 <Row className="mb-8 m-1">
                     <Col xl={12} lg={12} md={12} xs={12}>
                         <Card>
-<<<<<<< HEAD
-                            <Card.Header className='fw-bold'>
-                               CONTROL DE LA INFORMACION
-=======
                             <Card.Header>
                                 <div className='row text-end'>
                                     <div className='col-md-8 col-lg-8 col-xs-8'>
@@ -214,7 +200,6 @@ const navbar = () => {
                                     </div>
 
                                 </div>
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
                             </Card.Header>
                             <Card.Body>
                                 <div className="mb-4 mb-lg-0">
@@ -228,11 +213,7 @@ const navbar = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
-<<<<<<< HEAD
-                                            {datos.map((fila, index) => (
-=======
                                             {filteredMenus.map((fila, index) => (
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
                                                 <tr key={fila.id}>
                                                     <td>{fila.id}</td>
                                                     <td>{fila.href}</td>
@@ -303,4 +284,4 @@ const navbar = () => {
     )
 }
 
-export default navbar
+export default Navbar

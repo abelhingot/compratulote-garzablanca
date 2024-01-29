@@ -1,3 +1,4 @@
+import { Image } from "react-bootstrap"
 export default function CFooter(props: any) {
    let ruta = props.rutatmp || './'
    return (
@@ -8,7 +9,8 @@ export default function CFooter(props: any) {
                </div>
             </footer>
             <div>
-               <a target="_blank" href="https://api.whatsapp.com/send?phone=51954498176" className="icon-footer-whatssap"><img className="" src={ruta + 'images/icon-whatsapp.png'} /></a>
+               <a target="_blank" href="https://api.whatsapp.com/send?phone=51954498176" className="icon-footer-whatssap">
+                  <Image className="" src={ruta + 'images/icon-whatsapp.png'} alt=""/></a>
             </div>
          
       </>

@@ -5,14 +5,7 @@ import CTop from './components/estructura/top'
 import CAnuncio from './components/estructura/anuncio'
 import CAdorno from './components/estructura/adorno'
 import type { Metadata } from 'next'
-import { Card, Col, Row } from 'react-bootstrap'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-<<<<<<< HEAD
-import Image from 'next/image';
-=======
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
+import { Col, Row, Form, Card, Button, Image, Table, Modal } from "react-bootstrap";
 import React from 'react'
 import { Border } from 'react-bootstrap-icons'
 import Videosinfo from './components/estructura/videosinfo'
@@ -54,11 +47,7 @@ export default function EstructuraInicio() {
     <>
       <Row className='bg-white m-0'>
        <Card className='p-0'>
-<<<<<<< HEAD
               <CTop />
-=======
-              <CTop selMenu="index" pagenav="./" />
->>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
               <CAdorno />
               <div className='m-0'>
                 <div className="container" >
@@ -70,7 +59,7 @@ export default function EstructuraInicio() {
                           {datos.map((fila, index) => (
                             <div className="col" key={index}>
                               <div className="p-3 rounded-4 custom-border-info" style={{border:'2px solid #637391'}}>
-                                <img src={fila.imagen} alt='imagen' className="img-fluid custom-img-info" />
+                                <Image src={fila.imagen} alt='imagen' className="img-fluid custom-img-info" />
                               </div>
                               <p className="py-2 fw-bold" style={{color:'#637391'}}>{fila.titulo}</p>
                             </div>

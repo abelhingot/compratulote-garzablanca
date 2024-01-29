@@ -5,7 +5,7 @@ import CTop from './components/estructura/top'
 import CAnuncio from './components/estructura/anuncio'
 import CAdorno from './components/estructura/adorno'
 import type { Metadata } from 'next'
-import { Card, Col, Row } from 'react-bootstrap'
+import { Card, Col, Row, Image } from 'react-bootstrap'
 import React from 'react'
 import { Border } from 'react-bootstrap-icons'
 import Videosinfo from './components/estructura/videosinfo'
@@ -33,7 +33,7 @@ export default function GarzaBlanca() {
     <>
       <Row className='bg-white m-0'>
        <Card className='p-0'>
-              <CTop selMenu="index" pagenav="./" />
+              <CTop />
               <CAdorno />
               <div className='m-0'>
                 <div className="container" >
@@ -45,7 +45,7 @@ export default function GarzaBlanca() {
                           {datos.map((fila, index) => (
                             <div className="col" key={index}>
                               <div className="p-3 rounded-4 custom-border-info" style={{border:'2px solid #637391'}}>
-                                <img src={fila.imagen} alt='imagen' className="img-fluid custom-img-info" />
+                                <Image src={fila.imagen} alt='imagen' className="img-fluid custom-img-info" />
                               </div>
                               <p className="py-2 fw-bold" style={{color:'#637391'}}>{fila.titulo}</p>
                             </div>

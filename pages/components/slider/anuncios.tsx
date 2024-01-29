@@ -1,6 +1,7 @@
 'use client'
 import React from "react";
 import Slider from "react-slick";
+import {Image} from "react-bootstrap"
 
 export default function CAnuncios() {
   var settings = {
@@ -14,13 +15,13 @@ export default function CAnuncios() {
     <div className="container">       
         <Slider {...settings}>
         <div>
-            <img src="/images/anuncios/anuncio01.png" className="img-fluid" />
+            <Image src="/images/anuncios/anuncio01.png" className="img-fluid" alt="texto"/>
         </div>
         <div>
-            <img src="/images/anuncios/anuncio02.png" className="img-fluid" />
+            <Image src="/images/anuncios/anuncio02.png" className="img-fluid" alt="texto"/>
         </div>
         <div>
-            <img src="/images/anuncios/anuncio03.png" className="img-fluid" />
+            <Image src="/images/anuncios/anuncio03.png" className="img-fluid" alt="texto"/>
         </div>          
         </Slider>
     </div>

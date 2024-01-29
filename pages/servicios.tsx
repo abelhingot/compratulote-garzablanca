@@ -5,6 +5,7 @@ import COMProductoBuscar from './components/proyectos/buscador'
 import COMTopInterno from './components/top/topInterno'
 import CBreadcrumb from './components/informacion/pagebardump'
 import CFormcontactanos from './components/informacion/contactanos'
+import {Image} from "react-bootstrap"
 export const metadata: Metadata = {
     title: 'Compratulote.pe : Servicios',
     description: 'Pagina incial de compra tu lote',
@@ -48,39 +49,38 @@ export default function Home() {
                         <div className="col-md-8">
                             <div className='row'>
                                 <div className="col-md-4">
-                                    <img src="./images/servicios/estructura/estructura1.png" className="img-fluid" alt="imagen servicio" />
+                                    <Image src="./images/servicios/estructura/estructura1.png" className="img-fluid" alt="imagen servicio" />
                                 </div>
                                 <div className="col-md-4">
-                                    <img src="./images/servicios/estructura/estructura2.png" className="img-fluid" alt="imagen servicio" />
+                                    <Image src="./images/servicios/estructura/estructura2.png" className="img-fluid" alt="imagen servicio" />
                                 </div>
                                 <div className="col-md-4">
-                                    <img src="./images/servicios/estructura/estructura3.png" className="img-fluid" alt="imagen servicio" />
+                                    <Image src="./images/servicios/estructura/estructura3.png" className="img-fluid" alt="imagen servicio" />
                                 </div>
                                 <div className="col-md-4">
-                                    <img src="./images/servicios/estructura/estructura4.png" className="img-fluid" alt="imagen servicio" />
+                                    <Image src="./images/servicios/estructura/estructura4.png" className="img-fluid" alt="imagen servicio" />
                                 </div>
                                 <div className="col-md-4">
-                                    <img src="./images/servicios/estructura/estructura5.png" className="img-fluid" alt="imagen servicio" />
+                                    <Image src="./images/servicios/estructura/estructura5.png" className="img-fluid" alt="imagen servicio" />
                                 </div>
                                 <div className="col-md-4">
-                                    <img src="./images/servicios/estructura/estructura6.png" className="img-fluid" alt="imagen servicio" />
+                                    <Image src="./images/servicios/estructura/estructura6.png" className="img-fluid" alt="imagen servicio" />
                                 </div>
                                 <div className="col-md-4">
-                                    <img src="./images/servicios/estructura/estructura7.png" className="img-fluid" alt="imagen servicio" />
+                                    <Image src="./images/servicios/estructura/estructura7.png" className="img-fluid" alt="imagen servicio" />
                                 </div>
                                 <div className="col-md-4">
-                                    <img src="./images/servicios/estructura/estructura8.png" className="img-fluid" alt="imagen servicio" />
+                                    <Image src="./images/servicios/estructura/estructura8.png" className="img-fluid" alt="imagen servicio" />
                                 </div>
                                 <div className="col-md-4">
-                                    <img src="./images/servicios/estructura/estructura9.png" className="img-fluid" alt="imagen servicio" />
+                                    <Image src="./images/servicios/estructura/estructura9.png" className="img-fluid" alt="imagen servicio" />
                                 </div>
                             </div>
 
                         </div>
                         <div className="col-md-4 contenedorasesora">
 
-                            <img src="./images/servicios/estructura/asesora.png"
-                                className="img-fluid imgasesora" alt="imagen servicio" />
+                            <Image src="./images/servicios/estructura/asesora.png" className="img-fluid imgasesora" alt="imagen servicio" />
                             <div className='fondoasesora'>
                             </div>
                         </div>
@@ -108,14 +108,14 @@ export default function Home() {
                     <div className="col-md-5 col-sm-6 col-xs-12">
                         <div >
                             Promocione productos o servicios en nuestro portal para alcanzar a una amplia audiencia y aumentar su visibilidad en línea. </div>
-                        <img className='img-fluid' src="/images/servicios/anuncie/imagen.png" />
+                        <Image className='img-fluid' src="/images/servicios/anuncie/imagen.png" alt="Imagen"/>
                     </div>
                     <div className="col-md-7 col-sm-6 col-xs-12 listabeneficiosredes">
                         <div className="row">
-                            <div className="col-md-6"><img src="/images/servicios/anuncie/1.png" alt="" /></div>
-                            <div className="col-md-6"><img src="/images/servicios/anuncie/2.png" alt="" /></div>
-                            <div className="col-md-6"><img src="/images/servicios/anuncie/3.png" alt="" /></div>
-                            <div className="col-md-6"><img src="/images/servicios/anuncie/4.png" alt="" /></div>
+                            <div className="col-md-6"><Image src="/images/servicios/anuncie/1.png" alt="texto-icono" /></div>
+                            <div className="col-md-6"><Image src="/images/servicios/anuncie/2.png" alt="texto-icono" /></div>
+                            <div className="col-md-6"><Image src="/images/servicios/anuncie/3.png" alt="texto-icono" /></div>
+                            <div className="col-md-6"><Image src="/images/servicios/anuncie/4.png" alt="texto-icono" /></div>
                         </div>
 
                     </div>
@@ -146,7 +146,7 @@ export default function Home() {
                         </ul>
                     </div>
                     <div className="col-md-4 col-sm-6 col-xs-12">
-                        <img className='img-fluid' src="/images/servicios/redes.png" />
+                        <Image className='img-fluid' src="/images/servicios/redes.png" alt=""/>
                     </div>
                 </div>
 

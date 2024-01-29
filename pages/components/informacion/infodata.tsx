@@ -1,3 +1,4 @@
+import {Image} from "react-bootstrap"
 export const infodata=[
     {
         id:1, title:'Gestiona tu información',
@@ -26,7 +27,7 @@ export default function CInfoData({idkey="1"}) {
             {      
             _datainfo.map((item)=>{               
                 return (<div key={'infodata'+idkey+'_'+item.id} className="infodataitem">
-                    <img src={item.icon} className="iconinfodata" />
+                    <Image src={item.icon} className="iconinfodata" alt="texto"/>
                     <strong>{item.title}</strong>
                     <p>{item.descripcion}</p>
                 </div>)

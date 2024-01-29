@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Link from 'next/link';
 import { Col, Card, Dropdown, Image, Row } from 'react-bootstrap';
 import { MoreVertical } from 'react-feather';
-import ProjectsContributionsData from 'data/profile/ProjectsContributionsData';
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -25,18 +24,8 @@ const Paginas = () => {
     const prevSlide = () => {
         sliderRef.current.slickPrev();
     };
-    const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
-        (<Link href="" ref={ref}
-            onClick={(e) => {
-                e.preventDefault();
-                onClick(e);
-            }}
-            className="text-muted text-primary-hover">
-            {children}
-        </Link>)
-    ));
+   
 
-    CustomToggle.displayName = 'CustomToggle';
     const [formData, setFormData] = useState({
         id: '',
         texto: '',
@@ -68,7 +57,7 @@ const Paginas = () => {
                             <Slider ref={sliderRef} {...settings} >
                                 {filteredData.map((item) => (
                                     <div key={item.id}>
-                                        <img src={item.imagen} alt={item.texto} className="d-block w-100" />
+                                        <Image src={item.imagen} alt={item.texto} className="d-block w-100" />
                                     </div>
                                 ))}
                             </Slider>

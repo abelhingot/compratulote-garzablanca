@@ -6,6 +6,7 @@ import COMPAuspiciadores from './components/slider/auspiciadores'
 import COMPProyectos from './components/proyectos/proyectos1'
 import COMInfo from './components/informacion/info'
 import COMNosotros from './components/nosotros/nosotros'
+import {Image} from "react-bootstrap"
 import COMProductoBuscar from './components/proyectos/buscador'
 import CBreadcrumb from './components/informacion/pagebardump'
 import CListadoPublicidad from './components/publicidad/listado'
@@ -33,22 +34,22 @@ export default function Clientes() {
           <div className='col-xs-12 col-sm-8 col-md-8 '>
             <div className="row">
               <div className='col-md-4 cols-ms-4'>
-                <img src="auspiciadores1.jpg" className="img-fluid" />
+                <Image src="auspiciadores1.jpg" className="img-fluid" alt=""/>
               </div>
               <div className='col-md-4 cols-ms-4'>
-                <img src="auspiciadores2.jpg" className="img-fluid" />
+                <Image src="auspiciadores2.jpg" className="img-fluid" alt=""/>
               </div>
               <div className='col-md-4 cols-ms-4'>
-                <img src="auspiciadores3.jpg" className="img-fluid" />
+                <Image src="auspiciadores3.jpg" className="img-fluid" alt=""/>
               </div>
               <div className='col-md-4 cols-ms-4'>
-                <img src="auspiciadores4.jpg" className="img-fluid" />
+                <Image src="auspiciadores4.jpg" className="img-fluid" alt=""/>
               </div>
               <div className='col-md-4 cols-ms-4'>
-                <img src="auspiciadores1.jpg" className="img-fluid" />
+                <Image src="auspiciadores1.jpg" className="img-fluid" alt=""/>
               </div>
               <div className='col-md-4 cols-ms-4'>
-                <img src="auspiciadores2.jpg" className="img-fluid" />
+                <Image src="auspiciadores2.jpg" className="img-fluid" alt=""/>
               </div>
             </div>
           </div>

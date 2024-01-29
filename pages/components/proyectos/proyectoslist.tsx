@@ -21,7 +21,7 @@ export default  function CProyectosList({tipo=''}){
                             new Date(firstItem.fecha_registro) < new Date(secondItem.fecha_registro))?1:-1 || 0))];
                 setData(datatmp);         
             })
-    }, [])
+    }, [tipo])
     const totalPages=Math.ceil(data.length/totalregistroxpage);
     //const indexpages = Array.from({ length: totalPages }, (_, index) => ({ id: `${index + 1}`, activo: index==currentpage-1?`si`:`no`}));
     //const indexdesde=currentpage*totalregistroxpage;

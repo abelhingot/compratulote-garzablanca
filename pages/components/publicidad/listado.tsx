@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation';
+import {Image} from "react-bootstrap"
 export default function CListadoPublicidad(props: any) {
    const router = useRouter();
    const [data, setData] = useState([]);
@@ -25,7 +26,7 @@ export default function CListadoPublicidad(props: any) {
             {
                data.map((item: any, key: any) => {
                   return (<div className='' key={'noti_' + item.id}>
-                     <a href={item.url}><img className='img-fluid imgpublicidad' src={item.imagen} /></a>
+                     <a href={item.url}><Image className='img-fluid imgpublicidad' src={item.imagen} alt="imagen"/></a>
                   </div>
 
                   )
