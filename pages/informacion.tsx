@@ -9,7 +9,10 @@ import { Card, Col, Row } from 'react-bootstrap'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+<<<<<<< HEAD
 import Image from 'next/image';
+=======
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
 import React from 'react'
 import { Border } from 'react-bootstrap-icons'
 import Videosinfo from './components/estructura/videosinfo'
@@ -51,7 +54,11 @@ export default function EstructuraInicio() {
     <>
       <Row className='bg-white m-0'>
        <Card className='p-0'>
+<<<<<<< HEAD
               <CTop />
+=======
+              <CTop selMenu="index" pagenav="./" />
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
               <CAdorno />
               <div className='m-0'>
                 <div className="container" >

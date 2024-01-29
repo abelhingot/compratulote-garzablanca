@@ -25,8 +25,13 @@ const navbar = () => {
             [field]: value,
         }));
     };
+<<<<<<< HEAD
   //  const filteredMenus = datos.filter((fila) =>
        // (fila.texto.toLowerCase().includes(searchTerm.toLowerCase()) || fila.href.toLowerCase().includes(searchTerm.toLowerCase())));
+=======
+    const filteredMenus = datos.filter((fila) =>
+        (fila.texto.toLowerCase().includes(searchTerm.toLowerCase()) || fila.href.toLowerCase().includes(searchTerm.toLowerCase())));
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
 
     useEffect(() => {
         fetch('http://localhost:3001/pgmenugb')
@@ -166,7 +171,11 @@ const navbar = () => {
                 <Row className="mb-5 m-1">
                     <Col xl={12} lg={12} md={12} xs={12}>
                         <Card>
+<<<<<<< HEAD
                             <Card.Header className='fw-bold'>VISTA PREVIA DEL NAVBAR</Card.Header>
+=======
+                            <Card.Header className=' fw-bold'>VISTA PREVIA DEL NAVBAR</Card.Header>
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
                             <Card.Body>
                                 <ul className="nav flex-column flex-sm-row justify-content-center bg-white p-2 overflow-auto">
                                     <div className="d-flex flex-nowrap align-items-center justify-content-center justify-content-lg-start">
@@ -191,8 +200,21 @@ const navbar = () => {
                 <Row className="mb-8 m-1">
                     <Col xl={12} lg={12} md={12} xs={12}>
                         <Card>
+<<<<<<< HEAD
                             <Card.Header className='fw-bold'>
                                CONTROL DE LA INFORMACION
+=======
+                            <Card.Header>
+                                <div className='row text-end'>
+                                    <div className='col-md-8 col-lg-8 col-xs-8'>
+                                        &nbsp;
+                                    </div>
+                                    <div className='col-md-4 col-lg-4 col-xs-4 '>
+                                        <input type='search' placeholder='Nueva busqueda' className='form-control' onChange={(event) => setSearchTerm(event.target.value)}></input>
+                                    </div>
+
+                                </div>
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
                             </Card.Header>
                             <Card.Body>
                                 <div className="mb-4 mb-lg-0">
@@ -206,7 +228,11 @@ const navbar = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
+<<<<<<< HEAD
                                             {datos.map((fila, index) => (
+=======
+                                            {filteredMenus.map((fila, index) => (
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
                                                 <tr key={fila.id}>
                                                     <td>{fila.id}</td>
                                                     <td>{fila.href}</td>

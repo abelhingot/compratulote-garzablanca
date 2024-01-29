@@ -1,4 +1,8 @@
 import Link from 'next/link';
+<<<<<<< HEAD
+=======
+import { FormSelect, DropFiles } from "widgets";
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
 import { Col, Row, Form, Card, Button, Image, Table, Modal, Accordion } from "react-bootstrap";
 import React, { Fragment, useEffect, useState } from 'react';
 import { useQuill } from 'react-quilljs';
@@ -113,7 +117,11 @@ const Servicioeditable = () => {
     useEffect(() => {
         const verificador = window.location.pathname.split('/');
         const rptAPI = verificador[verificador.length - 1];
+<<<<<<< HEAD
         fetch('http://localhost:3001/pginformacion')
+=======
+        fetch('http://localhost:3001/pginformacionvs')
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
             .then(response => response.json())
             .then(data => {
                 const filtrado = data.filter(fila => fila.categoria === rptAPI);
@@ -127,12 +135,20 @@ const Servicioeditable = () => {
         return contenidoQuill;
     };
     const handleDeleteClick = (id) => {
+<<<<<<< HEAD
         fetch(`http://localhost:3001/pginformacion/${id}`, {
+=======
+        fetch(`http://localhost:3001/pginformacionvs/${id}`, {
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
             method: 'DELETE',
         })
             .then(response => {
                 if (response.ok) {
+<<<<<<< HEAD
                     fetch('http://localhost:3001/pginformacion')
+=======
+                    fetch('http://localhost:3001/pginformacionvs')
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
                         .then(response => response.json())
                         .then(data => setDatos(data))
                         .catch(error => console.error('Error al obtener datos:', error));
@@ -224,7 +240,11 @@ const Servicioeditable = () => {
                                     <form onSubmit={handleSubmit}>
                                         <Row className="mb-3">
                                             <div className="col-md-4 col-4">
+<<<<<<< HEAD
                                                 <label htmlFor='title'>Id:</label>
+=======
+                                                <label htmlFor='title'>Identificador Único:</label>
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
                                                 <input type='text' className='form-control' id='id' value={selectedId} onChange={handleChange}></input>
                                             </div>
 
@@ -247,7 +267,11 @@ const Servicioeditable = () => {
                                         </Row>
                                         <Row className="mb-3">
                                             <div className="col-md-6 col-6 ">
+<<<<<<< HEAD
                                                 <label htmlFor='recurso1'>Imágenes <small><code>delimitador ( , )</code></small></label>
+=======
+                                                <label htmlFor='recurso1'>Imagen o Video:</label>
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
                                                 <input
                                                     type='text'
                                                     placeholder='para la 1 columna'

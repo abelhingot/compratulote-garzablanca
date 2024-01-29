@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "pages": {
     "/": [],
@@ -7,3 +8,6 @@
   "appUsingSizeAdjust": false,
   "pagesUsingSizeAdjust": false
 }
+=======
+{"pages":{},"app":{},"appUsingSizeAdjust":false,"pagesUsingSizeAdjust":false}
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956

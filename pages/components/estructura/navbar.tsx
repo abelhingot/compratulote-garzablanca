@@ -3,7 +3,10 @@ import { useEffect, useState } from "react";
 export default function CNavbar({ pagenav = "" }) {
     const [datos, setDatos] = useState([]);
     const [selMenu, setSelMenu] = useState('');
+<<<<<<< HEAD
     
+=======
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
     useEffect(() => {
         const urlParts = window.location.pathname.split('/');
         const categoriaFromUrl = urlParts[urlParts.length - 1];
@@ -19,7 +22,11 @@ export default function CNavbar({ pagenav = "" }) {
 
     return (
         <>
+<<<<<<< HEAD
             <ul className="nav flex-column flex-sm-row justify-content-center bg-white p-2 overflow-auto sticky-top" >
+=======
+            <ul className="nav flex-column flex-sm-row justify-content-center bg-white p-2 overflow-auto">
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
                 <div className="d-flex flex-nowrap align-items-center justify-content-center justify-content-lg-start">
                     {datos.map((fila, index) => (
                         <li key={index} className="nav-item fw-bold">

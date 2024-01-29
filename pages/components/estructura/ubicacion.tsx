@@ -46,10 +46,17 @@ export default function CUbicacion() {
     return (
         <>
             <div className="row mb-4">
+<<<<<<< HEAD
             <div className="col-md-7 col-lg-8">
                     <div className="container px-4 text-center">
                         <div className="row gx-5">
                             <div className="accordion" >
+=======
+                <div className="col-md-7 col-lg-8">
+                    <div className="container px-4 text-center">
+                        <div className="row gx-5">
+                            <div className="accordion" id="accordionExample">
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
                                 <div id="collapseOne" className="accordion-collapse collapse show"
                                     data-bs-parent="#accordionExample">
                                     <div className="row">
@@ -67,6 +74,11 @@ export default function CUbicacion() {
                                             </div>
                                         </div>
                                     </div>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
                                 </div>
 
                             </div>
@@ -75,11 +87,18 @@ export default function CUbicacion() {
                 </div>
                 <div className="col-md-5 col-lg-4 p-4"><br />
                     <div className="no-left-top-shadow rounded-3 ">
+<<<<<<< HEAD
                         <div className="accordion ">
                             <div className="accordion-item border border-top-1 border-bottom-0 p-1"><br />
                                 {datos.map((fila, index) => (
 
                                     <h4 className="accordion-header" key={index}>
+=======
+                        <div className="accordion " id="accordionExample">
+                            <div className="accordion-item border border-top-1 border-bottom-0 p-1"><br />
+                                {datos.map((fila, index) => (
+                                    <h4 className="accordion-header">
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
                                         <button
                                             className="accordion-button-no-icon collapsed rounded-5 bg-body border-0 focus-ring focus-ring-light px-4"
                                             type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"

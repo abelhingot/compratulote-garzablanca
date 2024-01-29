@@ -721,7 +721,11 @@
       "manzana": "A",
       "areaLote": "230.90 mts2",
       "referencia": "Esquina/Frente a parque",
+<<<<<<< HEAD
       "precio": 75000.00,
+=======
+      "precio": 197547.65,
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
       "estado": "VENDIDO"
     },
     {

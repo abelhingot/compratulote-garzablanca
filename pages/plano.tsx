@@ -6,10 +6,15 @@ import { Card, Modal, Row } from 'react-bootstrap'
 import CPlano from './components/estructura/plano'
 import { Fragment, useState } from 'react'
 import React, { useEffect, useRef } from 'react';
+<<<<<<< HEAD
 import Swal from 'sweetalert2'
 export default function EstructuraInicio() {
     const [lgShow, setLgShow] = useState(false);
     const [datos, setDatos] = useState([]);
+=======
+export default function EstructuraInicio() {
+    const [lgShow, setLgShow] = useState(false);
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
     const [editItemId, setEditItemId] = useState(null);
     const [formData, setFormData] = useState({
         id: '',
@@ -18,11 +23,17 @@ export default function EstructuraInicio() {
         areaLote: '',
         referencia: '',
         precio: '',
+<<<<<<< HEAD
         precioFormato: '',
         precioFinal: '',
         estado: '',
         coordenadas:'',
         color:''
+=======
+        estado: '',
+        coordenadas: '',
+        color: ''
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
       
     });
     const [areas, setAreas] = useState([]);
@@ -31,6 +42,7 @@ export default function EstructuraInicio() {
     const [selectedArea, setSelectedArea] = useState(null);
     const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
 
+<<<<<<< HEAD
     const [mostrarResultados, setMostrarResultados] = useState(false);
     const [financiamiento, setFinanciamiento] = useState("");
     const [cantidadInicial, setCantidadInicial] = useState(0);
@@ -40,6 +52,8 @@ export default function EstructuraInicio() {
     const [ultimaCuota, setUltimaCuota] = useState(0);
     const [numeroCuotas, setNumeroCuotas] = useState(0);
 
+=======
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
     const drawAllAreas = (ctx) => {
         areas.forEach(area => {
             const coords = area.coordenadas.split(',').map(Number);
@@ -141,6 +155,7 @@ export default function EstructuraInicio() {
     const handleEditClick = (id) => {
         setEditItemId(id);
         setLgShow(true);
+<<<<<<< HEAD
 
         fetch(`http://localhost:3001/pgconfiplanobg/${id}`)
             .then((response) => response.json())
@@ -166,6 +181,22 @@ export default function EstructuraInicio() {
                     });
                     setMostrarResultados(true);
                 }
+=======
+        fetch(`http://localhost:3001/pgconfiplanobg/${id}`)
+            .then((response) => response.json())
+            .then((data) => {
+                setFormData({
+                    id: data.id,
+                    lote: data.lote,
+                    manzana: data.manzana,
+                    areaLote: data.areaLote,
+                    referencia: data.referencia,
+                    precio: data.precio,
+                    estado: data.estado,
+                    coordenadas: data.coordenadas,
+                    color: data.color
+                });
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
             })
             .catch((error) => {
                 console.error('Error al obtener datos para editar:', error);
@@ -176,6 +207,7 @@ export default function EstructuraInicio() {
         */
     };
 
+<<<<<<< HEAD
     const calcularCeroIntereses = () => {
         if (cantidadInicial < 10000) {
             Swal.fire({
@@ -246,6 +278,12 @@ export default function EstructuraInicio() {
         <>
             <Row className='bg-white m-0'>
                 <CTop />
+=======
+    return (
+        <>
+            <Row className='bg-white m-0'>
+                <CTop selMenu="plano" pagenav="./../" />
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
                 <div className="x_content" >
                     <CAdorno />
                     <div className="container">
@@ -302,9 +340,13 @@ export default function EstructuraInicio() {
                         </Modal.Header>
                         <Modal.Body style={{ height: '80vh', borderLeft: '2px solid #3292F7', borderRight: '2px solid #3292F7', borderBottom: '2px solid #3292F7', borderBottomRightRadius: '5px', borderBottomLeftRadius: '5px' }}>
 
+<<<<<<< HEAD
                         <div id="info-Plano">
                         {mostrarResultados && (
                             <span> <div className="row fw-bold text-center ">
+=======
+                            <div className="row fw-bold text-center ">
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
                                 <div className="col">
                                     Manzana:
                                 </div>
@@ -315,6 +357,7 @@ export default function EstructuraInicio() {
                                     Área del Lote:
                                 </div>
                                 <div className="col">
+<<<<<<< HEAD
                                     Costo del Lote:
                                 </div>
                             </div>
@@ -474,6 +517,58 @@ export default function EstructuraInicio() {
                             </div>
                         }
                     </div>
+=======
+                                    Valor:
+                                </div>
+                            </div>
+                            <div className="row text-center text-success">
+                                <div className="col">
+                                    {formData.manzana}
+                                </div>
+                                <div className="col">
+                                    {formData.lote}
+                                </div>
+                                <div className="col">
+                                    {formData.areaLote}
+                                </div>
+                                <div className="col">
+                                    S/. {formData.precio}
+                                </div>
+                            </div>
+                            <hr className="my-4 bg-red border-3" />
+                            <div className="row ">
+                                <div className="col-md-6 text-left">
+                                    <div className="row text-left">
+                                        <div className="col-md-6 fw-bold">Precio Base:</div>
+                                        <div className="col-md-6">10800</div>
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <div className="row">
+                                        <div className="col-md-6 fw-bold">Descuento:</div>
+                                        <div className="col-md-6 ">450 %</div>
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <div className="row">
+                                        <div className="col-md-6 fw-bold">Precio Descuento:</div>
+                                        <div className="col-md-6">s/ 180</div>
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <div className="row">
+                                        <div className="col-md-6 fw-bold">Inicial:</div>
+                                        <div className="col-md-6">s/ 1000</div>
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <div className="row">
+                                        <div className="col-md-6 fw-bold">Saldo Restante:</div>
+                                        <div className="col-md-6">s/ 19,600.00</div>
+                                    </div>
+                                </div>
+                            </div>
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
                             
                         </Modal.Body>
                     </Modal>

@@ -1,4 +1,8 @@
 import Link from 'next/link';
+<<<<<<< HEAD
+=======
+import { FormSelect, DropFiles } from "widgets";
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
 import { Col, Row, Form, Card, Button, Image, Table, Modal } from "react-bootstrap";
 import React, { Fragment, useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
@@ -28,6 +32,7 @@ const CrudServicio = () => {
         (fila.texto.toLowerCase().includes(searchTerm.toLowerCase()) || fila.titulo.toLowerCase().includes(searchTerm.toLowerCase())));
 
     useEffect(() => {
+<<<<<<< HEAD
         const verificador = window.location.pathname.split('/');
         const rptAPI = verificador[verificador.length - 1];
         fetch('http://localhost:3001/serviciosES')
@@ -37,6 +42,11 @@ const CrudServicio = () => {
                 setDatos(filtrado);
             })
             
+=======
+        fetch('http://localhost:3001/serviciosES')
+            .then(response => response.json())
+            .then(data => setDatos(data))
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
             .catch(error => console.error('Error al obtener datos:', error));
     }, []);
 

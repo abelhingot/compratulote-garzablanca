@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+"use strict";
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
 /*
  * ATTENTION: An "eval-source-map" devtool has been used.
  * This devtool is neither made for production nor for readable output files.
@@ -12,6 +16,7 @@ exports.id = "pages/_document";
 exports.ids = ["pages/_document"];
 exports.modules = {
 
+<<<<<<< HEAD
 /***/ "./node_modules/next/dist/pages/_document.js":
 /*!***************************************************!*\
   !*** ./node_modules/next/dist/pages/_document.js ***!
@@ -129,6 +134,15 @@ module.exports = require("next/dist/shared/lib/html-context.js");
 
 "use strict";
 module.exports = require("next/dist/shared/lib/is-plain-object.js");
+=======
+/***/ "next/dist/compiled/next-server/pages.runtime.dev.js":
+/*!**********************************************************************!*\
+  !*** external "next/dist/compiled/next-server/pages.runtime.dev.js" ***!
+  \**********************************************************************/
+/***/ ((module) => {
+
+module.exports = require("next/dist/compiled/next-server/pages.runtime.dev.js");
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
 
 /***/ }),
 
@@ -138,11 +152,15 @@ module.exports = require("next/dist/shared/lib/is-plain-object.js");
   \************************/
 /***/ ((module) => {
 
+<<<<<<< HEAD
 "use strict";
+=======
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
 module.exports = require("react");
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "react/jsx-dev-runtime":
 /*!****************************************!*\
   !*** external "react/jsx-dev-runtime" ***!
@@ -151,6 +169,15 @@ module.exports = require("react");
 
 "use strict";
 module.exports = require("react/jsx-dev-runtime");
+=======
+/***/ "path":
+/*!***********************!*\
+  !*** external "path" ***!
+  \***********************/
+/***/ ((module) => {
+
+module.exports = require("path");
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
 
 /***/ })
 
@@ -161,7 +188,11 @@ module.exports = require("react/jsx-dev-runtime");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
+<<<<<<< HEAD
 var __webpack_exports__ = (__webpack_exec__("./pages/_document.js"));
+=======
+var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next","vendor-chunks/@swc"], () => (__webpack_exec__("./node_modules/next/dist/pages/_document.js")));
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
 module.exports = __webpack_exports__;
 
 })();

@@ -23,13 +23,21 @@ export default function EstructuraInicio() {
     <>
       <Row className='bg-white m-0'>
         <Card className='p-0'>
+<<<<<<< HEAD
           <CTop />
+=======
+          <CTop selMenu="ubicacion" pagenav="./../" />
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
           <div className="x_content" >
             <CAdorno />
             <div className="container">
               <div className="row g-5">
                 {datos.map((fila, index) => (
+<<<<<<< HEAD
                   <div className="col-md-7 col-lg-8" key={index}>
+=======
+                  <div key={"ubi"+index} className="col-md-7 col-lg-8">
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
                     <h2 className="fw-bold cProyect">{fila.titulo}</h2>
                     <div className="container mt-4">
                       <div className="row">

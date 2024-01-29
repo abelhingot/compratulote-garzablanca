@@ -38,7 +38,11 @@ const GBinfo = () => {
                             <div className='col-md-6 col-6 mb-4'>
                                 <select className="form-select" id="floatingSelect" aria-label="Floating label select example"
                                     value={formData.categoria} onChange={(e) => handleInputChange('categoria', e.target.value)}>
+<<<<<<< HEAD
                                     <option value="" disabled>Seleccionar una página</option>
+=======
+                                    <option value="" disabled>Seleccionar</option>
+>>>>>>> 314253c1b9d2658f547dd600c8f9e63171b22956
                                     {datos.filter((value, index, self) => index === self.findIndex((v) => v.categoria === value.categoria))
                                         .map((fila, index) => (
                                             <option key={index} value={fila.categoria}>{fila.categoria}</option>
