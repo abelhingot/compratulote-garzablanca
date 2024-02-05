@@ -504,7 +504,7 @@
       "titulo": "Agua",
       "texto": "",
       "estado": true,
-      "imagen": "/images/icons/agua.png"
+      "imagen": "/images/icons/"
     },
     {
       "id": 2,
@@ -685,7 +685,7 @@
   ],
   "pgempresa": [
     {
-      "title": "Misión",
+      "title": "Misón",
       "content": "<p><span style=\"background-color: transparent; color: rgb(0, 0, 0);\">En Procasa Norte Chiclayo SAC, nos dedicamos a transformar la calidad de vivienda a través de nuestros proyectos inmobiliarios. Nuestro compromiso es ofrecer a cada familia un nuevo y exclusivo estándar de vida, creando entornos que integren la naturaleza, seguridad y tranquilidad, adaptados a los anhelos y necesidades de cada hogar</span></p>",
       "id": 1
     },

@@ -15,6 +15,15 @@ background-color: #CED4DA;
   background-color: #3292F7;
   
 }
+.btnProyect{
+  background-color: #3292F7;
+  opacity: 0.9;
+}
+
+.btnProyect:hover{
+  background-color: #3292F7;
+  opacity: 2;
+}
 
 .cProyect {
   color: #0881FF;
@@ -24,24 +33,6 @@ background-color: #CED4DA;
   border: 2px solid #0881FF;
 }
 
-.bgProyect2 {
-  background-color: #fdcd68;
-}
-
-.bgProyectOpaco2 {
-  background-color: #b08833;
-}
-
-.borderProyect2 {
-  border: 2px solid #fdcd68;
-}
-
-.cProyect2 {
-  color: #fdcd68;
-  //rgba(220, 53, 70, 0.504)
-  //rgba(77, 203, 92, 0.497)//verde
-  //rgba(99, 115, 129, 0.51)//plomo
-}
 
 .titulo-Intro {
   font-family: 'Anton', sans-serif;
@@ -964,4 +955,13 @@ ol.breadcrumb {
 .navbar-scrolled{
   background-color: black; /* Cambia esto por el color que prefieras */
   transition: background-color 0.3s; /* Opcional, para un cambio suave */
+}
+
+.modalPlano{
+  height: '80vh';
+  border-left: 1px solid #3292F7;
+  border-right: 1px solid #3292F7;
+  border-bottom: 1px solid #3292F7;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }

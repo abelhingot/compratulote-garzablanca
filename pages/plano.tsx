@@ -42,6 +42,10 @@ export default function EstructuraInicio() {
 
     const drawAllAreas = useCallback((ctx) => {
         areas.forEach(area => {
+            if (!area.coordenadas) {
+                return;
+            }
+
             const coords = area.coordenadas.split(',').map(Number);
             ctx.beginPath();
             for (let i = 0; i < coords.length; i += 2) {
@@ -79,6 +83,9 @@ export default function EstructuraInicio() {
     }, [selectedArea]);
 
     const isCursorInArea = (cursorX, cursorY, area) => {
+        if (!area.coordenadas) {
+            return;
+        }
         const coords = area.coordenadas.split(',').map(Number);
         let isInside = false;
         for (let i = 0, j = coords.length - 2; i < coords.length; i += 2) {
@@ -112,7 +119,7 @@ export default function EstructuraInicio() {
             drawAllAreas(ctx);
             setLoadedImage(image);
         };
-        image.src = '/images/icons/PLANOGARZABLANCA.png';
+        image.src = './imagenes/PLANOGARZABLANCA.png';
 
         const handleClick = (event) => {
             const rect = canvas.getBoundingClientRect();
@@ -134,53 +141,52 @@ export default function EstructuraInicio() {
     }, [areas, drawAllAreas]);
 
     useEffect(() => {
-        fetch('/db.json')
+        fetch('https://sheet.best/api/sheets/7ae0c5f0-997f-4c88-935e-f4a58678ff5e/tabs/plano')
             .then(response => response.json())
-            .then(json => {
-                const data: any[] = json.pgconfiplanobg;
-                setAreas(data);
+            .then(data => {
+                if (data.length > 1) {
+                    const headers = Object.keys(data[0]).map(key => data[0][key]);
+                    const rows = data.slice(1).map(row => {
+                        let obj = {};
+                        Object.keys(row).forEach((key, index) => {
+                            obj[headers[index]] = row[key];
+                        });
+                        return obj;
+                    });
+                    setAreas(rows);
+                }
             })
             .catch(error => console.error('Tenemos un error', error));
     }, []);
+
     const handleEditClick = (id) => {
-        setEditItemId(id);
-        setLgShow(true);
+        setEditItemId(id); 
+        setLgShow(true); 
+        const datosporId = areas.find(fila => fila.id.toString() === id.toString());
+ 
+        if (datosporId) {
+            const descuento = 0.05;
+            const precioConDescuento = datosporId.precio - (datosporId.precio * descuento);
+            const precioOriginal = datosporId.precio.toLocaleString("es-PE", { style: "currency", currency: "PEN", maximumFractionDigits: 2 });
+            const precioConFormato = precioConDescuento.toLocaleString("es-PE", { style: "currency", currency: "PEN", maximumFractionDigits: 2 });
 
-        fetch('/db.json')
-            .then((response) => response.json())
-            .then((json) => {
-                const data: any[] = json.pgconfiplanobg;
-
-                const obj = data.find(x => x.id == id);
-                const descuento = 0.05;
-                const precioConDescuento = obj.precio - (obj.precio * descuento);
-                const precioOriginal = obj.precio.toLocaleString("es-PE", { style: "decimal", maximumFractionDigits: 2 });
-                const precioconFormato = precioConDescuento.toLocaleString("es-PE", { style: "decimal", maximumFractionDigits: 2 });
-                if (obj) {
-                    setFormData({
-                        id: obj.id,
-                        lote: obj.lote,
-                        manzana: obj.manzana,
-                        areaLote: obj.areaLote,
-                        referencia: obj.referencia,
-                        precio: obj.precio,
-                        precioFormato: precioOriginal,
-                        precioFinal: precioconFormato,
-                        estado: obj.estado,
-                        coordenadas: obj.coordenadas,
-                        color: obj.color
-                    });
-                    setMostrarResultados(true);
-                }
-            })
-            .catch((error) => {
-                console.error('Error al obtener datos para editar:', error);
+            setFormData({
+                id: datosporId.id,
+                lote: datosporId.lote,
+                manzana: datosporId.manzana,
+                areaLote: datosporId.areaLote,
+                referencia: datosporId.referencia,
+                precio: datosporId.precio,
+                precioFormato: precioOriginal,
+                precioFinal: precioConFormato,
+                estado: datosporId.estado,
+                coordenadas: datosporId.coordenadas,
+                color: datosporId.color
             });
-
-        /*
-        <img src="/images/icons/PLANOGARZABLANCA.png" useMap="#image-map" />
-        */
+            setMostrarResultados(true); 
+        }
     };
+
 
     const calcularCeroIntereses = () => {
         if (cantidadInicial < 10000) {
@@ -300,8 +306,7 @@ export default function EstructuraInicio() {
                         <Modal.Header closeButton className='bgProyect'>
                             <h3 className='fw-bold'> Estado del lote: <span className='text-light'>{formData.estado}</span></h3>
                         </Modal.Header>
-                        <Modal.Body style={{ height: '80vh', borderLeft: '2px solid #3292F7', borderRight: '2px solid #3292F7', borderBottom: '2px solid #3292F7', borderBottomRightRadius: '5px', borderBottomLeftRadius: '5px' }}>
-
+                        <Modal.Body className='modalPlano'>
                             <div id="info-Plano">
                                 {mostrarResultados && (
                                     <span> <div className="row fw-bold text-center ">
@@ -363,7 +368,7 @@ export default function EstructuraInicio() {
                                                     <div className="col-md-6 fw-bold">Descuento:</div>
                                                     <div className="col-md-6">&nbsp; &nbsp; &nbsp; 5 %</div>
                                                     <div className="col-md-6 fw-bold">Precio Final:</div>
-                                                    <div className="col-md-6">S/. {formData.precioFinal}</div>
+                                                    <div className="col-md-6">{formData.precioFinal}</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -462,7 +467,7 @@ export default function EstructuraInicio() {
                                                 <tbody className="">
                                                     <tr className="border-1 border-secondary-subtle">
                                                         <td>1.5 %</td>
-                                                        <td>s/ {pagoMensual.toFixed(2)}</td>
+                                                        <td>S/. {pagoMensual.toFixed(2)}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>

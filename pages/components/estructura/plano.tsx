@@ -30,11 +30,20 @@ export default function CPlano() {
     const [numeroCuotas, setNumeroCuotas] = useState(0);
 
     useEffect(() => {
-        fetch("/db.json")
+        fetch('https://sheet.best/api/sheets/7ae0c5f0-997f-4c88-935e-f4a58678ff5e/tabs/plano')
             .then(response => response.json())
-            .then(json => {
-                const data: any[] = json.pgconfiplanobg;
-                setDatos(data);
+            .then(data => {
+                if (data.length > 1) {
+                    const headers = Object.keys(data[0]).map(key => data[0][key]);
+                    const rows = data.slice(1).map(row => {
+                        let obj = {};
+                        Object.keys(row).forEach((key, index) => {
+                            obj[headers[index]] = row[key];
+                        });
+                        return obj;
+                    });
+                    setDatos(rows);
+                }
             })
             .catch(error => console.error('Error al obtener datos:', error));
     }, []);

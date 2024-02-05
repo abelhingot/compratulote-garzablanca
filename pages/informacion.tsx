@@ -14,34 +14,27 @@ export const metadata: Metadata = {
 }
 export default function Pinformacion() {
   const [datos, setDatos] = useState([]);
-  const [banners, setBanners] = useState('');
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-  const sliderRef = React.useRef(null);
-  const nextSlide = () => {
-    sliderRef.current.slickNext();
-  };
-
-  const prevSlide = () => {
-    sliderRef.current.slickPrev();
-  };
+  const [datos2, setDatos2] = useState([]);
   useEffect(() => {
-    const verificador = window.location.pathname.split('/');
-    const rptURL = verificador[verificador.length - 1];
-    fetch('/db.json')
+    fetch('https://sheet.best/api/sheets/7ae0c5f0-997f-4c88-935e-f4a58678ff5e/tabs/informacion')
       .then(response => response.json())
-      .then(json => {
-        const data = json.serviciosES;
-        setDatos(data);
-        const filtrado = data.filter(fila => fila.categoria.toLowerCase() === "informacion");
-        setDatos(filtrado);        
+      .then(data => {
+        if (data.length > 1) {
+          const headers = Object.keys(data[0]).map(key => data[0][key]);
+          const rows = data.slice(1).map(row => {
+            let obj = {};
+            Object.keys(row).forEach((key, index) => {
+              obj[headers[index]] = row[key];
+            });
+            return obj;
+          });
+          const filtro1 = rows.filter(fila => fila.categoria === "infoup");
+          setDatos(filtro1);
+          const filtro2 = rows.filter(fila => fila.categoria === "infomiddle");
+          setDatos2(filtro2);
+        }
       })
-      .catch(error => console.error("Se encontró un error"))
+      .catch(error => console.error('Error:', error));
   }, []);
   return (
     <>
@@ -51,22 +44,40 @@ export default function Pinformacion() {
           <CAdorno />
           <div className='m-0'>
             <div className="container" >
+
               <div className="row g-5 mb-3 py-4">
-                <div className="col-md-7 col-lg-8">
-                  <CAnuncio />
+
+                <div className="col-md-7 col-lg-8" >
+                  {datos.map((fila, index) => (
+                    <Row className="mb-1" key={index}>
+
+                      <p className="txt-jf" dangerouslySetInnerHTML={{ __html: fila.contenido }} />
+
+                    </Row>
+                  ))}
                   <div className="container text-center">
+
                     <div className="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-                      {datos.map((fila, index) => (
+                      {datos2.map((fila, index) => (
                         <div className="col" key={index}>
+
                           <div className="p-3 rounded-4 custom-border-info" style={{ border: '2px solid #637391' }}>
-                            <Image src={fila.imagen} alt='imagen' className="img-fluid custom-img-info" />
+
+                            <Image src={'./imagenes/' + fila.contenido} alt='imagen' className="img-fluid custom-img-info" />
                           </div>
                           <p className="py-2 fw-bold" style={{ color: '#637391' }}>{fila.titulo}</p>
+
                         </div>
                       ))}
+
+
+
                     </div>
+
                   </div>
+
                 </div>
+
                 <CFormulario />
               </div>
             </div>

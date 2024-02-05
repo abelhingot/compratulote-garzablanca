@@ -2,35 +2,38 @@ import { Fragment, useEffect, useState } from "react";
 import { Button, Modal, Row, Image } from "react-bootstrap";
 
 export default function CBanner() {
-    const [showText, setShowText] = useState(true);
     const [datos, setDatos] = useState([]);
-    const [setBanner, setBanners] = useState('');
     const [lgShow, setLgShow] = useState(false);
     useEffect(() => {
-        const identificador = window.location.pathname.split('/');
-        const categoriaApi = identificador[identificador.length - 1];
-        fetch('/db.json')
+        const path = window.location.pathname === '/' ? 'informacion' : window.location.pathname.split('/').pop();
+        fetch('https://sheet.best/api/sheets/7ae0c5f0-997f-4c88-935e-f4a58678ff5e/tabs/banner')
             .then(response => response.json())
-            .then(json => {
-                const data = json.pgslidergb;
-                setDatos(data);
-                const filtrado = data.filter(fila => fila.categoria.toLowerCase() === "informacion");
-                setDatos(filtrado);
+            .then(data => {
+                if (data.length > 1) {
+                    const headers = Object.keys(data[0]).map(key => data[0][key]);
+                    const rows = data.slice(1).map(row => {
+                      let obj = {};
+                      Object.keys(row).forEach((key, index) => {
+                        obj[headers[index]] = row[key];
+                      });
+                      return obj;
+                    
+                    });
+                    const filtrar = rows.filter(fila=> fila.categoria===path);
+                    setDatos(filtrar);
+                 
+                }
             })
-            .catch(error => console.error('Error al obtener datos:', error));
-
-        const interval = setInterval(() => {
-        }, 5000);
-
-        return () => clearInterval(interval);
+            .catch(error => console.error('Tenemos un error:', error));
     }, []);
-
+ 
+    
     return (
         <>
             {datos.map((fila, index) => (
                 <div className="container-fluid contenedor-imagen p-0" key={index}>
                     <div className="position-relative">
-                        <Image src={fila.imagen} className="fondo img-fluid" alt={fila.categoria} />
+                        <Image src={'./imagenes/'+fila.imagen} className="fondo img-fluid" alt={fila.categoria} />
                         <div className="position-absolute w-100 texto-superpuesto">
                             <div className="transicion-container bg-custom-colordk p-3">
                                 <h2 className="text-white mb-3 titulo-Intro">{fila.titulo}</h2>

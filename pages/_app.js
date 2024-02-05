@@ -14,7 +14,7 @@ import DefaultDashboardLayout from 'layouts/DefaultDashboardLayout';
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const pageURL = process.env.baseURL + router.pathname;
-  const title = "Dashboard";
+  const title = "Garza Blanca";
   const description = " Nextjs Snippet "
   const keywords = "e"
 
@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="keywords" content={keywords} />
-        <link rel="shortcut icon" href="/compratulote.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="./logo1.ico" type="image/x-icon" />
       </Head>
       <NextSeo
         title={title}

@@ -9,13 +9,24 @@ import { useEffect, useState } from 'react'
 export default function EstructuraInicio() {
   const [datos, setDatos] = useState([]);
   useEffect(() => {
-    fetch('/db.json')
+    fetch('https://sheet.best/api/sheets/7ae0c5f0-997f-4c88-935e-f4a58678ff5e/tabs/ubicacion')
       .then(response => response.json())
-      .then(json => {
-        const data: any[] = json.pgubicaciongb;
-        setDatos(data);
+      .then(data => {
+        if (data.length > 1) {
+          const headers = Object.keys(data[0]).map(key => data[0][key]);
+          const rows = data.slice(1).map(row => {
+            let obj = {};
+            Object.keys(row).forEach((key, index) => {
+              obj[headers[index]] = row[key];
+            });
+            return obj;
+          });
+          const datosFiltrados = rows.filter(fila => fila.categoria === "infoup");
+          setDatos(datosFiltrados);
+
+        }
       })
-      .catch(error => console.error('Error al obtener datos:', error));
+      .catch(error => console.error('Error:', error));
   }, []);
   return (
     <>
@@ -30,13 +41,17 @@ export default function EstructuraInicio() {
                   <div className="col-md-7 col-lg-8" key={index}>
                     <h2 className="fw-bold cProyect">{fila.titulo}</h2>
                     <div className="container mt-4">
+                      
                       <div className="row">
                         <div className="d-grid gap-2 d-md-block pb-3">
-                          <a href={fila.ruta1} target='_blank'> <button className="btn bgProyect text-light fw-bold" type="button">{fila.boton1}</button></a>&nbsp;
-                          <a href={fila.ruta2} target='_blank'><button className="btn btn-secondary fw-bold" type="button">{fila.boton2}</button></a>
+                          <a href="#"> 
+                          <button className="btn btnProyect text-light fw-bold" type="button">{fila.subtitulo}</button></a>&nbsp;
+                          <a href="#">
+                            <button className="btn btn-secondary fw-bold" type="button">{fila.imagen}</button></a>
                         </div>
-                        <iframe src={fila.iframe} width="600" height="450" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src={fila.mensaje} width="600" height="450" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                       </div>
+
                     </div>
                   </div>
                 ))}
