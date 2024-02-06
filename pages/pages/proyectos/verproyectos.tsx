@@ -1,9 +1,9 @@
 "use client"
 import React, { useState, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation';
-import COMProductoBuscar from '../proyectos/buscador'
-import CBreadcrumb from '../informacion/pagebardump'
-import COMPProyectosResultados from '../proyectos/proyectosresultado'
+import COMProductoBuscar from './buscador'
+import CBreadcrumb from '../../components/informacion/pagebardump'
+import COMPProyectosResultados from './proyectosresultado'
 export default function VerProyectos() {
     const searchParams = useSearchParams()
     //const [data, setData] = useState([]);

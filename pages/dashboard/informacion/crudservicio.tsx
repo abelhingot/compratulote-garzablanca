@@ -28,9 +28,16 @@ const CrudServicio = () => {
         (fila.texto.toLowerCase().includes(searchTerm.toLowerCase()) || fila.titulo.toLowerCase().includes(searchTerm.toLowerCase())));
 
     useEffect(() => {
-        fetch('http://localhost:3001/serviciosES')
+        const verificador = window.location.pathname.split('/');
+        const rptAPI = verificador[verificador.length - 1];
+        fetch('/db.json')
             .then(response => response.json())
-            .then(data => setDatos(data))
+            .then(json => {
+                const data: any[] = json.serviciosES;
+                const filtrado = data.filter(fila => fila.categoria === rptAPI);
+                setDatos(filtrado);
+            })
+            
             .catch(error => console.error('Error al obtener datos:', error));
     }, []);
 
@@ -154,6 +161,17 @@ const CrudServicio = () => {
 
     };
 
+    const handleCleanClick=()=>{
+        setFormData({
+            id: "",
+            categoria: "",
+            titulo: "",
+            texto: "",
+            imagen: "",
+            estado: ""
+
+        });
+    }
     return (
         <>
 
@@ -194,7 +212,7 @@ const CrudServicio = () => {
                                                 <td>{fila.categoria}</td>
                                                 <td>{fila.titulo}</td>
                                                 <td><textarea className='form-control no-scroll' value={fila.texto} style={{ width: '350px', border: 'none', overflowY: 'hidden', backgroundColor: 'white' }} disabled /></td>
-                                                <td><Image src={fila.imagen} className='img-thumbnail' alt=''/></td>
+                                                <td><Image src={fila.imagen} className='img-thumbnail' alt=""/></td>
                                                 <td>
                                                     <Button onClick={() => handleEditClick(fila.id)} >  <i className="fe fe-edit fa-lg text-light"></i>   </Button>{' '}
                                                     <Button onClick={() => handleDeleteClick(fila.id)} className='btn-danger'><i className="fe fe-trash fa-lg"></i></Button>{' '}
@@ -260,7 +278,7 @@ const CrudServicio = () => {
                                         <Col md={12} xs={12}>
                                             <Button className="btn btn-primary" type="submit" onClick={() => handleSaveClick()}>GUARDAR</Button>
                                             &nbsp;
-                                            <Button className="btn btn-primary" type="reset" >LIMPIAR</Button>
+                                            <Button className="btn btn-primary" type="reset" onClick={()=>handleCleanClick()}>LIMPIAR</Button>
                                         </Col>
                                     </Row>
 

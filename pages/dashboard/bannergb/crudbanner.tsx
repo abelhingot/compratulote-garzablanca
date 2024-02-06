@@ -27,9 +27,12 @@ const GBbanner = () => {
         (fila.titulo.toLowerCase().includes(searchTerm.toLowerCase()) || fila.subtitulo.toLowerCase().includes(searchTerm.toLowerCase()) || fila.categoria.toLowerCase().includes(searchTerm.toLowerCase())));
 
     useEffect(() => {
-        fetch('http://localhost:3001/pgslidergb')
+        fetch('/db.json')
             .then(response => response.json())
-            .then(data => setDatos(data))
+            .then(json => {
+                const data: any[] = json.pgslidergb;
+                setDatos(data);}
+                )
             .catch(error => console.error('Error al obtener datos:', error));
     }, []);
 

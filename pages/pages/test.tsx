@@ -1,14 +1,7 @@
 // import node module libraries
-import { Col, Row, Container } from 'react-bootstrap';
+import { Col, Row, Container, Image } from 'react-bootstrap';
 import React from 'react';
-import {Image} from "react-bootstrap"
-// import widget as custom components
 import Link from 'next/link';
-
-// import sub components
-
-// import data files
-
 
 const Test = () => {
     return (
@@ -177,7 +170,7 @@ const Test = () => {
                                                 <div className="album-item text-center">
                                                     <button type="button"
                                                         className="btn border border-danger border-2 p-3 rounded-4 ">
-                                                        <Image src="Imagenes/Recurso1.png" alt='Imagen'/>
+                                                        <Image src="Imagenes/Recurso1.png" alt='Texto'/>
                                                     </button><br />
                                                     <label className="text-danger fw-bold">Desague</label>
                                                 </div>

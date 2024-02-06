@@ -1,8 +1,10 @@
+import { Link } from "react-bootstrap-icons";
 import CMenusTop from "../menus/menutop";
 import CAnimacion from "../slider/animacion";
 import {Image} from "react-bootstrap"
 import CTop1 from "./top1";
-import { Link } from "react-bootstrap-icons";
+
+
 
 export default function CTop2(props:any) {
   const menu=props.menu||'inicio';

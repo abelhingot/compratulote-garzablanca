@@ -1,7 +1,6 @@
 // Importa React, useState y useEffect
 import React, { useState, useEffect } from 'react';
 import {Image} from "react-bootstrap"
-
 // Define tu componente CVernoticias
 export default function CVernoticias(props: any) {
   // Estado para almacenar las noticias

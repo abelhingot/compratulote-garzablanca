@@ -38,7 +38,7 @@ const Contactame = () => {
     };
 
     const filteredMenus = datos.filter((fila) =>
-        (fila.nombre.toLowerCase().includes(searchTerm.toLowerCase()) || fila.apellidos.toLowerCase().includes(searchTerm.toLowerCase())));
+        (fila.nombre.toLowerCase().includes(searchTerm.toLowerCase()) || fila.apellidos.toLowerCase().includes(searchTerm.toLowerCase())|| fila.dni.toLowerCase().includes(searchTerm.toLowerCase())));
 
 
     useEffect(() => {

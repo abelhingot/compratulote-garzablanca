@@ -1,21 +1,18 @@
 "use client"
 import React, { useState, useEffect } from 'react'
+import { useRouter } from 'next/router';
 import CProyectovista from './vista2';
-import CPaginate from '../tools/paginacion';
-import CAnuncios from '../slider/anuncios';
-import { useRouter, useSearchParams } from 'next/navigation';
-export default  function COMPProyectosResultados(props:any){
+import CPaginate from '../../components/tools/paginacion';
+import CAnuncios from '../../components/slider/anuncios';
+export default  function ProyectosResultados(props:any){
     const [data, setData] = useState([]);
     const [currentpage,setCurrentpage]=useState(1);
     const totalregistroxpage=6;
-    const searchParams = useSearchParams()
-    let textosearch = searchParams.get("proyecto") || props? props.textosearch:'';
-    let selDepartamento = searchParams.get("departamento")||props? props.departamento.value:'';
+    const router = useRouter();
+    let textosearch = router.query.proyecto || props.textosearch || '';
+    let selDepartamento = router.query.departamento || "";
+    
     let datatmp:any[]=[];
-
-   // console.log('selDepartamento',selDepartamento);
-    //console.log('textosearch',textosearch);
-
     useEffect(() => {
         fetch("./json/proyectos.json")
             .then(res => res.json())
@@ -38,11 +35,9 @@ export default  function COMPProyectosResultados(props:any){
         });
         console.log('data',data);
         console.log('datatmp',datatmp);
-        //setData(datatmp);
     }else{
         datatmp=data;
     }
-
 
     const totalPages=Math.ceil(datatmp.length/totalregistroxpage);
     const indexpages = Array.from({ length: totalPages }, (_, index) => ({ id: `${index + 1}`, activo: index==currentpage-1?`si`:`no`}));

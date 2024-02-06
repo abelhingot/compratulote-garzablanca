@@ -9,13 +9,13 @@ export default function CBanner() {
     useEffect(() => {
         const identificador = window.location.pathname.split('/');
         const categoriaApi = identificador[identificador.length - 1];
-
-        fetch('http://localhost:3001/pgslidergb')
+        fetch('/db.json')
             .then(response => response.json())
-            .then(data => {
-                const imagenesFiltradas = data.filter(fila => fila.categoria === categoriaApi);
-                setDatos(imagenesFiltradas);
-                setBanners(categoriaApi);
+            .then(json => {
+                const data = json.pgslidergb;
+                setDatos(data);
+                const filtrado = data.filter(fila => fila.categoria.toLowerCase() === "informacion");
+                setDatos(filtrado);
             })
             .catch(error => console.error('Error al obtener datos:', error));
 

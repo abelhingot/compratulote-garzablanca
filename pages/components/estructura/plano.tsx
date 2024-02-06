@@ -30,9 +30,12 @@ export default function CPlano() {
     const [numeroCuotas, setNumeroCuotas] = useState(0);
 
     useEffect(() => {
-        fetch("http://localhost:3001/pgconfiplanobg")
+        fetch("/db.json")
             .then(response => response.json())
-            .then(data => setDatos(data))
+            .then(json => {
+                const data: any[] = json.pgconfiplanobg;
+                setDatos(data);
+            })
             .catch(error => console.error('Error al obtener datos:', error));
     }, []);
     const manzanasUnicas = useMemo(() => Array.from(new Set(datos.map(item => item.manzana))), [datos]);
@@ -75,10 +78,8 @@ export default function CPlano() {
                 title: "Verificar el monto inicial",
                 text: "El monto mínimo inicial debe ser mayor",
                 icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Volver a intentar"
+                confirmButtonColor: "#3292F7",
+                confirmButtonText: "Aceptar"
             });
         } else {
             if (pagoMensual < 1000) {
@@ -86,10 +87,8 @@ export default function CPlano() {
                     title: "Verificar el pago mensual",
                     text: "El pago mensual debe ser mayor",
                     icon: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "Volver a intentar"
+                    confirmButtonColor: "#3292F7",
+                    confirmButtonText: "Aceptar"
                 });
             } else {
                 let numCuotas = 0;
@@ -122,10 +121,8 @@ export default function CPlano() {
                 title: "Verificar el monto inicial",
                 text: "El monto mínimo inicial debe ser mayor",
                 icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Volver a intentar"
+                confirmButtonColor: "#3292F7",
+                confirmButtonText: "Aceptar"
             });
         } else {
         const interes = 0.015;

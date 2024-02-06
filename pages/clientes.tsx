@@ -3,13 +3,13 @@ import COMTopInterno from './components/top/topInterno'
 //import COMPFooter from './components/footer/footer2'
 import COMPAnuncio1 from './components/anuncios/anuncio1'
 import COMPAuspiciadores from './components/slider/auspiciadores'
-import COMPProyectos from './components/proyectos/proyectos1'
+import COMPProyectos from './pages/proyectos/proyectos1'
 import COMInfo from './components/informacion/info'
 import COMNosotros from './components/nosotros/nosotros'
-import {Image} from "react-bootstrap"
-import COMProductoBuscar from './components/proyectos/buscador'
+import COMProductoBuscar from './pages/proyectos/buscador'
 import CBreadcrumb from './components/informacion/pagebardump'
 import CListadoPublicidad from './components/publicidad/listado'
+import {Image} from "react-bootstrap"
 export const metadata: Metadata = {
   title: 'Compratulote.pe : Clientes',
   description: 'Pagina incial de compra tu lote',

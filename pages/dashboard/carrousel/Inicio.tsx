@@ -24,7 +24,6 @@ const Paginas = () => {
     const prevSlide = () => {
         sliderRef.current.slickPrev();
     };
-   
 
     const [formData, setFormData] = useState({
         id: '',

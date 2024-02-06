@@ -103,6 +103,14 @@ const Textoeditable = () => {
         }
     };
 
+    const handleCleanClick =()=>{
+        setTitle("");
+        setInsertText("");
+        setSelectedId("");
+        if (quill) {
+            quill.clipboard.dangerouslyPasteHTML(content);
+        }
+    }
     return (
         <>
             <Row className="mb-8 m-1">
@@ -123,7 +131,7 @@ const Textoeditable = () => {
                                     </Row>
                                     <hr />
                                     <Accordion>
-                                        <Accordion.Item eventKey="0" style={{ border: 'none', marginBottom: '10px' }} key={index}>
+                                        <Accordion.Item eventKey="0" style={{ border: 'none', marginBottom: '10px' }} >
                                             <Accordion.Header style={{ border: '1px solid lightgray', borderRadius: '7px', paddingTop: '3px', paddingBottom: '3px', width: '50%' }}>
                                                 <strong> {fila.title}</strong>
                                             </Accordion.Header>
@@ -149,7 +157,7 @@ const Textoeditable = () => {
                         <Card.Body>
                             <div className='row'>
                                 <div className="container">
-                                    <form onSubmit={handleSubmit}>
+                                    <form >
                                         <Row className="mb-1">
                                             <div className="col-md-12 col-12">
                                                 <label htmlFor='title'>Identificador Único:</label>
@@ -171,7 +179,8 @@ const Textoeditable = () => {
                                         </Row>
                                         <Row className="mb-3">
                                             <div className="col-md-12 col-12 text-end">
-                                                <button className='btn btn-primary'>Guardar</button>
+                                                <Button className='btn btn-primary m-1' type='submit' onClick={()=>handleSubmit}>Guardar</Button>
+                                                <Button className='btn btn-primary m-1' type='reset' onClick={()=>handleCleanClick()}>Limpiar</Button>
                                             </div>
                                         </Row>
                                     </form>

@@ -1,7 +1,7 @@
 import styles from './page.module.css'
 import type { Metadata } from 'next'
 //import COMPFooter from './components/footer/footer2'
-import COMProductoBuscar from './components/proyectos/buscador'
+import COMProductoBuscar from './pages/proyectos/buscador'
 import COMTopInterno from './components/top/topInterno'
 import CBreadcrumb from './components/informacion/pagebardump'
 import CFormcontactanos from './components/informacion/contactanos'
@@ -80,7 +80,8 @@ export default function Home() {
                         </div>
                         <div className="col-md-4 contenedorasesora">
 
-                            <Image src="./images/servicios/estructura/asesora.png" className="img-fluid imgasesora" alt="imagen servicio" />
+                            <Image src="./images/servicios/estructura/asesora.png"
+                                className="img-fluid imgasesora" alt="imagen servicio" />
                             <div className='fondoasesora'>
                             </div>
                         </div>

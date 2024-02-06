@@ -24,10 +24,10 @@ export default function CProyectovista1(itemp:any) {
                         </div>
                         <div className="col-6">
                             <div className="row">
-                                <div className="col-md-3 iconproy"><Image alt="iconos" src="/images/icons/1.png" className='img-fluid'/></div>
-                                <div className="col-md-3 iconproy"><Image alt="iconos" src="/images/icons/2.png" className='img-fluid'/></div>
-                                <div className="col-md-3 iconproy"><Image alt="iconos" src="/images/icons/3.png" className='img-fluid'/></div>
-                                <div className="col-md-3 iconproy"><Image alt="iconos" src="/images/icons/4.png" className='img-fluid'/></div>
+                                <div className="col-md-3 iconproy"><Image src="/images/icons/1.png" className='img-fluid' alt="Icono"/></div>
+                                <div className="col-md-3 iconproy"><Image src="/images/icons/2.png" className='img-fluid' alt="Icono"/></div>
+                                <div className="col-md-3 iconproy"><Image src="/images/icons/3.png" className='img-fluid' alt="Icono"/></div>
+                                <div className="col-md-3 iconproy"><Image src="/images/icons/4.png" className='img-fluid' alt="Icono"/></div>
                             </div>
                         </div>
                     </div>

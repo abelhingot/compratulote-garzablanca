@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 const GBinfo = () => {
     const [datos, setDatos] = useState([]);
+    const [lgShow,setLgShow] = useState(false);
     const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('');
     const [lgShow, setLgShow] = useState(false);
     const [formData, setFormData] = useState({
@@ -22,9 +23,12 @@ const GBinfo = () => {
         setCategoriaSeleccionada(value);
     };
     useEffect(() => {
-        fetch('http://localhost:3001/pgslidergb')
+        fetch('/db.json')
             .then(response => response.json())
-            .then(data => setDatos(data))
+            .then(json => {
+                const data: any[]=json.pgslidergb;
+                setDatos(data);
+            })
             .catch(error => console.error('Error al obtener datos:', error));
     }, []);
     const filteredData = datos.filter((item) => item.categoria === categoriaSeleccionada);
@@ -41,7 +45,7 @@ const GBinfo = () => {
                             <div className='col-md-6 col-6 mb-4'>
                                 <select className="form-select" id="floatingSelect" aria-label="Floating label select example"
                                     value={formData.categoria} onChange={(e) => handleInputChange('categoria', e.target.value)}>
-                                    <option value="" disabled>Seleccionar</option>
+                                    <option value="" disabled>Seleccionar una página</option>
                                     {datos.filter((value, index, self) => index === self.findIndex((v) => v.categoria === value.categoria))
                                         .map((fila, index) => (
                                             <option key={index} value={fila.categoria}>{fila.categoria}</option>

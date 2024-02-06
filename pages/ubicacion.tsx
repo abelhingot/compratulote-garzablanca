@@ -9,16 +9,14 @@ import { useEffect, useState } from 'react'
 export default function EstructuraInicio() {
   const [datos, setDatos] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:3001/pgubicaciongb')
+    fetch('/db.json')
       .then(response => response.json())
-      .then(data => setDatos(data))
+      .then(json => {
+        const data: any[] = json.pgubicaciongb;
+        setDatos(data);
+      })
       .catch(error => console.error('Error al obtener datos:', error));
   }, []);
-
-  function cambiarColor() {
-
-  }
-
   return (
     <>
       <Row className='bg-white m-0'>
@@ -29,7 +27,7 @@ export default function EstructuraInicio() {
             <div className="container">
               <div className="row g-5">
                 {datos.map((fila, index) => (
-                  <div key={"ubi"+index} className="col-md-7 col-lg-8">
+                  <div className="col-md-7 col-lg-8" key={index}>
                     <h2 className="fw-bold cProyect">{fila.titulo}</h2>
                     <div className="container mt-4">
                       <div className="row">

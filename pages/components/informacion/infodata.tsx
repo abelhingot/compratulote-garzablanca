@@ -27,7 +27,7 @@ export default function CInfoData({idkey="1"}) {
             {      
             _datainfo.map((item)=>{               
                 return (<div key={'infodata'+idkey+'_'+item.id} className="infodataitem">
-                    <Image src={item.icon} className="iconinfodata" alt="texto"/>
+                    <Image src={item.icon} className="iconinfodata" alt=""/>
                     <strong>{item.title}</strong>
                     <p>{item.descripcion}</p>
                 </div>)

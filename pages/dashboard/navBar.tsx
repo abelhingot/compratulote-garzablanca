@@ -24,13 +24,16 @@ const Navbar = () => {
             [field]: value,
         }));
     };
-    const filteredMenus = datos.filter((fila) =>
-        (fila.texto.toLowerCase().includes(searchTerm.toLowerCase()) || fila.href.toLowerCase().includes(searchTerm.toLowerCase())));
+  //  const filteredMenus = datos.filter((fila) =>
+       // (fila.texto.toLowerCase().includes(searchTerm.toLowerCase()) || fila.href.toLowerCase().includes(searchTerm.toLowerCase())));
 
     useEffect(() => {
-        fetch('http://localhost:3001/pgmenugb')
+        fetch('/db.json')
             .then(response => response.json())
-            .then(data => setDatos(data))
+            .then(json => {
+                const data: any[] = json.pgmenugb;
+                setDatos(data);
+            })
             .catch(error => console.error('Error al obtener datos:', error));
     }, []);
 
@@ -40,14 +43,17 @@ const Navbar = () => {
         setEditItemId(id);
         setLgShow(true);
 
-        fetch(`http://localhost:3001/pgmenugb/${id}`)
+        fetch('/db.json')
             .then((response) => response.json())
-            .then((data) => {
+            .then((json) => {
+                const data: any[] = json.pgmenugb;
+
+            const obj = data.find(x => x.id == id);
                 setFormData({
-                    id: data.id,
-                    href: data.href,
-                    categoria: data.categoria,
-                    texto: data.texto
+                    id: obj.id,
+                    href: obj.href,
+                    categoria: obj.categoria,
+                    texto: obj.texto
                 });
             })
             .catch((error) => {
@@ -57,7 +63,7 @@ const Navbar = () => {
 
     const handleSaveClick = () => {
         if (editItemId) {
-            fetch(`http://localhost:3001/pgmenugb/${editItemId}`, {
+            fetch('/db.json', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -65,7 +71,9 @@ const Navbar = () => {
                 body: JSON.stringify(formData),
             })
                 .then((response) => response.json())
-                .then((data) => {
+                .then((json) => {
+                    const data: any[] = json.pgmenugb;
+                    const obj = data.find(x => x.id == editItemId);   
                     console.log('Datos actualizados:', data);
                 })
                 .catch((error) => {
@@ -73,7 +81,7 @@ const Navbar = () => {
                 });
             setEditItemId(null);
         } else {
-            fetch('http://localhost:3001/pgmenu', {
+            fetch('/db.json', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -81,7 +89,8 @@ const Navbar = () => {
                 body: JSON.stringify(formData),
             })
                 .then((response) => response.json())
-                .then((data) => {
+                .then((json) => {
+                    const data: any[] = json.pgmenugb;
                     console.log('Datos guardados:', data);
                 })
                 .catch((error) => {
@@ -165,7 +174,7 @@ const Navbar = () => {
                 <Row className="mb-5 m-1">
                     <Col xl={12} lg={12} md={12} xs={12}>
                         <Card>
-                            <Card.Header className=' fw-bold'>VISTA PREVIA DEL NAVBAR</Card.Header>
+                            <Card.Header className='fw-bold'>VISTA PREVIA DEL NAVBAR</Card.Header>
                             <Card.Body>
                                 <ul className="nav flex-column flex-sm-row justify-content-center bg-white p-2 overflow-auto">
                                     <div className="d-flex flex-nowrap align-items-center justify-content-center justify-content-lg-start">
@@ -190,16 +199,8 @@ const Navbar = () => {
                 <Row className="mb-8 m-1">
                     <Col xl={12} lg={12} md={12} xs={12}>
                         <Card>
-                            <Card.Header>
-                                <div className='row text-end'>
-                                    <div className='col-md-8 col-lg-8 col-xs-8'>
-                                        &nbsp;
-                                    </div>
-                                    <div className='col-md-4 col-lg-4 col-xs-4 '>
-                                        <input type='search' placeholder='Nueva busqueda' className='form-control' onChange={(event) => setSearchTerm(event.target.value)}></input>
-                                    </div>
-
-                                </div>
+                            <Card.Header className='fw-bold'>
+                               CONTROL DE LA INFORMACION
                             </Card.Header>
                             <Card.Body>
                                 <div className="mb-4 mb-lg-0">
@@ -213,7 +214,7 @@ const Navbar = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {filteredMenus.map((fila, index) => (
+                                            {datos.map((fila, index) => (
                                                 <tr key={fila.id}>
                                                     <td>{fila.id}</td>
                                                     <td>{fila.href}</td>

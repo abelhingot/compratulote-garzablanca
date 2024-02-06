@@ -15,9 +15,10 @@ export default function CUbicacion() {
     useEffect(() => {
         const verificador = window.location.pathname.split('/');
         const url = verificador[verificador.length - 1];
-        fetch('http://localhost:3001/serviciosES')
+        fetch('/db.json')
             .then(response => response.json())
-            .then(data => {
+            .then(json => {
+                const data: any[] = json.serviciosES;
                 const filtrado = data.filter(fila => fila.categoria === url);
                 setDatos(filtrado);
                 setUbicacion(url);
@@ -27,16 +28,19 @@ export default function CUbicacion() {
 
     const handleEnviarIdClick = (id) => {
         setEditItemId(id);
-        fetch(`http://localhost:3001/serviciosES/${id}`)
-            .then((response) => response.json())
-            .then((data) => {
-                setFormData({
-                    id: data.id,
-                    categoria: data.categoria,
-                    titulo: data.titulo,
-                    texto: data.texto,
-                    estado: data.estado,
-                    imagen: data.imagen
+        fetch(`/db.json`)
+        .then((response) => response.json())
+        .then((json) => {
+            const data: any[] = json.serviciosES;
+
+            const obj = data.find(x => x.id == id);
+            setFormData({
+                id: obj.id,
+                categoria: obj.categoria,
+                titulo: obj.titulo,
+                texto: obj.texto,
+                estado: obj.estado,
+                imagen: obj.imagen
                 });
             })
             .catch((error) => {
@@ -46,10 +50,10 @@ export default function CUbicacion() {
     return (
         <>
             <div className="row mb-4">
-                <div className="col-md-7 col-lg-8">
+            <div className="col-md-7 col-lg-8">
                     <div className="container px-4 text-center">
                         <div className="row gx-5">
-                            <div className="accordion" id="accordionExample">
+                            <div className="accordion" >
                                 <div id="collapseOne" className="accordion-collapse collapse show"
                                     data-bs-parent="#accordionExample">
                                     <div className="row">
@@ -67,8 +71,6 @@ export default function CUbicacion() {
                                             </div>
                                         </div>
                                     </div>
-
-
                                 </div>
 
                             </div>
@@ -77,7 +79,7 @@ export default function CUbicacion() {
                 </div>
                 <div className="col-md-5 col-lg-4 p-4"><br />
                     <div className="no-left-top-shadow rounded-3 ">
-                        <div className="accordion " id="accordionExample">
+                        <div className="accordion ">
                             <div className="accordion-item border border-top-1 border-bottom-0 p-1"><br />
                                 {datos.map((fila, index) => (
                                     <h4 className="accordion-header" key={index}>

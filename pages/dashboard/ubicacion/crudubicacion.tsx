@@ -30,9 +30,10 @@ const Crudubicacion = () => {
     useEffect(() => {
         const verificador = window.location.pathname.split('/');
         const url = verificador[verificador.length - 1];
-        fetch('http://localhost:3001/serviciosES')
+        fetch('/db.json')
             .then(response => response.json())
-            .then(data => {
+            .then(json => {
+                const data: any[] = json.serviciosES;
                 const filtrado = data.filter(fila => fila.categoria === url);
                 setDatos(filtrado);
                 setUbicacion(url);
@@ -55,16 +56,19 @@ const Crudubicacion = () => {
         setEditItemId(id);
         setLgShow(true);
 
-        fetch(`http://localhost:3001/serviciosES/${id}`)
+        fetch('/db.json')
             .then((response) => response.json())
-            .then((data) => {
+            .then((json) => {
+                const data: any[] = json.serviciosES;
+
+                const obj = data.find(x => x.id == id);
                 setFormData({
-                    id: data.id,
-                    categoria: data.categoria,
-                    titulo: data.titulo,
-                    texto: data.texto,
-                    estado: data.estado,
-                    imagen: data.imagen
+                    id: obj.id,
+                    categoria: obj.categoria,
+                    titulo: obj.titulo,
+                    texto: obj.texto,
+                    estado: obj.estado,
+                    imagen: obj.imagen
                 });
             })
             .catch((error) => {
@@ -73,16 +77,19 @@ const Crudubicacion = () => {
     };
     const handleEnviarIdClick = (id) => {
         setEditItemId(id);
-        fetch(`http://localhost:3001/serviciosES/${id}`)
+        fetch('/db.json')
             .then((response) => response.json())
-            .then((data) => {
+            .then((json) => {
+                const data: any[] = json.serviciosES;
+
+                const obj = data.find(x => x.id == id);
                 setFormData({
-                    id: data.id,
-                    categoria: data.categoria,
-                    titulo: data.titulo,
-                    texto: data.texto,
-                    estado: data.estado,
-                    imagen: data.imagen
+                    id: obj.id,
+                    categoria: obj.categoria,
+                    titulo: obj.titulo,
+                    texto: obj.texto,
+                    estado: obj.estado,
+                    imagen: obj.imagen
                 });
             })
             .catch((error) => {
@@ -233,7 +240,7 @@ const Crudubicacion = () => {
                                         <div className="accordion " id="accordionExample">
                                             <div className="accordion-item border border-top-1 border-bottom-0 p-1"><br />
                                                 {datos.map((fila, index) => (
-                                                    <h4 key={"datos"+index} className="accordion-header">
+                                                    <h4 className="accordion-header" key={index}>
                                                         <button
                                                             className="accordion-button-no-icon collapsed rounded-5 bg-body border-0 focus-ring focus-ring-light px-4"
                                                             type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
@@ -292,7 +299,7 @@ const Crudubicacion = () => {
                                     </thead>
                                     <tbody>
                                         {filteredMenus.map((fila, index) => (
-                                            <tr key={fila.id}>
+                                            <tr key={fila.id} >
                                                 <td>{fila.id}</td>
                                                 <td>{fila.categoria}</td>
                                                 <td>{fila.titulo}</td>

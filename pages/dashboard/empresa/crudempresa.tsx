@@ -103,6 +103,14 @@ const Crudempresa = () => {
         }
     };
 
+    const handleCleanClick = () => {
+        setTitle("");
+        setInsertText("");
+        setSelectedId("");
+        if (quill) {
+            quill.clipboard.dangerouslyPasteHTML(content);
+        }
+    }
     return (
         <>
             <Row className="mb-5 m-1 mt-3">
@@ -148,7 +156,7 @@ const Crudempresa = () => {
                         <Card.Body>
                             <div className='row'>
                                 <div className="container">
-                                    <form onSubmit={handleSubmit}>
+                                    <form>
                                         <Row className="mb-1">
                                             <div className="col-md-12 col-12">
                                                 <label htmlFor='title'>Identificador Único:</label>
@@ -156,11 +164,8 @@ const Crudempresa = () => {
                                             </div>
                                         </Row>
                                         <Row className="mb-3">
-                                            <div className="col-md-1 col-12">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-caret-right-fill cProyect" viewBox="0 0 16 16">
-                                                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"></path></svg>
-                                            </div>
-                                            <div className="col-md-11 col-12">
+
+                                            <div className="col-md-12 col-12">
                                                 <input type='text' placeholder='Escriba un título' className='p-2 bg-secondary text-light accordion-button rounded-2' id='value' value={title} onChange={handleChange}></input>
                                             </div>
                                         </Row>
@@ -172,9 +177,11 @@ const Crudempresa = () => {
                                             </div>
                                         </Row>
                                         <Row className="mb-3">
-                                            <div className="col-md-12 col-12 text-end">
-                                                <button className='btn btn-primary'>Guardar</button>
+                                            <div className="col-md-12 text-end">
+                                                <Button className='btn btn-primary m-1' type='submit' onClick={()=>handleSubmit}>Guardar</Button>
+                                                <Button className='btn btn-primary m-1' type='reset' onClick={()=>handleCleanClick()}>Limpiar</Button>
                                             </div>
+
                                         </Row>
                                     </form>
                                 </div>

@@ -24,16 +24,17 @@ export default function Videosinfo() {
 
     useEffect(() => {
         const verificador = window.location.pathname.split('/');
-        const rptAPI = verificador[verificador.length - 1];
-        fetch('http://localhost:3001/pginformacion')
-            .then(response => response.json())
-            .then(data => {
-                const filtrado = data.filter(fila => fila.categoria === rptAPI);
-                setDatos(filtrado);
-                setBanners(rptAPI);
-            })
-            .catch(error => console.error('Tenemos un error', error));
-    }, []);
+        const rptURL = verificador[verificador.length - 1];
+        fetch('/db.json')
+          .then(response => response.json())
+          .then(json => {
+            const data = json.pginformacion;
+            setDatos(data);
+            const filtrado = data.filter(fila => fila.categoria.toLowerCase() === "informacion");
+            setDatos(filtrado);        
+          })
+          .catch(error => console.error("Se encontró un error"))
+      }, []);
     return (
         <>
             {datos.map((item, index) => (<Row className='m-0 p-5' key={index}>

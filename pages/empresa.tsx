@@ -14,16 +14,12 @@ export default function EstructuraInicio() {
     const verificador = window.location.pathname.split('/');
     const rptAPI = verificador[verificador.length - 1];
 
-    fetch('http://localhost:3001/pgempresa')
+    fetch('/db.json')
       .then(response => response.json())
-      .then(data => setDatos(data))
-
-      /* {
-       const filtrado = data.filter(fila => fila.categoria === rptAPI);
-       setDatos(filtrado);
-       setBanners(rptAPI);
-     })*/
-
+      .then(json => {
+        const data: any[] = json.pgempresa;
+        setDatos(data);
+      })
       .catch(error => console.error('Tenemos un error', error));
   }, []);
 

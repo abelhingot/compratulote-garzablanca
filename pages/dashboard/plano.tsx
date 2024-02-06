@@ -38,7 +38,10 @@ const Plano = () => {
     useEffect(() => {
         fetch('http://localhost:3001/pgconfiplanobg')
             .then(response => response.json())
-            .then(data => setDatos(data))
+            .then(data => {
+                setDatos(data);
+            }
+            )
             .catch(error => console.error('Error al obtener datos:', error));
     }, []);
     const handleRegistrarClick = () => {

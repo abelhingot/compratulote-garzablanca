@@ -129,6 +129,16 @@ const Infoeditable = () => {
         }
     };
 
+    const handleCleanClick =()=>{
+        setRecurso1(null);
+        setRecurso2(null);
+        setInsertText("");
+        setTitle("");
+        setSelectedId("");
+        if (quill) {
+            quill.clipboard.dangerouslyPasteHTML(content);
+        }
+    }
     return (
         <>
             <Row className="m-1 mt-5">
@@ -184,7 +194,7 @@ const Infoeditable = () => {
                         <Card.Body>
                             <div className='row'>
                                 <div className="container">
-                                    <form onSubmit={handleSubmit}>
+                                    <form>
                                         <Row className="mb-1">
                                             <div className="col-md-12 col-12">
                                                 <label htmlFor='title'>Identificador Único:</label>
@@ -230,7 +240,8 @@ const Infoeditable = () => {
                                       
                                         <Row className="mb-3">
                                             <div className="col-md-12 col-12 text-end">
-                                                <button className='btn btn-primary'>Guardar</button>
+                                                <Button className='btn btn-primary m-1' type='submit' onClick={()=>handleSubmit}>Guardar</Button>
+                                                <Button className='btn btn-primary m-1' type='reset' onClick={()=>handleCleanClick()}>Limpiar</Button>
                                             </div>
                                         </Row>
                                     </form>

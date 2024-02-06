@@ -923,7 +923,45 @@ ol.breadcrumb {
     }
     
 }
+
+
 /////////////////////////////
 .imageContainer{
   overflow-x: auto;
+}
+
+////codigo top
+.space-between{
+    display: flex;
+   justify-content: space-between; 
+    width: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+  
+}
+
+.left-items {
+ justify-content: left;
+}
+
+.right-items {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 470px) {
+  .left-items {
+    margin: -2px;
+   }
+   
+   .right-items {
+    margin: -2px;
+   }
+}
+
+////
+
+.navbar-scrolled{
+  background-color: black; /* Cambia esto por el color que prefieras */
+  transition: background-color 0.3s; /* Opcional, para un cambio suave */
 }

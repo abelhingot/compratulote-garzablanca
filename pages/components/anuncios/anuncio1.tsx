@@ -13,7 +13,7 @@ export default function CAnuncio1() {
                       <i className="fe fe-phone"></i> 074-307092
                    </div>
                    <div className=" align-self-stretch col-sm-12 col-md-8">
-                      <Link href="/"><a>  <Image src="anuncio1.jpg" className="img-responsive img-fluid" alt=""/>  </a></Link>
+                     <Link href="/"><a > <Image src="anuncio1.jpg" className="img-responsive img-fluid" alt="Informacion"/>  </a></Link> 
                    </div>
                 </div>
              </div>
