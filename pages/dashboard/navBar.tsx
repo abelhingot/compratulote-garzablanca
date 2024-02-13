@@ -121,7 +121,7 @@ const Navbar = () => {
                     icon: "success"
                 });
                 fetch(`http://localhost:3001/pgmenugb/${id}`, {
-                    method: 'DELETE',
+                    method: 'DELETE',//{}
                     headers: {
                         'Content-Type': 'application/json',
                     },
