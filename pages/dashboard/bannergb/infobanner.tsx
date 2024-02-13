@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 const GBinfo = () => {
     const [datos, setDatos] = useState([]);
-    const [lgShow,setLgShow] = useState(false);
+   // const [lgShow,setLgShow] = useState(false);
     const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('');
     const [lgShow, setLgShow] = useState(false);
     const [formData, setFormData] = useState({

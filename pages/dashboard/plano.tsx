@@ -35,15 +35,19 @@ const Plano = () => {
     const filteredMenus = datos.filter((fila) =>
         (fila.id.toLowerCase().includes(searchTerm.toLowerCase())));
 
+
+
     useEffect(() => {
-        fetch('http://localhost:3001/pgconfiplanobg')
+        fetch('/db.json')
             .then(response => response.json())
-            .then(data => {
+            .then(json => {
+                const data: any[]=json.pgconfiplanobg;
                 setDatos(data);
-            }
-            )
+            })
             .catch(error => console.error('Error al obtener datos:', error));
-    }, []);
+        }, []);
+
+
     const handleRegistrarClick = () => {
         setLgShow(true)
         setFormData({

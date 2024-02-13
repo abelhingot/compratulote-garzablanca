@@ -10,6 +10,7 @@ const Textoeditable = () => {
     const [selectedId, setSelectedId] = useState('');
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
+    const [banners, setBanners] = useState('');
     const [insertText, setInsertText] = useState('');
     const { quill, quillRef } = useQuill({
         modules: {
@@ -66,15 +67,35 @@ const Textoeditable = () => {
         }
     };
 
-    useEffect(() => {
-        fetch('http://localhost:3001/pgtimeline')
+  /*  useEffect(() => {
+        const verificador = window.location.pathname.split('/');
+        const rp = verificador[verificador.length - 1];
+        fetch('/db.json')
             .then(response => response.json())
-            .then(data => setDatos(data))
-            .catch(error => console.error('Tenemos un error', error));
-    }, []);
+            .then(json => {
+                const data: any[] = json.pgtimeline;
+                const filtrado = data.filter(fila => fila.categoria === rp);
+                setDatos(filtrado);
+                setBanners(rp);
+            })
+            .catch(error => console.error('Error al obtener datos:', error));
+    }, []);*/
+
+
+useEffect(() => {
+    fetch('/db.json')
+        .then(response => response.json())
+        .then(json => {
+            const data: any[]=json.pgtimeline;
+            setDatos(data);
+        })
+        .catch(error => console.error('Error al obtener datos:', error));
+    }, []);
+
+
 
     const procesarContenidoQuill = (contenidoQuill) => {
-        return contenidoQuill;
+        return contenidoQuill
     };
     const handleDeleteClick = (id) => {
         fetch(`http://localhost:3001/pgtimeline/${id}`, {
@@ -115,7 +136,7 @@ const Textoeditable = () => {
         <>
             <Row className="mb-8 m-1">
                 <Col xl={12} lg={12} md={12} xs={12}>
-                    {datos.map((fila, index) => (
+                    {datos.map((fila, index) =>  (
                         <Card className='mb-3' key={index}>
                             <Card.Body>
                                 <div className='row'>
@@ -138,7 +159,7 @@ const Textoeditable = () => {
                                             <Accordion.Body>
                                                 <div className='row'>
                                                     {fila.content && (
-                                                         <div dangerouslySetInnerHTML={{ __html: fila.content }} className='image-row'/>
+                                                        <div dangerouslySetInnerHTML={{ __html: fila.content }} className='image-row'/>
                                                     )}
                                                 </div>
 
@@ -147,6 +168,7 @@ const Textoeditable = () => {
                                     </Accordion>
                                 </div>
                             </Card.Body>
+
                         </Card>))}
                 </Col>
             </Row>

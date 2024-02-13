@@ -27,11 +27,7 @@ export default function EstructuraInicio() {
 
     <Row className='bg-white m-0'>
       <Card className='p-0'>
-<<<<<<< HEAD
-        <CTop />
-=======
         <CTop  />
->>>>>>> 5ae2fafb59ba0d66a1a4b4a867e9158702c377d8
         <div className="x_content" >
           <CAdorno />
           <div className="container">
@@ -42,11 +38,7 @@ export default function EstructuraInicio() {
                 <div className='container'>
                   <div className='row'>
                     {datos.map((fila, index) => (
-<<<<<<< HEAD
-                      <Accordion key={"aco"+index}>
-=======
                       <Accordion key={index}>
->>>>>>> 5ae2fafb59ba0d66a1a4b4a867e9158702c377d8
                         <Accordion.Item eventKey="0" style={{ border: 'none', marginBottom: '10px' }}>
                           <Accordion.Header style={{ border: '1px solid lightgray', borderRadius: '7px', paddingTop: '3px', paddingBottom: '3px' }}>
                             <strong> {fila.title}</strong>

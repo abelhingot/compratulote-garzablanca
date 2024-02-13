@@ -15,12 +15,13 @@ const Detalleinfo = () => {
         setSeccionActiva(seccion);
     };
 
-    useEffect(() => {
-        fetch('http://localhost:3001/slider2')
+  /* useEffect(() => {
+        fetch('/db.json')
             .then(response => response.json())
             .then(data => setDatos(data))
             .catch(error => console.error('Error al obtener datos:', error));
-    }, []);
+    }, []);*/
+    
 
 
     return (
@@ -45,9 +46,8 @@ const Detalleinfo = () => {
                             {/* nav */}
 
                             <ul className="nav nav-lt-tab px-4" id="pills-tab" role="tablist">
-                               
-                                <li className="nav-item">
-                               <Link
+                            <li className="nav-item">
+                            <Link
                                         className={`nav-link ${seccionActiva === 'home' ? 'active' : ''}`}
                                         href="#"
                                         onClick={() => ocultarMantenimiento('home')}

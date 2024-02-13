@@ -29,7 +29,7 @@ export default function CNavbar({ pagenav = "" }) {
                     {datos.map((fila, index) => (
                         <li key={index} className="nav-item fw-bold">
                             {fila.texto === 'Logo' ? (
-                                <Image src={fila.href} alt="Logo" style={{ zoom: '0.5' }} />
+                                <Image src={fila.href} alt="Logo" style={{ zoom: '0.3' }} />
                             ) : (
                                 <a className={`nav-link custom-sombra fs-4 ${selMenu.toLowerCase() === fila.texto.toLowerCase() ? 'text-light active bgProyect mx-2 rounded-5' : 'text-dark'}`} href={fila.href ? `../${fila.href}` : undefined}>
                                     {fila.texto}

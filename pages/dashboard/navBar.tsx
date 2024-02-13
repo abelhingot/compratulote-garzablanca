@@ -42,28 +42,25 @@ const Navbar = () => {
     const handleEditClick = (id) => {
         setEditItemId(id);
         setLgShow(true);
-
-        fetch('/db.json')
+    
+        fetch(`http://localhost:3001/pgmenugb/${id}`)
             .then((response) => response.json())
-            .then((json) => {
-                const data: any[] = json.pgmenugb;
-
-            const obj = data.find(x => x.id == id);
+            .then((data) => {
                 setFormData({
-                    id: obj.id,
-                    href: obj.href,
-                    categoria: obj.categoria,
-                    texto: obj.texto
+                    id: data.id,
+                    href: data.href,
+                    categoria: data.categoria,
+                    texto: data.texto
                 });
             })
             .catch((error) => {
                 console.error('Error al obtener datos para editar:', error);
-            });
+            });
     };
 
     const handleSaveClick = () => {
         if (editItemId) {
-            fetch('/db.json', {
+            fetch(`http://localhost:3001/pgmenugb/${editItemId}`, { // Corrección aquí
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -71,17 +68,16 @@ const Navbar = () => {
                 body: JSON.stringify(formData),
             })
                 .then((response) => response.json())
-                .then((json) => {
-                    const data: any[] = json.pgmenugb;
-                    const obj = data.find(x => x.id == editItemId);   
+                .then((data) => {
                     console.log('Datos actualizados:', data);
+                    // Aquí deberías también actualizar tu estado local o refrescar los datos mostrados si es necesario
                 })
                 .catch((error) => {
                     console.error('Error al actualizar datos:', error);
                 });
             setEditItemId(null);
         } else {
-            fetch('/db.json', {
+            fetch('http://localhost:3001/pgmenugb', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -89,15 +85,15 @@ const Navbar = () => {
                 body: JSON.stringify(formData),
             })
                 .then((response) => response.json())
-                .then((json) => {
-                    const data: any[] = json.pgmenugb;
+                .then((data) => {
                     console.log('Datos guardados:', data);
+                    // Similarmente, actualiza el estado local o refresca los datos aquí si es necesario
                 })
                 .catch((error) => {
                     console.error('Error al guardar datos:', error);
                 });
-        }
-    };
+        }
+    };
 
     const handleDeleteClick = (id) => {
         setIdToDelete(id);
@@ -134,7 +130,7 @@ const Navbar = () => {
                     .then((response) => response.json())
                     .then((data) => {
                         console.log('Datos guardados:', data);
-                        fetch('http://localhost:3001/pgmenugb')
+                        fetch(`http://localhost:3001/pgmenugb`)
                             .then((response) => response.json())
                             .then((menusData) => {
                                 setDatos(menusData);

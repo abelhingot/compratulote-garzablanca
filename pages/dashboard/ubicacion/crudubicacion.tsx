@@ -10,6 +10,7 @@ const Crudubicacion = () => {
     const [idToDelete, setIdToDelete] = useState(null);
     const [editItemId, setEditItemId] = useState(null);
     const [searchTerm, setSearchTerm] = useState("");
+    const [videoVisible, setVideoVisible] = useState(false);
     const [formData, setFormData] = useState({
         id: '',
         categoria: '',
@@ -26,6 +27,11 @@ const Crudubicacion = () => {
     };
     const filteredMenus = datos.filter((fila) =>
         (fila.titulo.toLowerCase().includes(searchTerm.toLowerCase())));
+
+
+    useEffect(()=>{
+        setVideoVisible(true);
+    },[])
 
     useEffect(() => {
         const verificador = window.location.pathname.split('/');
@@ -75,6 +81,8 @@ const Crudubicacion = () => {
                 console.error('Error al obtener datos para editar:', error);
             });
     };
+    
+    
     const handleEnviarIdClick = (id) => {
         setEditItemId(id);
         fetch('/db.json')
@@ -96,6 +104,8 @@ const Crudubicacion = () => {
                 console.error('Error al obtener datos para editar:', error);
             });
     }
+
+
     const handleSaveClick = () => {
         if (editItemId) {
             fetch(`http://localhost:3001/serviciosES/${editItemId}`, {

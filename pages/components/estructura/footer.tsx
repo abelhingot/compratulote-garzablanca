@@ -5,7 +5,7 @@ export default function CFooter(props: any) {
       <>
             <footer className="bg-dark text-light text-center py-3">
                <div className="container">
-                  <p>Copyright &copy; 2023 Los Arrecifes de Mórrope | Desarrollado por Compratulote.pe</p>
+           <p>&copy; Desarrollado por Compratulote.pe</p> 
                </div>
             </footer>
             <div>

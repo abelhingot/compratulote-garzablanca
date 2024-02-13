@@ -248,7 +248,7 @@ const Servicioeditable = () => {
 
                                             <div className="col-md-4 col-4">
                                                 <label htmlFor='title'>Categoria:</label>
-                                                <input type='text' className='form-control' id='categoria' disabled value={categoria} onChange={handleChange}></input>
+                                                <input type='text' className='form-control' id='categoria'  value={categoria} onChange={handleChange}></input>
                                             </div>
                                         </Row>
                                         <Row className="mb-3">

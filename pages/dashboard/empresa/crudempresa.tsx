@@ -67,11 +67,14 @@ const Crudempresa = () => {
     };
 
     useEffect(() => {
-        fetch('http://localhost:3001/pgempresa')
+        fetch('/db.json')
             .then(response => response.json())
-            .then(data => setDatos(data))
-            .catch(error => console.error('Tenemos un error', error));
-    }, []);
+            .then(json => {
+                const data: any[] = json.pgempresa;
+                setDatos(data);}
+                )
+            .catch(error => console.error('Error al obtener datos:', error));
+    }, []);
 
     const procesarContenidoQuill = (contenidoQuill) => {
         return contenidoQuill;

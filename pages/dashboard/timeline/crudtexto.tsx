@@ -66,11 +66,11 @@ const Crudtexto = () => {
         }
     };
 
-    useEffect(() => {
+ /*   useEffect(() => {
         const verificador = window.location.pathname.split('/');
         const rptAPI = verificador[verificador.length - 1];
 
-        fetch('http://localhost:3001/pginformacion')
+        fetch('/db.json')
             .then(response => response.json())
             .then(data => {
                 const filtrado = data.filter(fila => fila.categoria === rptAPI);
@@ -78,13 +78,34 @@ const Crudtexto = () => {
                 setBanners(rptAPI);
             })
             .catch(error => console.error('Tenemos un error', error));
-    }, []);
+    }, []);*/
+
+    useEffect(() => {
+        const verificador = window.location.pathname.split('/');
+        const rptAPI = verificador[verificador.length - 1];
+    
+        fetch('/db.json')
+        .then(response => response.json())
+        .then(json => {
+            const data: any[] = json.pginformacionvs;
+            const filtrado = data.filter(fila => fila.categoria === rptAPI);
+            setDatos(filtrado);
+        })
+        .catch(error => console.error('Tenemos un error', error));
+      }, []);
+
+ //con este estaba bien
+
+
+
+
 
     const procesarContenidoQuill = (contenidoQuill) => {
         return contenidoQuill;
     };
     const handleDeleteClick = (id) => {
-        fetch(`http://localhost:3001/pginformacion/${id}`, {
+       fetch(`http://localhost:3001/pginformacion/${id}`, {
+        
             method: 'DELETE',
         })
             .then(response => {

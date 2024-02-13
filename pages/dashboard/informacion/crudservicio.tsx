@@ -101,7 +101,7 @@ const CrudServicio = () => {
         }
     };
 
-    const handleDeleteClick = (id) => {
+   const handleDeleteClick = (id) => {
         setIdToDelete(id);
 
         const swalWithBootstrapButtons = Swal.mixin({
@@ -131,7 +131,7 @@ const CrudServicio = () => {
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify(formData),
+                   // body: JSON.stringify(formData),
                 })
                     .then((response) => response.json())
                     .then((data) => {
@@ -161,6 +161,7 @@ const CrudServicio = () => {
 
     };
 
+
     const handleCleanClick=()=>{
         setFormData({
             id: "",
@@ -172,6 +173,14 @@ const CrudServicio = () => {
 
         });
     }
+
+
+
+
+    
+    
+
+    
     return (
         <>
 
@@ -295,4 +304,4 @@ const CrudServicio = () => {
     )
 }
 
-export default CrudServicio
+export default CrudServicio;
