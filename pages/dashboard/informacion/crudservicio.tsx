@@ -66,40 +66,32 @@ const CrudServicio = () => {
     };
 
     const handleSaveClick = () => {
-        if (editItemId) {
-            fetch(`http://localhost:3001/serviciosES/${editItemId}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log('Datos actualizados:', data);
-                })
-                .catch((error) => {
-                    console.error('Error al actualizar datos:', error);
-                });
-
-            setEditItemId(null);
-        } else {
-            fetch('http://localhost:3001/serviciosES', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log('Datos guardados:', data);
-                })
-                .catch((error) => {
-                    console.error('Error al guardar datos:', error);
-                });
-        }
+        const url = editItemId ? `http://localhost:3001/serviciosES/${editItemId}` : 'http://localhost:3001/serviciosES';
+        const method = editItemId ? 'PUT' : 'POST';
+    
+        fetch(url, {
+            method: method,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Datos guardados o actualizados:', data);
+            if(editItemId) {
+                // Es una actualización, reemplaza el elemento actualizado en el estado
+                setDatos(datos.map(item => item.id === editItemId ? data : item));
+            } else {
+                // Es un nuevo elemento, añádelo al estado
+                setDatos(prevDatos => [...prevDatos, data]);
+            }
+            setLgShow(false); // Cierra el modal
+            setEditItemId(null); // Resetea el ID de edición
+            handleCleanClick(); // Limpia el formulario
+        });
     };
+    
 
     const handleDeleteClick = (id) => {
         setIdToDelete(id);
@@ -276,7 +268,8 @@ const CrudServicio = () => {
                                     <Row className="mb-3 text-end">
 
                                         <Col md={12} xs={12}>
-                                            <Button className="btn btn-primary" type="submit" onClick={() => handleSaveClick()}>GUARDAR</Button>
+                                            <Button className="btn btn-primary" onClick={(e) => handleSaveClick()}>GUARDAR</Button>
+
                                             &nbsp;
                                             <Button className="btn btn-primary" type="reset" onClick={()=>handleCleanClick()}>LIMPIAR</Button>
                                         </Col>

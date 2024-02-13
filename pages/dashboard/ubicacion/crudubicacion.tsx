@@ -90,40 +90,37 @@ const Crudubicacion = () => {
                 console.error('Error al obtener datos para editar:', error);
             });
     }
-    const handleSaveClick = () => {
-        if (editItemId) {
-            fetch(`http://localhost:3001/serviciosES/${editItemId}`, {
-                method: 'PUT',
+    const handleSaveClick = async () => {
+        const url = editItemId ? `http://localhost:3001/serviciosES/${editItemId}` : 'http://localhost:3001/serviciosES';
+        const method = editItemId ? 'PUT' : 'POST';
+    
+        try {
+            const response = await fetch(url, {
+                method: method,
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(formData),
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log('Datos actualizados:', data);
-                })
-                .catch((error) => {
-                    console.error('Error al actualizar datos:', error);
-                });
+            });
+            const data = await response.json();
+    
+            if (editItemId) {
+                // Actualizar el estado con el elemento editado
+                setDatos(datos.map(item => item.id === editItemId ? data : item));
+            } else {
+                // Añadir el nuevo elemento al estado
+                setDatos([...datos, data]);
+            }
+    
+            // Cierra el modal y limpia el formulario
+            setLgShow(false);
             setEditItemId(null);
-        } else {
-            fetch('http://localhost:3001/serviciosES', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log('Datos guardados:', data);
-                })
-                .catch((error) => {
-                    console.error('Error al guardar datos:', error);
-                });
+            handleClearClick(); // Asumiendo que esta función resetea formData
+        } catch (error) {
+            console.error('Error al guardar o actualizar datos:', error);
         }
     };
+    
     const handleDeleteClick = (id) => {
         setIdToDelete(id);
 

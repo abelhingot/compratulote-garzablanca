@@ -57,40 +57,39 @@ const GBbanner = () => {
             });
     };
 
-    const handleSaveClick = () => {
-        if (editItemId) {
-            fetch(`http://localhost:3001/pgbannervs/${editItemId}`, {
-                method: 'PUT',
+    const handleSaveClick = async (event) => {
+        event.preventDefault(); // Si el botón está dentro de un <form>
+    
+        const url = editItemId ? `http://localhost:3001/pgbannervs/${editItemId}` : 'http://localhost:3001/pgbannervs';
+        const method = editItemId ? 'PUT' : 'POST';
+    
+        try {
+            const response = await fetch(url, {
+                method: method,
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(formData),
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log('Datos actualizados:', data);
-                })
-                .catch((error) => {
-                    console.error('Error al actualizar datos:', error);
-                });
+            });
+            const data = await response.json();
+            console.log('Datos guardados o actualizados:', data);
+    
+            // Actualizar el estado de datos aquí
+            if (editItemId) {
+                setDatos(datos.map(item => (item.id === editItemId ? data : item)));
+            } else {
+                setDatos([...datos, data]); // Suponiendo que `data` es el objeto recién creado
+            }
+    
+            // Limpia el formulario o cierra el modal aquí si es necesario
             setEditItemId(null);
-        } else {
-            fetch('http://localhost:3001/pgbannervs', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log('Datos guardados:', data);
-                })
-                .catch((error) => {
-                    console.error('Error al guardar datos:', error);
-                });
+            setLgShow(false);
+    
+        } catch (error) {
+            console.error('Error al guardar o actualizar datos:', error);
         }
     };
+    
 
     const handleDeleteClick = (id) => {
         setIdToDelete(id);
@@ -269,7 +268,8 @@ const GBbanner = () => {
                                     </Row>
                                     <Row className="mb-3 text-end">
                                         <Col md={12} xs={12}>
-                                            <Button className="btn btn-primary" type="submit" onClick={() => handleSaveClick()}>GUARDAR</Button>
+                                        <Button className="btn btn-primary" onClick={(e) => handleSaveClick(e)}>GUARDAR</Button>
+
                                             &nbsp;
                                             <Button className="btn btn-primary" type="reset" onClick={() => handleClearText()}>LIMPIAR</Button>
                                         </Col>
