@@ -34,7 +34,7 @@ const Crudtexto = () => {
         e.preventDefault();
 
         try {
-            let apiUrl = 'http://localhost:3001/pginformacion';
+            let apiUrl = 'http://localhost:3001/pginformacionvs';
             let method = 'POST';
             if (selectedId) {
                 apiUrl += `/${selectedId}`;
@@ -54,7 +54,7 @@ const Crudtexto = () => {
 
             if (response.ok) {
                 console.log(`Información ${selectedId ? 'actualizada' : 'guardada'} con éxito.`);
-                fetch('http://localhost:3001/pginformacion')
+                fetch('http://localhost:3001/pginformacionvs')
                     .then(response => response.json())
                     .then(data => setDatos(data))
                     .catch(error => console.error('Error al obtener datos:', error));

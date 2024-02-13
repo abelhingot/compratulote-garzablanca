@@ -42,7 +42,7 @@ const GBinfo = () => {
                 <Col xl={12} lg={12} md={12} xs={12}>
                     <Card>
                         <Card.Body>
-                            <Card.Title as="h4">SELECCIONA UNA CATEGORIA</Card.Title>
+                            <Card.Title as="h4">SELECCIONA UNA CATEGORÍA</Card.Title>
                             <div className='col-md-6 col-6 mb-4'>
                                 <select className="form-select" id="floatingSelect" aria-label="Floating label select example"
                                     value={formData.categoria} onChange={(e) => handleInputChange('categoria', e.target.value)}>

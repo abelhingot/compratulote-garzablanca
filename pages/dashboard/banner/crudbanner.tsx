@@ -30,7 +30,7 @@ const GBbanner = () => {
             fetch('../../api/db.json')
                 .then(response => response.json())
                 .then(json => {
-                    const data: any[] = json.pgslidergb;
+                    const data: any[] = json.pgbannervs;
                     setDatos(data);}
                     )
                 .catch(error => console.error('Error al obtener datos:', error));

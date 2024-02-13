@@ -2,7 +2,7 @@ export default function CAdorno() {
 
   return (
     <>
-      <div>
+      {/*<div>
       <div className="container-fluid mb-2">
           <div className="button-bar">
             <div className="row text-center fw-bold d-flex flex-row">
@@ -12,7 +12,7 @@ export default function CAdorno() {
             </div>
           </div>
         </div>
-      </div>
+      </div>*/}
     </>
   )
 }

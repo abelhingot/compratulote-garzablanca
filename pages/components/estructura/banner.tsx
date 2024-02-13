@@ -38,10 +38,10 @@ export default function CBanner() {
                             </div>
                         </div>
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
+                    {/*<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
                         className="bi bi-play-circle-fill icono-reproducir" data-bs-toggle="modal" data-bs-target="#exampleModal" viewBox="0 0 16 16" onClick={() => setLgShow(true)}>
                         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
-                    </svg>
+            </svg>*/}
                     <Fragment>
                         <Modal size="xl" show={lgShow} onHide={() => setLgShow(false)} aria-labelledby="example-modal-sizes-title-lg" style={{ backgroundColor: 'black' }}>
                             <Modal.Header closeButton style={{ backgroundColor: 'lightgray' }}>  </Modal.Header>

@@ -33,7 +33,7 @@ const CrudServicio = () => {
             fetch('../../api/db.json')
                 .then(response => response.json())
                 .then(json => {
-                    const data: any[] = json.pgserviciosvs;
+                    const data: any[] = json.serviciosES;
                     const filtrado = data.filter(fila => fila.categoria === rptAPI);
                     setDatos(filtrado);
                     
