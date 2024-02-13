@@ -3,11 +3,7 @@ import CMenusTop from "../menus/menutop";
 import CAnimacion from "../slider/animacion";
 import {Image} from "react-bootstrap"
 import CTop1 from "./top1";
-<<<<<<< HEAD
-import {Image} from "react-bootstrap"
-=======
-import { Link } from "react-bootstrap-icons";
->>>>>>> 5ae2fafb59ba0d66a1a4b4a867e9158702c377d8
+//import { Link } from "react-bootstrap-icons";
 
 export default function CTopInterno(props:any) {
     const menu=props.menu||'inicio';
@@ -18,7 +14,7 @@ export default function CTopInterno(props:any) {
       <div className="container topbarlogo">
         <div className="row">
           <div className="text-center text-md-start col-sm-12 col-md-4">
-             <Link href="/"> <a title="logo"><Image src="/logo1.png" alt="Imagen Logo"/></a></Link>
+            <Link href="/"> <a title="logo"><Image src="/logo1.png" alt="Imagen Logo"/></a></Link>
           </div>
           <div className="text-center text-md-end col-sm-12 col-md-8 ">     
               <div className="row infocontact">
@@ -36,5 +32,5 @@ export default function CTopInterno(props:any) {
       <CAnimacion menu={menu==='clientes/auspiciadores'?'clientes':menu} />
     </div>
     </>
-   )
- }
+  )
+}

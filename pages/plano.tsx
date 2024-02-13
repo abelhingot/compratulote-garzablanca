@@ -121,8 +121,9 @@ export default function EstructuraInicio() {
             });
         };
 
-        canvas.addEventListener('click', handleClick);    return () => {            canvas.removeEventListener('click', handleClick);        };
-    }, [areas, drawAllAreas]);
+        canvas.addEventListener('click', handleClick);   
+        return () => {canvas.removeEventListener('click', handleClick);};
+    }, [areas,drawAllAreas,isCursorInArea]);
 
 
 
