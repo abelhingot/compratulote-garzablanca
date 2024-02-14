@@ -21,7 +21,7 @@ export default function CTop() {
             <div className="right-items">
                               
 
-               <li className="nav-item custom-redsocial" style={{ margin: '-2px' }}>
+               <li className="nav-item custom-redsocial" style={{ textAlign:'center',margin: ' 0 -3px' }}>
                   <a className="nav-link " aria-disabled="true"  href="https://www.facebook.com/garzablancacountryclub" target="_blank">
                   
                      <span className="rounded-circle align-items-center">
@@ -33,7 +33,7 @@ export default function CTop() {
                   </a>
                </li>
 
-               <li className="nav-item custom-redsocial" style={{ margin: '-2px' }}>
+               <li className="nav-item custom-redsocial" style={{ textAlign:'center',margin: '0 3px' }}>
                   <a className="nav-link text-light " aria-disabled="true" href="//www.instagram.com/procasanorteinmobiliaria/" target="_blank">
                      <span className="rounded-circle text-center">
                         <svg xmlns="http://www.w3.org/2000/svg" height="18" width="20" viewBox="0 0 448 512">

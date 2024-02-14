@@ -173,7 +173,7 @@ export default function EstructuraInicio() {
         if (cantidadInicial < 10000) {
             Swal.fire({
                 title: "Verificar el monto inicial",
-                text: "El monto mínimo inicial debe ser mayor",
+                text: "El monto mínimo inicial debe ser mayor a S/. 10,000",
                 icon: "warning",
                 confirmButtonColor: "#3292F7",
                 confirmButtonText: "Aceptar"
@@ -182,7 +182,7 @@ export default function EstructuraInicio() {
             if (pagoMensual < 1000) {
                 Swal.fire({
                     title: "Verificar el pago mensual",
-                    text: "El pago mensual debe ser mayor",
+                    text: "El pago mensual debe ser mayor a S/. 1,000",
                     icon: "warning",
                     confirmButtonColor: "#3292F7",
                     confirmButtonText: "Aceptar"
@@ -216,7 +216,7 @@ export default function EstructuraInicio() {
         if (cantidadInicialIntereses < 6000) {
             Swal.fire({
                 title: "Verificar el monto inicial",
-                text: "El monto mínimo inicial debe ser mayor",
+                text: "El monto mínimo inicial debe ser mayor a S/. 6000",
                 icon: "warning",
                 confirmButtonColor: "#3292F7",
                 confirmButtonText: "Aceptar"
@@ -259,7 +259,7 @@ export default function EstructuraInicio() {
                                         </div>
                                         <div className="col-md-3 text-center py-2">
                                             <span className=''>
-                                                <span className="rounded-circle p-2 border border-secondary bgGreen">
+                                                <span className="rounded-circle p-2 border border-secondary bgWhite">
                                                     <span className="p-2 " />
                                                 </span>
                                                 <span className="p-2">LOTES DISPONIBLES</span>
@@ -285,7 +285,7 @@ export default function EstructuraInicio() {
                 <Fragment>
                     <Modal size="xl" show={lgShow} onHide={() => setLgShow(false)} aria-labelledby="example-modal-sizes-title-lg" style={{ backgroundColor: 'rgba(255,255,255,0.5)' }}>
                         <Modal.Header closeButton className='bgProyect'>
-                            <h3 className='fw-bold'> Estado del lote: <span className='text-light'>{formData.estado}</span></h3>
+                            <h3 className='fw-bold' style={{color:'white'}}> Estado del lote: <span className='text-light'>{formData.estado}</span></h3>
                         </Modal.Header>
                         <Modal.Body style={{ height: '80vh', borderLeft: '2px solid #3292F7', borderRight: '2px solid #3292F7', borderBottom: '2px solid #3292F7', borderBottomRightRadius: '5px', borderBottomLeftRadius: '5px' }}>
 
@@ -315,7 +315,7 @@ export default function EstructuraInicio() {
                                             <div className="col p-1">
                                                 {formData.areaLote}
                                             </div>
-                                            <div className="col bg-dark-subtle rounded p-1 fw-bold border border-secondary">
+                                            <div className="col bg-yellow rounded p-1 fw-bold border border-secondary" style={{ color: 'black',  fontSize: '19px' }}>
                                                 S/. {formData.precioFormato}
                                             </div>
 

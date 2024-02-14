@@ -31,7 +31,7 @@ const Navbar = () => {
         fetch('/db.json')
             .then(response => response.json())
             .then(json => {
-                const data: any[] = json.pgmenugb;
+                const data: [] = json.pgmenugb;
                 setDatos(data);
             })
             .catch(error => console.error('Error al obtener datos:', error));
@@ -42,26 +42,36 @@ const Navbar = () => {
     const handleEditClick = (id: any) => {
         setEditItemId(id);
         setLgShow(true);
-    
-        fetch(`http://localhost:3001/pgmenugb/${id}`)
-            .then((response) => response.json())
-            .then((datos) => {
-             //  console.log(data)
-                setFormData({
-                    id: datos.id,
-                    href: datos.href,
-                    categoria: datos.categoria,
-                    texto: datos.texto
-                });
-            })
-            .catch((error) => {
-                console.error('Error al obtener datos para editar:', error);
-            });
+
+        const menuItem = datos.find(item => item.id === id);
+        if (menuItem) {
+            setFormData({
+                id: menuItem.id,
+                href: menuItem.href,
+                categoria: menuItem.categoria,
+                texto: menuItem.texto
+            });
+        } else {
+            console.error('Error: No se encontró el elemento con el ID especificado');
+        }
+    //     fetch(`http://localhost:3000/pgmenugb/${id}`)
+    //         .then((response) => response.json())    
+    //         .then((datos) => {
+    //             setFormData({
+    //                 id: datos.id,
+    //                 href: datos.href,
+    //                 categoria: datos.categoria,
+    //                 texto: datos.texto
+    //             });
+    //         })
+    //         .catch((error) => {
+    //             console.error('Error al obtener datos para editar:', error);
+    //         });
     };
 
     const handleSaveClick = () => {
         if (editItemId) {
-            fetch(`http://localhost:3001/pgmenugb/${editItemId}`, { // Corrección aquí
+            fetch(`http://localhost:3000/pgmenugb/${editItemId}`, { // Corrección aquí
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -78,7 +88,7 @@ const Navbar = () => {
                 });
             setEditItemId(null);
         } else {
-            fetch('http://localhost:3001/pgmenugb', {
+            fetch('http://localhost:3000/pgmenugb', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
