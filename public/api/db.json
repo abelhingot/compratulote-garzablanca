@@ -627,9 +627,9 @@
     {
       "id": "16",
       "categoria": "ubicacion",
-      "titulo": "Villa Sipán",
+      "titulo": "Villa Sipán - video referencial",
       "texto": "El siguiente video brinda una visión anticipada de lo que está por construirse.",
-      "estado": "Dato Ubicación 01",
+      "estado": "Video referencial",
       "imagen": "https://www.youtube.com/embed/q6IzqXFS-68?si=qsQoxSYXmuglYY9o"
     },
     {
@@ -637,7 +637,7 @@
       "categoria": "ubicacion",
       "titulo": "Vista Aérea",
       "texto": "El siguiente video muestra un pequeño recorrido por Villa Sipán.",
-      "estado": "Dato Ubicación 02",
+      "estado": "Vista Aérea",
       "imagen": "https://www.youtube.com/embed/qGAI16fmpWY?si=yZHOc6F99R5a93cO"
     },
     {
@@ -4281,7 +4281,7 @@
   "pginformacionvs": [
     {
       "id": "1",
-      "content": "<p class=\"ql-align-justify\">Club <span style=\"background-color: transparent;\">Privado Villa Sipán, un proyecto residencial exclusivo y privado, garantizando total seguridad gracias a su cerco perimétrico de concreto. Con todas las obras finalizadas, este proyecto permite comenzar la construcción de su hogar de forma inmediata, brindándole la oportunidad de materializar su visión sin demora. Ubicado estrátegicamente, Villa Sipán se sitúa en una zona exclusiva, a espaldas de la Universidad Señor de Sipán y al lado de la urbanización La Ensenada. Ofrecemos lotes disponibles desde </span>90m²&nbsp;y opciones más amplias de 120m². Además, reafirmamos nuestro compromiso con la seguridad jurídica al entregar cada lote con Título de Propiedad registrado en Registros Públicos (SUNARP) de manera INMEDIATA y a sola firma<span style=\"color: var(--bs-card-color); background-color: transparent;\">. </span></p><ul><li>Ofrecemos los siguientes servicios básicos:</li></ul>",
+      "content": "<p class=\"ql-align-justify\"> <span style=\"background-color: transparent;\">Club Privado Villa Sipán, un proyecto residencial exclusivo y privado, garantizando total seguridad gracias a su cerco perimétrico de concreto. Con todas las obras finalizadas, este proyecto permite comenzar la construcción de su hogar de forma inmediata, brindándole la oportunidad de materializar su visión sin demora. Ubicado estrátegicamente, Villa Sipán se sitúa en una zona exclusiva, a espaldas de la Universidad Señor de Sipán y al lado de la urbanización La Ensenada. Ofrecemos lotes disponibles desde </span>90m²&nbsp;y opciones más amplias de 120m². Además, reafirmamos nuestro compromiso con la seguridad jurídica al entregar cada lote con Título de Propiedad registrado en Registros Públicos (SUNARP) de manera INMEDIATA y a sola firma<span style=\"color: var(--bs-card-color); background-color: transparent;\">. </span></p><ul><li>Ofrecemos los siguientes servicios básicos:</li></ul>",
       "recurso1": "/images/icons/imagen1vs.jpg,/images/icons/imagen2vs.png,/images/icons/imagen3vs.png",
       "recurso2": "https://drive.google.com/file/d/1b64Shp9da4q5K4sorIMvIRwfxLFzGbAB/preview",
       "categoria": "informacion",
@@ -4291,7 +4291,7 @@
       "id": "2",
       "title": "Luz",
       "categoria": "timeline",
-      "content": "Club Privado Villa Sipán, un proyecto residencial exclusivo y privado, garantizando total seguridad gracias a su cerco perimétrico de concreto. Con todas las obras finalizadas, este proyecto permite comenzar la construcción de su hogar de forma inmediata, brindándole la oportunidad de materializar su visión sin demora. Ubicado estrátegicamente, Villa Sipán se sitúa en una zona exclusiva, a espaldas de la Universidad Señor de Sipán y al lado de la urbanización La Ensenada.",
+      "content": "",
       "recurso1": "",
       "recurso2": ""
     },
@@ -4299,7 +4299,7 @@
       "id": "3",
       "title": "Luz",
       "categoria": "empresa",
-      "content": "¡Hola! Somos Villa Sipán, una inmobiliaria dedicada a la creación de entornos residenciales exclusivos en las zonas más exclusivas de Chiclayo, Lambayeque. Desde nuestra fundación en 2017, nos destacamos por ofrecer un nuevo estándar de vida a través de proyectos inmobiliarios innovadores. Nos enfocamos en diseñar espacios que integren la naturaleza, la seguridad y la tranquilidad, añadiendo valor a nuestros proyectos con áreas verdes, parques infantiles, piscinas y más.",
+      "content": "<p>¡Hola! Somos Procasa Norte, una inmobiliaria dedicada a la creación de entornos residenciales exclusivos en las zonas más exclusivas de Chiclayo, Lambayeque. Desde nuestra fundación en 2017, nos destacamos por ofrecer un nuevo estándar de vida a través de proyectos inmobiliarios innovadores. Nos enfocamos en diseñar espacios que integren la naturaleza, la seguridad y la tranquilidad, añadiendo valor a nuestros proyectos con áreas verdes, parques infantiles, piscinas y más.</p><p>Nuestros valores definen nuestro compromiso con el bienestar de la familia. Estamos aquí para ofrecerte lotes que se conviertan en el escenario perfecto para tus sueños y tu estilo de vida. ¡Bienvenidos a Procasa Norte!</p>",
       "recurso1": "",
       "recurso2": ""
     },
@@ -4326,12 +4326,12 @@
   "pgempresavs": [
     {
       "title": "Misión",
-      "content": "<p>Villa Sipán, un proyecto urbanístico de primera categoría donde la exclusividad se fusiona con la seguridad y la tranquilidad. Ofrecemos todos los servicios básicos como luz, agua, desagüe, además de veredas y pistas.</p><p>Ubicado estratégicamente en la zona más prestigiosa de Chiclayo, Garza Blanca se encuentra rodeado de urbanizaciones selectas y a pasos de la reconocida Universidad Señor de Sipán. Contamos con lotes disponibles a partir de 90m², 120m² y más.</p>",
+      "content": "<p>En Procasa Norte Chiclayo SAC, nos dedicamos a transformar la calidad de vivienda a través de nuestros proyectos inmobiliarios. Nuestro compromiso es ofrecer a cada familia un nuevo y exclusivo estándar de vida, creando entornos que integren la naturaleza, seguridad y tranquilidad, adaptados a los anhelos y necesidades de cada hogar.</p>",
       "id": "1"
     },
     {
       "title": "Visión",
-      "content": "<p>Nos proyectamos como líderes en el desarrollo inmobiliario de las zonas más exclusivas de Chiclayo, destacándonos por la excelencia en la creación de proyectos inmobiliarios modernos, con estándares de calidad superiores.</p><p>Aspiramos a ser reconocidos por nuestro compromiso con la innovación, la sostenibilidad y la satisfacción de nuestros clientes, convirtiendo a Procasa Norte Chiclayo SAC en sinónimo de hogares de prestigio y bienestar familiar.</p>",
+      "content": "<p>Nos proyectamos como líderes en el desarrollo inmobiliario de las zonas más exclusivas de Chiclayo, destacándonos por la excelencia en la creación de proyectos inmobiliarios modernos, con estándares de calidad superiores. Aspiramos a ser reconocidos por nuestro compromiso con la innovación, la sostenibilidad y la satisfacción de nuestros clientes, convirtiendo a Procasa Norte Chiclayo SAC en sinónimo de hogares de prestigio y bienestar familiar.</p>",
       "id": "2"
     }
   ],

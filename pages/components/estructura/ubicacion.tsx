@@ -20,6 +20,19 @@ export default function CUbicacion() {
             .then(json => {
                 const data: any[] = json.serviciosES;
                 const filtrado = data.filter(fila => fila.categoria === url);
+                if (filtrado.length > 0) {
+                    const primerResultado = filtrado[0];
+                    setFormData({
+                        id: primerResultado.id,
+                        categoria: primerResultado.categoria,
+                        titulo: primerResultado.titulo,
+                        texto: primerResultado.texto,
+                        estado: primerResultado.estado,
+                        imagen: primerResultado.imagen
+                    });
+                } else {
+                    console.error('No se encontraron datos para la categoría:', url);
+                }
                 setDatos(filtrado);
                 setUbicacion(url);
             })

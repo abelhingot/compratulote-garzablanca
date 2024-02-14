@@ -166,7 +166,7 @@ const Crudtexto = () => {
                                         </Row>
                                         <Row className="mb-3">
                                             <div className="col-md-12 col-12 text-end">
-                                                <Button className='btn btn-primary m-1' type='submit' onClick={()=>handleSubmit}>Guardar</Button>
+                                                <Button className='btn btn-primary m-1' type='button' onClick={(e) => handleSubmit(e)}>Guardar</Button>
                                                 <Button className='btn btn-primary m-1' type='reset' onClick={()=>handleCleanClick()}>Limpiar</Button>
                                             </div>
                                         </Row>

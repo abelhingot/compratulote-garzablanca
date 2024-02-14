@@ -10,8 +10,7 @@ export default function CAnuncio() {
       .then(response => response.json())
       .then(json => {
         const data = json.pginformacionvs;
-        setDatos(data);
-        const filtrado = data.filter(fila => fila.categoria.toLowerCase() === rptAPI);
+        const filtrado = rptAPI === '' ? data.filter(fila => fila.categoria.toLowerCase() === 'informacion') : data.filter(fila => fila.categoria.toLowerCase() === rptAPI);
         setDatos(filtrado);
       })
       .catch(error => console.error('Tenemos un error', error));
@@ -23,7 +22,8 @@ export default function CAnuncio() {
         <div key={index}>
           {fila.categoria === 'empresa' ? (
             <>
-              <p className="txt-jf" dangerouslySetInnerHTML={{ __html: fila.content }} /> <Row className="mb-1">
+              <p className="txt-jf" dangerouslySetInnerHTML={{ __html: fila.content }} /> 
+              <Row className="mb-1">
                 <div className="col-md-6 col-6">
                   <Image src={fila.recurso1} className='img-thumbnail rounded-4' alt='' />
                 </div>
@@ -33,11 +33,12 @@ export default function CAnuncio() {
                 </div>
               </Row>
             </>
-          ) : (
+          ) 
+          : (
             <Row className="mb-1"> 
             <p className="txt-jf" dangerouslySetInnerHTML={{ __html: fila.content }} />
            
-          </Row>
+            </Row>
           )}
 
         </div>
