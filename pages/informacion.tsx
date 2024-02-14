@@ -36,13 +36,15 @@ export default function Pinformacion() {
     fetch('/db.json')
       .then(response => response.json())
       .then(json => {
-        const data = json.serviciosES;
-        setDatos(data);
-        const filtrado = data.filter(fila => fila.categoria.toLowerCase() === "informacion");
+       const data = json.serviciosES;
+       setDatos(data);
+        const filtrado = data.filter(fila => fila.categoria.toLowerCase() === 'informacion');
         setDatos(filtrado);        
       })
       .catch(error => console.error("Se encontró un error"))
   }, []);
+
+
   return (
     <>
       <Row className='bg-white m-0'>
@@ -52,12 +54,13 @@ export default function Pinformacion() {
           <div className='m-0'>
             <div className="container" >
               <div className="row g-5 mb-3 py-4">
+                <CAnuncio/>
                 <div className="col-md-7 col-lg-8">
-                  <div>                        <p className="ql-align-justify\"><span>Garza Blanca Country Club, un proyecto urbanístico de primera categoría donde la exclusividad se fusiona con la seguridad y la tranquilidad. Ofrecemos todos los servicios básicos de luz, agua, desagüe, además de veredas y pistas. </span></p><p className="ql-align-justify\"></p>Ubicado estratégicamente en la zona más prestigiosa de Chiclayo, Garza Blanca se encuentra rodeado de urbanizaciones selectas y a pasos de la reconocida Universidad Señor de Sipán. Contamos con lotes disponibles a partir de 90m², 120m² y más.<p className="ql-align-justify\"><span >Además, seguridad jurídica garantizada, entregamos cada lote con Título de Propiedad inscrito en Registros Públicos (SUNARP) de forma INMEDIATA y a sola firma.</span></p><ul><li>Ofrecemos los siguientes servicios básicos:</li></ul></div>
-                  <div className="container text-center">
+                   <div className="container text-center">
                     <div className="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
                       {datos.map((fila, index) => (
                         <div className="col" key={index}>
+                          
                           <div className="p-3 rounded-4 custom-border-info" style={{ border: '2px solid #637391' }}>
                             <Image src={fila.imagen} alt='imagen' className="img-fluid custom-img-info" />
                           </div>

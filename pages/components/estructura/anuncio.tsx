@@ -3,7 +3,7 @@ import { Row, Image } from "react-bootstrap";
 export default function CAnuncio() {
   const [datos, setDatos] = useState([]);
   const [banners, setBanners] = useState('');
-  useEffect(() => {
+/*  useEffect(() => {
     const verificador = window.location.pathname.split('/');
     const rptAPI = verificador[verificador.length - 1];
     fetch('/db.json')
@@ -15,7 +15,22 @@ export default function CAnuncio() {
         setDatos(filtrado);
       })
       .catch(error => console.error('Tenemos un error', error));
+  }, []);*/
+
+  useEffect(() => {
+    const verificador = window.location.pathname.split('/');
+    const rptAPI = verificador[verificador.length - 1];
+    fetch('/db.json')
+      .then(response => response.json())
+      .then(json => {
+        const data = json.pginformacion;
+        const filtrado = rptAPI === '' ? data.filter(fila => fila.categoria.toLowerCase() === 'informacion') : data.filter(fila => fila.categoria.toLowerCase() === rptAPI);
+        setDatos(filtrado);
+      })
+      .catch(error => console.error('Tenemos un error', error));
   }, []);
+
+
   return (
     <>
       {datos.map((fila, index) => (

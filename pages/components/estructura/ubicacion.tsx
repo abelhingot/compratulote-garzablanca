@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 
 export default function CUbicacion() {
     const [datos, setDatos] = useState([]);
@@ -13,7 +13,7 @@ export default function CUbicacion() {
         estado: '',
         imagen: ''
     });
-    const [videoUrl, setVideoUrl] = useState('');
+
 
     useEffect(() => {
         const verificador = window.location.pathname.split('/');
@@ -24,12 +24,21 @@ export default function CUbicacion() {
                 const data: any[] = json.serviciosES;
                 const filtrado = data.filter(fila => fila.categoria === url);
                 if (filtrado.length > 0) {
-                const primerResultado = filtrado[0];   
-                const videoUrl= primerResultado.videoUrl;
-                setVideoUrl(videoUrl);
+                    const primerResultado = filtrado[0];
+                    setFormData({
+                        id: primerResultado.id,
+                        categoria: primerResultado.categoria,
+                        titulo: primerResultado.titulo,
+                        texto: primerResultado.texto,
+                        estado: primerResultado.estado,
+                        imagen: primerResultado.imagen
+                    });
+                } else {
+                    console.error('No se encontraron datos para la categoría:', url);
+                }
                 setDatos(filtrado);
                 setUbicacion(url);
-            }})
+            })
             .catch(error => console.error('Tenemos un error:', error));
     }, []);
 
@@ -74,7 +83,7 @@ export default function CUbicacion() {
                                     <div className="row">
                                         <div className="col-md-12 border borderProyect border-3 p-1">
                                             <div className="embed-responsive ratio ratio-16x9">
-                                                <iframe src={formData.imagen} className="w-100 h-100" style={{ border: 'none', borderRadius: 'inherit' }} allowFullScreen>
+                                                <iframe src={formData.imagen} className="w-100 h-10" style={{ border: 'none', borderRadius: 'inherit' }} allowFullScreen>
                                             
                                                 </iframe>
                                                 

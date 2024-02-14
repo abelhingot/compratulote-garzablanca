@@ -634,7 +634,7 @@
       "categoria": "ubicacion",
       "titulo": "Avances de la obra",
       "texto": "",
-      "estado": "Avances de la",
+      "estado": "Avances de la obra",
       "imagen": "https://drive.google.com/file/d/1lO-VSU3mVD0_K7kjX7CLuZmBttAyQEOs/preview"
     }
 
@@ -699,7 +699,7 @@
       "id": 2,
       "title": "Luz",
       "categoria": "timeline",
-      "content": "<p class=\"ql-align-justify\"><div style=\"text-align: justify;\"><span style=\"background-color: transparent;\">Texto para Timeline Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euis-mod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accum- san et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+      "content": "",
       "recurso1": "",
       "recurso2": ""
     },
