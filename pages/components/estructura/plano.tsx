@@ -76,7 +76,7 @@ export default function CPlano() {
         if (cantidadInicial < 10000) {
             Swal.fire({
                 title: "Verificar el monto inicial",
-                text: "El monto mínimo inicial debe ser mayor",
+                text: "El monto mínimo inicial debe ser mayor a S/. 10,000",
                 icon: "warning",
                 confirmButtonColor: "#3292F7",
                 confirmButtonText: "Aceptar"
@@ -85,7 +85,7 @@ export default function CPlano() {
             if (pagoMensual < 1000) {
                 Swal.fire({
                     title: "Verificar el pago mensual",
-                    text: "El pago mensual debe ser mayor",
+                    text: "El pago mensual debe ser mayor a S/. 1,000",
                     icon: "warning",
                     confirmButtonColor: "#3292F7",
                     confirmButtonText: "Aceptar"
@@ -119,7 +119,7 @@ export default function CPlano() {
         if (cantidadInicialIntereses < 6000) {
             Swal.fire({
                 title: "Verificar el monto inicial",
-                text: "El monto mínimo inicial debe ser mayor",
+                text: "El monto mínimo inicial debe ser mayor a S/. 6,000",
                 icon: "warning",
                 confirmButtonColor: "#3292F7",
                 confirmButtonText: "Aceptar"
@@ -187,7 +187,7 @@ export default function CPlano() {
                                     <div className="col p-1">
                                         {formData.areaLote}
                                     </div>
-                                    <div className="col bg-dark-subtle rounded p-1 fw-bold border border-secondary">
+                                    <div className="col bg-yellow rounded p-1 fw-bold border border-secondary" style={{ color: 'black',  fontSize: '19px' }}>
                                         S/. {formData.precioFormato}
                                     </div>
 
