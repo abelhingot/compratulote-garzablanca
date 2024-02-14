@@ -5,6 +5,7 @@ export default function CUbicacion() {
     const [ubicacion, setUbicacion] = useState('');
     const [editItemId, setEditItemId] = useState(null);
     const [formData, setFormData] = useState({
+    
         id: '',
         categoria: '',
         titulo: '',
@@ -12,6 +13,8 @@ export default function CUbicacion() {
         estado: '',
         imagen: ''
     });
+    const [videoUrl, setVideoUrl] = useState('');
+
     useEffect(() => {
         const verificador = window.location.pathname.split('/');
         const url = verificador[verificador.length - 1];
@@ -20,9 +23,13 @@ export default function CUbicacion() {
             .then(json => {
                 const data: any[] = json.serviciosES;
                 const filtrado = data.filter(fila => fila.categoria === url);
+                if (filtrado.length > 0) {
+                const primerResultado = filtrado[0];   
+                const videoUrl= primerResultado.videoUrl;
+                setVideoUrl(videoUrl);
                 setDatos(filtrado);
                 setUbicacion(url);
-            })
+            }})
             .catch(error => console.error('Tenemos un error:', error));
     }, []);
 
@@ -67,7 +74,10 @@ export default function CUbicacion() {
                                     <div className="row">
                                         <div className="col-md-12 border borderProyect border-3 p-1">
                                             <div className="embed-responsive ratio ratio-16x9">
-                                                <iframe src={formData.imagen} className="w-100 h-100" style={{ border: 'none', borderRadius: 'inherit' }} allowFullScreen></iframe>
+                                                <iframe src={formData.imagen} className="w-100 h-100" style={{ border: 'none', borderRadius: 'inherit' }} allowFullScreen>
+                                            
+                                                </iframe>
+                                                
                                             </div>
                                         </div>
                                     </div>

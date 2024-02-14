@@ -22,7 +22,7 @@ export default function CTop() {
                               
 
                <li className="nav-item custom-redsocial" style={{ margin: '-2px' }}>
-                  <a className="nav-link " aria-disabled="true"  href="https://www.facebook.com/profile.php?id=61552130754679" target="_blank">
+                  <a className="nav-link " aria-disabled="true"  href="https://www.facebook.com/garzablancacountryclub" target="_blank">
                   
                      <span className="rounded-circle align-items-center">
                      <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">

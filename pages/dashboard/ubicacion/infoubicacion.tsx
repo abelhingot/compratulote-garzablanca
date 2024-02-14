@@ -186,7 +186,7 @@ const Infoubicacion = () => {
                                         </Card.Title>
 
                                         <div className='col-md-12 col-12 border border-1 p-2 rounded rounded-2 mb-1' style={{ backgroundColor: '#F8F9FA' }}>
-                                           {fila.id}
+                                            {fila.id}
                                         </div>
                                         <div className='col-md-12 col-12 border border-1 p-2 rounded rounded-2 mb-1' style={{ backgroundColor: '#F8F9FA' }}>
                                             {fila.titulo}

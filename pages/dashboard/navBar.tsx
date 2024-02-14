@@ -39,18 +39,19 @@ const Navbar = () => {
 
 
 
-    const handleEditClick = (id) => {
+    const handleEditClick = (id: any) => {
         setEditItemId(id);
         setLgShow(true);
     
         fetch(`http://localhost:3001/pgmenugb/${id}`)
             .then((response) => response.json())
-            .then((data) => {
+            .then((datos) => {
+             //  console.log(data)
                 setFormData({
-                    id: data.id,
-                    href: data.href,
-                    categoria: data.categoria,
-                    texto: data.texto
+                    id: datos.id,
+                    href: datos.href,
+                    categoria: datos.categoria,
+                    texto: datos.texto
                 });
             })
             .catch((error) => {
