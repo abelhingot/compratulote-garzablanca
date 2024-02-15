@@ -87,7 +87,7 @@ const Crudtexto = () => {
         fetch('/db.json')
         .then(response => response.json())
         .then(json => {
-            const data: any[] = json.pginformacionvs;
+            const data: any[] = json.pginformacion;
             const filtrado = data.filter(fila => fila.categoria === rptAPI);
             setDatos(filtrado);
         })

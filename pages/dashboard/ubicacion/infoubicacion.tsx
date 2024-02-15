@@ -42,23 +42,19 @@ const Infoubicacion = () => {
     const handleEditClick = (id) => {
         setEditItemId(id);
         setLgShow(true);
-
-        fetch(`http://localhost:3001/pgubicaciongb/${id}`)
-            .then((response) => response.json())
-            .then((data) => {
-                setFormData({
-                    id: data.id,
-                    boton1: data.boton1,
-                    ruta1: data.ruta1,
-                    boton2: data.boton2,
-                    ruta2: data.ruta2,
-                    iframe: data.iframe,
-                    titulo: data.titulo
-                });
-            })
-            .catch((error) => {
-                console.error('Error al obtener datos para editar:', error);
-            });
+        let datat=datos.filter((fila)=>{
+            console.log(fila)
+            return fila.id==id;
+        })
+        setFormData({
+            id: datat[0].id,
+            boton1: datat[0].boton1,
+            ruta1: datat[0].ruta1,
+            boton2: datat[0].boton2,
+            ruta2: datat[0].ruta2,
+            iframe: datat[0].iframe,
+            titulo: datat[0].titulo
+        });
     };
 
     const handleSaveClick = () => {

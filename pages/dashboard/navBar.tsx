@@ -54,22 +54,9 @@ const Navbar = () => {
         } else {
             console.error('Error: No se encontró el elemento con el ID especificado');
         }
-    //     fetch(`http://localhost:3000/pgmenugb/${id}`)
-    //         .then((response) => response.json())    
-    //         .then((datos) => {
-    //             setFormData({
-    //                 id: datos.id,
-    //                 href: datos.href,
-    //                 categoria: datos.categoria,
-    //                 texto: datos.texto
-    //             });
-    //         })
-    //         .catch((error) => {
-    //             console.error('Error al obtener datos para editar:', error);
-    //         });
     };
 
-    const handleSaveClick = () => {
+   /* const handleSaveClick = () => {
         if (editItemId) {
             fetch(`http://localhost:3000/pgmenugb/${editItemId}`, { // Corrección aquí
                 method: 'PUT',
@@ -79,10 +66,13 @@ const Navbar = () => {
                 body: JSON.stringify(formData),
             })
                 .then((response) => response.json())
+                
                 .then((data) => {
+                    
                     console.log('Datos actualizados:', data);
                     // Aquí deberías también actualizar tu estado local o refrescar los datos mostrados si es necesario
                 })
+                
                 .catch((error) => {
                     console.error('Error al actualizar datos:', error);
                 });
@@ -97,16 +87,54 @@ const Navbar = () => {
             })
                 .then((response) => response.json())
                 .then((data) => {
+                
                     console.log('Datos guardados:', data);
                     // Similarmente, actualiza el estado local o refresca los datos aquí si es necesario
                 })
+               
                 .catch((error) => {
                     console.error('Error al guardar datos:', error);
                 });
         }
-    };
+    };*/
 
-    const handleDeleteClick = (id) => {
+const handleSaveClick = () => {
+    if (editItemId) {
+        // Actualizar datos localmente
+        const updatedData = datos.map(item => {
+            if (item.id === editItemId) {
+                return formData; // Actualizar el elemento con el mismo ID con los nuevos datos
+            } else {
+                return item; // Mantener los demás elementos sin cambios
+            }
+        });
+        
+        // Actualizar el estado con los datos actualizados
+        setDatos(updatedData);
+        setEditItemId(null); // Restablecer el ID de edición
+        
+        // Enviar los datos actualizados al servidor para guardar en la base de datos
+        fetch(`http://localhost:3001/pgmenugb/${editItemId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Datos actualizados en la base de datos:', data);
+            // Aquí puedes manejar la respuesta del servidor si es necesario
+        })
+        .catch(error => {
+            console.error('Error al actualizar datos en la base de datos:', error);
+        });
+    }
+};
+
+
+
+   const handleDeleteClick = (id) => {
         setIdToDelete(id);
 
         const swalWithBootstrapButtons = Swal.mixin({
@@ -166,6 +194,10 @@ const Navbar = () => {
 
     };
 
+
+
+    
+
     const handleClearText = () => {
         setFormData({
             id: '',
@@ -189,7 +221,11 @@ const Navbar = () => {
                                             <li key={index} className="nav-item fw-bold">
                                                 {fila.texto === 'Logo' ? (
                                                     <Image src={fila.href} alt="Logo" style={{ zoom: '0.5' }} />
-                                                ) : (
+                                                ) : fila.texto === 'LogoProcasa' ? (
+                                                    <>
+                                                        <Image src={fila.href} alt="LogoProcasa" style={{ margin: '10px',zoom: '0.012' }} />
+                                                    </>
+                                            ) :(
                                                     <a className={`nav-link custom-sombra fs-4 ${selMenu.toLowerCase() === fila.texto.toLowerCase() ? 'text-light active bgProyect mx-2 rounded-5' : 'text-dark'}`} href="#">
                                                         {fila.texto}
                                                     </a>

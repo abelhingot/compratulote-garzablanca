@@ -62,26 +62,19 @@ const Crudubicacion = () => {
         setEditItemId(id);
         setLgShow(true);
 
+        let datat=datos.filter((fila)=>{
+            console.log(fila)
+            return fila.id==id;
+        })
 
-    
-    fetch('/db.json')
-            .then((response) => response.json())
-            .then((json) => {
-                const data: any[] = json.serviciosES;
-
-                const obj = data.find(x => x.id == id);
-                setFormData({
-                    id: obj.id,
-                    categoria: obj.categoria,
-                    titulo: obj.titulo,
-                    texto: obj.texto,
-                    estado: obj.estado,
-                    imagen: obj.imagen
-                });
-            })
-            .catch((error) => {
-                console.error('Error al obtener datos para editar:', error);
-            });
+        setFormData({
+            id: datat[0].id,
+            categoria: datat[0].categoria,
+            titulo: datat[0].titulo,
+            texto: datat[0].texto,
+            estado: datat[0].estado,
+            imagen: datat[0].imagen
+        });
     };
     
     
