@@ -688,7 +688,7 @@
   "pginformacion": [
     {
       "id": 1,
-      "content": "<p class=\"ql-align-justify\"><span style=\"background-color: transparent;\">Garza Blanca Country Club, un proyecto urbanístico de primera categoría donde la exclusividad se fusiona con la seguridad y la tranquilidad. Ofrecemos todos los servicios básicos de luz, agua, desagüe, además de veredas y pistas. </span></p><p class=\"ql-align-justify\"><span style=\"background-color: transparent;\">Ubicado estratégicamente en la zona más prestigiosa de Chiclayo, Garza Blanca se encuentra rodeado de urbanizaciones selectas y a pasos de la reconocida Universidad Señor de Sipán. Contamos con lotes disponibles a partir de 90m², 120m² y más.</span></p><p class=\"ql-align-justify\"><span style=\"background-color: transparent;\">Además, seguridad jurídica garantizada, entregamos cada lote con Título de Propiedad inscrito en Registros Públicos (SUNARP) de forma INMEDIATA y a sola firma.</span></p><ul><li>Ofrecemos los siguientes servicios básicos:</li></ul>",
+      "content": "<p class=\"ql-align-justify\"><div style=\"text-align: justify;\"><span style=\"background-color: transparent;\">Garza Blanca Country Club, un proyecto urbanístico de primera categoría donde la exclusividad se fusiona con la seguridad y la tranquilidad. Ofrecemos todos los servicios básicos de luz, agua, desagüe, además de veredas y pistas. </span></p><p class=\"ql-align-justify\"><div style=\"text-align: justify;\"><span style=\"background-color: transparent;\">Ubicado estratégicamente en la zona más prestigiosa de Chiclayo, Garza Blanca se encuentra rodeado de urbanizaciones selectas y a pasos de la reconocida Universidad Señor de Sipán. Contamos con lotes disponibles a partir de 90m², 120m² y más.</span></p><p class=\"ql-align-justify\"><span style=\"background-color: transparent;\">Además, seguridad jurídica garantizada, entregamos cada lote con Título de Propiedad inscrito en Registros Públicos (SUNARP) de forma INMEDIATA y a sola firma.</span></p><div style=\"text-align: justify;\"><ul><li>Ofrecemos los siguientes servicios básicos:</li></ul>",
       "recurso1": "/images/icons/imagen1.png,/images/icons/imagen2.png,/images/icons/imagen3.png",
       "recurso2": "https://drive.google.com/file/d/12bUOKbp-6iwDHwLxaiSUWL6-hmVdIOSP/preview",
       
@@ -723,12 +723,12 @@
   "pgempresa": [
     {
       "title": "Misión",
-      "content": "<p><span style=\"background-color: transparent; color: rgb(0, 0, 0);\">En Procasa Norte Chiclayo SAC, nos dedicamos a transformar la calidad de vivienda a través de nuestros proyectos inmobiliarios. Nuestro compromiso es ofrecer a cada familia un nuevo y exclusivo estándar de vida, creando entornos que integren la naturaleza, seguridad y tranquilidad, adaptados a los anhelos y necesidades de cada hogar</span></p>",
+      "content": "<p><div style=\"text-align: justify;\"><span style=\"background-color: transparent; color: rgb(0, 0, 0);\">En Procasa Norte Chiclayo SAC, nos dedicamos a transformar la calidad de vivienda a través de nuestros proyectos inmobiliarios. Nuestro compromiso es ofrecer a cada familia un nuevo y exclusivo estándar de vida, creando entornos que integren la naturaleza, seguridad y tranquilidad, adaptados a los anhelos y necesidades de cada hogar</span></p>",
       "id": 1
     },
     {
       "title": "Visión",
-      "content": "<p><span style=\"color: rgb(0, 0, 0); background-color: transparent;\">Nos proyectamos como líderes en el desarrollo inmobiliario de las zonas más exclusivas de Chiclayo, destacándonos por la excelencia en la creación de proyectos inmobiliarios modernos, con estándares de calidad superiores. Aspiramos a ser reconocidos por nuestro compromiso con la innovación, la sostenibilidad y la satisfacción de nuestros clientes, convirtiendo a Procasa Norte Chiclayo SAC en sinónimo de hogares de prestigio y bienestar familiar</span></p>",
+      "content": "<p><div style=\"text-align: justify;\"><span style=\"color: rgb(0, 0, 0); background-color: transparent;\">Nos proyectamos como líderes en el desarrollo inmobiliario de las zonas más exclusivas de Chiclayo, destacándonos por la excelencia en la creación de proyectos inmobiliarios modernos, con estándares de calidad superiores. Aspiramos a ser reconocidos por nuestro compromiso con la innovación, la sostenibilidad y la satisfacción de nuestros clientes, convirtiendo a Procasa Norte Chiclayo SAC en sinónimo de hogares de prestigio y bienestar familiar</span></p>",
       "id": 2
     }
   ],
@@ -2778,7 +2778,7 @@
     },
     {
       "id": 7,
-      "href": "/images/icons/logogarza.jpg",
+      "href": "/images/icons/nuevologoprocasa.png",
       "texto": "LogoProcasa"
     }
 

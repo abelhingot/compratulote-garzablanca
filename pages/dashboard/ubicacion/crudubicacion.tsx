@@ -62,7 +62,9 @@ const Crudubicacion = () => {
         setEditItemId(id);
         setLgShow(true);
 
-        fetch('/db.json')
+
+    
+    fetch('/db.json')
             .then((response) => response.json())
             .then((json) => {
                 const data: any[] = json.serviciosES;

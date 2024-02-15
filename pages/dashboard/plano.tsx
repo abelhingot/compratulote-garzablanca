@@ -66,8 +66,24 @@ const Plano = () => {
     const handleEditClick = (id) => {
         setEditItemId(id);
         setLgShow(true);
+        let data=datos.filter((fila)=>{
+            console.log(id)
+            return fila.id==id;
+        })
 
-        fetch(`http://localhost:3001/pgconfiplanobg/${id}`)
+        setFormData({
+            id: data[0].id,
+            coordenadas: data[0].coordenadas,
+            color: data[0].color,
+            lote: data[0].lote,
+            manzana: data[0].manzana,
+            areaLote: data[0].areaLote,
+            referencia: data[0].referencia,
+            precio: data[0].precio,
+            estado: data[0].estado
+        });
+
+       /* fetch(`/db.json`)
             .then((response) => response.json())
             .then((data) => {
                 setFormData({
@@ -84,7 +100,7 @@ const Plano = () => {
             })
             .catch((error) => {
                 console.error('Error al obtener datos para editar:', error);
-            });
+            });*/
     };
 
     const handleSaveClick = () => {

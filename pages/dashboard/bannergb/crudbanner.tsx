@@ -39,6 +39,20 @@ const GBbanner = () => {
     const handleEditClick = (id) => {
         setEditItemId(id);
         setLgShow(true);
+        let datat=datos.filter((fila)=>{
+            console.log(fila)
+            return fila.id==id;
+        })
+        setFormData({
+            id: datat[0].id,
+            titulo: datat[0].titulo,
+            subtitulo: datat[0].subtitulo,
+            categoria: datat[0].categoria,
+            imagen: datat[0].imagen,
+            href: datat[0].href
+        });
+        /*console.log(id);
+        console.log(datat);
 
         fetch(`http://localhost:3001/pgslidergb/${id}`)
             .then((response) => response.json())
@@ -54,7 +68,7 @@ const GBbanner = () => {
             })
             .catch((error) => {
                 console.error('Error al obtener datos para editar:', error);
-            });
+            });*/
     };
 
     const handleSaveClick = () => {

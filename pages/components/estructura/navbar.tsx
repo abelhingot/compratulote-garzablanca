@@ -34,7 +34,7 @@ export default function CNavbar({ pagenav = "" }) {
                                 </>
                                 ): fila.texto === 'LogoProcasa' ? (
                                     <>
-                                        <Image src={fila.href} alt="LogoProcasa" style={{ margin: '10px',zoom: '0.45' }} />
+                                        <Image src={fila.href} alt="LogoProcasa" style={{ margin: '10px',zoom: '0.012' }} />
                                     </>
                             ) : (
                                 <a className={`nav-link custom-sombra fs-4 ${selMenu.toLowerCase() === fila.texto.toLowerCase() ? 'text-light active bgProyect mx-2 rounded-5' : 'text-dark'}`} href={fila.href ? `../${fila.href}` : undefined} style={{ margin: '0 10px' }}>

@@ -46,8 +46,20 @@ const CrudServicio = () => {
     const handleEditClick = (id) => {
         setEditItemId(id);
         setLgShow(true);
+        let data=datos.filter((fila)=>{
+            return fila.id==id;
+            })
+            setFormData({
+                id: data[0].id,
+                categoria: data[0].categoria,
+                titulo: data[0].titulo,
+                texto: data[0].texto,
+                imagen: data[0].imagen,
+                estado: data[0].estado
 
-        fetch(`http://localhost:3001/serviciosES/${id}`)
+            });
+
+       /* fetch(`http://localhost:3001/serviciosES/${id}`)
             .then((response) => response.json())
             .then((data) => {
                 setFormData({
@@ -62,7 +74,7 @@ const CrudServicio = () => {
             })
             .catch((error) => {
                 console.error('Error al obtener datos para editar:', error);
-            });
+            });*/
     };
 
     const handleSaveClick = () => {

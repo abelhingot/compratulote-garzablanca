@@ -54,8 +54,10 @@ export default function Pinformacion() {
           <div className='m-0'>
             <div className="container" >
               <div className="row g-5 mb-3 py-4">
-                <CAnuncio/>
+              
+                
                 <div className="col-md-7 col-lg-8">
+                <CAnuncio/>
                    <div className="container text-center">
                     <div className="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
                       {datos.map((fila, index) => (
@@ -70,6 +72,7 @@ export default function Pinformacion() {
                     </div>
                   </div>
                 </div>
+                
                 <CFormulario />
               </div>
             </div>
