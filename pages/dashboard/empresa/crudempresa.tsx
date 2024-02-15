@@ -21,12 +21,12 @@ const Crudempresa = () => {
         setTitle(e.target.value);
     };
 
-    const handleLinkClick = (id, content, insertText) => {
-        setTitle(insertText);
-        setInsertText(content);
-        setSelectedId(id);
+    const handleLinkClick = (fila) => {
+        setTitle(fila.title);
+        setInsertText(fila.content);
+        setSelectedId(fila.id);
         if (quill) {
-            quill.clipboard.dangerouslyPasteHTML(content);
+            quill.clipboard.dangerouslyPasteHTML(fila.content);
         }
     };
 
@@ -124,7 +124,7 @@ const Crudempresa = () => {
                                 <div className='row '>
                                     <Row className="mb-1 align-items-center justify-content-end">
                                         <div className="col-auto">
-                                            <button type="button" className='bg-white fa-lg text-primary border-0 rounded-3' onClick={() => handleLinkClick(fila.id, fila.content, fila.title)} ><i className='fe fe-edit fa-md'></i></button>
+                                            <button type="button" className='bg-white fa-lg text-primary border-0 rounded-3' onClick={() => handleLinkClick(fila)} ><i className='fe fe-edit fa-md'></i></button>
                                         </div>|
                                         <div className="col-auto">
                                             <button type="button" className='bg-white fa-lg text-danger border-0 rounded-3' onClick={() => confirmDelete(fila.id)}>
@@ -181,7 +181,7 @@ const Crudempresa = () => {
                                         </Row>
                                         <Row className="mb-3">
                                             <div className="col-md-12 text-end">
-                                                <Button className='btn btn-primary m-1' type='submit' onClick={()=>handleSubmit}>Guardar</Button>
+                                                <Button className='btn btn-primary m-1' type='submit' onClick={handleSubmit}>Guardar</Button>
                                                 <Button className='btn btn-primary m-1' type='reset' onClick={()=>handleCleanClick()}>Limpiar</Button>
                                             </div>
 

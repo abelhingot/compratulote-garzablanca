@@ -10,6 +10,7 @@ const Infoeditable = () => {
     const [selectedId, setSelectedId] = useState('');
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
+    const [categoria, setCategoria] = useState('');
     const [banners, setBanners] = useState('');
     const [insertText, setInsertText] = useState('');
     const [recurso1, setRecurso1] = useState();
@@ -38,10 +39,11 @@ const Infoeditable = () => {
         }
     };
 
-    const handleLinkClick = (id, content, recurso1, recurso2, title) => {
+    const handleLinkClick = (id, content, recurso1, recurso2, title, categoria) => {
         setRecurso1(recurso1);
         setRecurso2(recurso2);
         setInsertText(content);
+        setCategoria(categoria);
         setTitle(title);
         setSelectedId(id);
         if (quill) {
@@ -66,6 +68,9 @@ const Infoeditable = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
+                    recurso1 : recurso1,
+                    recurso2 : recurso2,
+                    categoria : categoria,
                     title: title,
                     content: quill.root.innerHTML,
                 }),
@@ -75,7 +80,10 @@ const Infoeditable = () => {
                 console.log(`Información ${selectedId ? 'actualizada' : 'guardada'} con éxito.`);
                 fetch('http://localhost:3001/pginformacionvs')
                     .then(response => response.json())
-                    .then(data => setDatos(data))
+                    .then(data => {
+                        const filtrado = data.filter(fila => fila.categoria === 'empresa'); // Aplica el filtro nuevamente
+                        setDatos(filtrado);
+                    })
                     .catch(error => console.error('Error al obtener datos:', error));
             } else {
                 console.error(`Error al ${selectedId ? 'actualizar' : 'guardar'} la información.`);
@@ -149,7 +157,7 @@ const Infoeditable = () => {
                                 <div className='row'>
                                     <Row className="mb-1 align-items-center justify-content-end">
                                         <div className="col-auto">
-                                            <button type="button" className='bg-white fa-lg text-primary border-0 rounded-3' onClick={() => handleLinkClick(fila.id, fila.content, fila.recurso1, fila.recurso2, fila.title)} ><i className='fe fe-edit fa-md'></i></button>
+                                            <button type="button" className='bg-white fa-lg text-primary border-0 rounded-3' onClick={() => handleLinkClick(fila.id, fila.content, fila.recurso1, fila.recurso2, fila.title, fila.categoria)} ><i className='fe fe-edit fa-md'></i></button>
                                         </div>|
                                         <div className="col-auto">
                                             <button type="button" className='bg-white fa-lg text-danger border-0 rounded-3' onClick={() => confirmDelete(fila.id)}>
@@ -240,7 +248,7 @@ const Infoeditable = () => {
                                       
                                         <Row className="mb-3">
                                             <div className="col-md-12 col-12 text-end">
-                                                <Button className='btn btn-primary m-1' type='submit' onClick={()=>handleSubmit}>Guardar</Button>
+                                                <Button className='btn btn-primary m-1' type='submit' onClick={handleSubmit}>Guardar</Button>
                                                 <Button className='btn btn-primary m-1' type='reset' onClick={()=>handleCleanClick()}>Limpiar</Button>
                                             </div>
                                         </Row>

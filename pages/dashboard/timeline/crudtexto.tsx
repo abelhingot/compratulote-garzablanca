@@ -9,6 +9,9 @@ const Crudtexto = () => {
     const [datos, setDatos] = useState([]);
     const [selectedId, setSelectedId] = useState('');
     const [title, setTitle] = useState('');
+    const [categoria, setCategoria] = useState('');
+    const [recurso1, setRecurso1] = useState('');
+    const [recurso2, setRecurso2] = useState('');
     const [content, setContent] = useState('');
     const [banners, setBanners] = useState('');
     const [insertText, setInsertText] = useState('');
@@ -22,11 +25,16 @@ const Crudtexto = () => {
         setTitle(e.target.value);
     };
 
-    const handleLinkClick = (id, content) => {
-        setInsertText(content);
-        setSelectedId(id);
+    const handleLinkClick = (e) => {
+        //setInsertText(content);
+        setSelectedId(e.id);
+        setCategoria(e.categoria);
+        setTitle(e.title);
+        setRecurso1(e.recurso1);
+        setRecurso2(e.recurso2)
+
         if (quill) {
-            quill.clipboard.dangerouslyPasteHTML(content);
+            quill.clipboard.dangerouslyPasteHTML(e.content);
         }
     };
 
@@ -47,6 +55,9 @@ const Crudtexto = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
+                    recurso1 : recurso1,
+                    recurso2 : recurso2,
+                    categoria : categoria,
                     title: title,
                     content: quill.root.innerHTML,
                 }),
@@ -56,7 +67,10 @@ const Crudtexto = () => {
                 console.log(`Información ${selectedId ? 'actualizada' : 'guardada'} con éxito.`);
                 fetch('http://localhost:3001/pginformacionvs')
                     .then(response => response.json())
-                    .then(data => setDatos(data))
+                    .then(data => {
+                    const filtrado = data.filter(fila => fila.categoria === 'timeline'); // Aplica el filtro nuevamente
+                    setDatos(filtrado);
+                })
                     .catch(error => console.error('Error al obtener datos:', error));
             } else {
                 console.error(`Error al ${selectedId ? 'actualizar' : 'guardar'} la información.`);
@@ -74,7 +88,7 @@ const Crudtexto = () => {
           .then(response => response.json())
           .then(json => {
             const data: any[] = json.pginformacionvs;
-            const filtrado = data.filter(fila => fila.categoria === rptAPI);
+            const filtrado = data.filter(fila => fila.categoria === 'timeline');
             setDatos(filtrado);
           })
           .catch(error => console.error('Tenemos un error', error));
@@ -127,7 +141,7 @@ const Crudtexto = () => {
                                 <div className='row'>
                                     <Row className="mb-1 align-items-center justify-content-end">
                                         <div className="col-auto">
-                                            <button type="button" className='bg-white fa-lg text-primary border-0 rounded-3' onClick={() => handleLinkClick(fila.id, fila.content)} ><i className='fe fe-edit fa-md'></i></button>
+                                            <button type="button" className='bg-white fa-lg text-primary border-0 rounded-3' onClick={() => handleLinkClick(fila)} ><i className='fe fe-edit fa-md'></i></button>
                                         </div>|
                                         <div className="col-auto">
                                             <button type="button" className='bg-white fa-lg text-danger border-0 rounded-3' onClick={() => confirmDelete(fila.id)}>
@@ -156,7 +170,6 @@ const Crudtexto = () => {
                                                 <input type='text' className='p-2 border-0 rounded-2' id='id' value={selectedId} onChange={handleChange}></input>
                                             </div>
                                         </Row>
-
                                         <Row className="mb-3">
                                             <div className="col-md-12 col-12">
                                                 <div className='editor'>
