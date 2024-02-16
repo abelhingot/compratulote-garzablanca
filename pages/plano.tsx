@@ -170,6 +170,7 @@ export default function EstructuraInicio() {
                         coordenadas: obj.coordenadas,
                         color: obj.color
                     });
+                    actualizarCantidadInicial(obj.precio); // Actualiza la cantidad inicial basado en el precio del lote
                     setMostrarResultados(true);
                 }
             })
@@ -184,14 +185,15 @@ export default function EstructuraInicio() {
 
     const calcularCeroIntereses = () => {
         const minimoInicial = parseFloat(formData.precio) * 0.1; // 10% del valor del lote
-        if (cantidadInicial < minimoInicial) {
-            Swal.fire({
-                title: "Verificar el monto inicial",
-                text: "El monto mínimo inicial debe ser mayor al 10% del precio del lote",
-                icon: "warning",
-                confirmButtonColor: "#fdcd68",
-                confirmButtonText: "Aceptar"
-            });
+    if (cantidadInicial < minimoInicial) {
+        Swal.fire({
+            title: "Verificar el monto inicial",
+            text: `El monto inicial debe ser al menos el 10% del valor del lote, inicial: S/. ${minimoInicial.toFixed(2)}`,
+            icon: "warning",
+            confirmButtonColor: "#fdcd68",
+            confirmButtonText: "Aceptar",
+        });
+        return; // Detiene la ejecución si la condición no se cumple
         // const minimoInicial = parseFloat(formData.precio) * 0.1; // 10% del valor del lote
         // if (cantidadInicial < minimoInicial) {
         // Swal.fire({
@@ -205,11 +207,13 @@ export default function EstructuraInicio() {
             if (pagoMensual < 1000) {
                 Swal.fire({
                     title: "Verificar el pago mensual",
-                    text: "El pago mensual debe ser mayor",
+                    text: "El pago mensual debe ser mayor de S/. 1000.",
                     icon: "warning",
                     confirmButtonColor: "#fdcd68",
-                    confirmButtonText: "Aceptar"
+                    confirmButtonText: "Aceptar",
                 });
+                return; // Detiene la ejecución si la condición no se cumple
+            
             } else {
                 let numCuotas = 0;
                 if (cantidadInicial >= 10000 && cantidadInicial < 15000) {
@@ -253,18 +257,24 @@ export default function EstructuraInicio() {
         }
     }
 
-// Actualiza cantidadInicial cuando el precio del lote cambia
-useEffect(() => {
-    if (formData.precio) {
-        const valorInicial = parseFloat(formData.precio) * 0.1;
-        setCantidadInicial(valorInicial);
-    }
-}, [formData.precio]);
+// // Actualiza cantidadInicial cuando el precio del lote cambia
+// useEffect(() => {
+//     if (formData.precio) {
+//         const valorInicial = parseFloat(formData.precio) * 0.1;
+//         setCantidadInicial(valorInicial);
+//     }
+// }, [formData.precio]);
 // Manejador para cambio en el input
 const handleCantidadInicialChange = (e) => {
     setCantidadInicial(e.target.value ? parseFloat(e.target.value) : 0);
 };
 //Se puede borrar
+const actualizarCantidadInicial = (precioLote) => {
+    const valorInicial = parseFloat(precioLote) * 0.1; // 10% del valor del lote
+    setCantidadInicial(valorInicial);
+};
+
+
 
     return (
         <>
@@ -419,13 +429,8 @@ const handleCantidadInicialChange = (e) => {
                 onChange={(e) => setCantidadInicial(parseFloat(e.target.value))} // Permite editar el valor
                 value={cantidadInicial.toFixed(2)} // Muestra el valor actualizado del estado
             /> */}
-            <input 
-            type="number" 
-            className="form-control" 
-            placeholder={`Mínimo: S/. ${cantidadInicial.toFixed(2)}`} // Muestra el 10% como placeholder
-            onChange={handleCantidadInicialChange}
-            value={cantidadInicial} // Usa el estado para el valor, permitiendo edición libre
-        />
+                                                        <input  type="number" className="form-control" placeholder="Ingrese cantidad inicial" onChange={handleCantidadInicialChange} value={cantidadInicial}/>
+
 
                                                     </div>
                                                 </div>

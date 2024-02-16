@@ -69,18 +69,25 @@ export default function CPlano() {
                 coordenadas:infoEncontrada.coordenadas,
                 color:infoEncontrada.color
             });
+            // Calcular el 10% del valor del lote
+            const cantidadInicialCalculada = infoEncontrada.precio * 0.10;
+            setCantidadInicial(cantidadInicialCalculada);
             setMostrarResultados(true);
         }
     };
     const calcularCeroIntereses = () => {
-        if (cantidadInicial < 10000) {
+        // Calcula el 10% del valor del lote para la comprobación
+        const minimoInicial = parseFloat(formData.precio) * 0.10;
+    
+        if (cantidadInicial < minimoInicial) {
             Swal.fire({
                 title: "Verificar el monto inicial",
-                text: "El monto mínimo inicial debe ser mayor",
+                text: `El monto inicial debe ser al menos el 10% del valor del lote, incial: S/. ${minimoInicial.toFixed(2)}`,
                 icon: "warning",
                 confirmButtonColor: "#fdcd68",
                 confirmButtonText: "Aceptar"
             });
+            return; // Salir de la función si la condición no se cumple
         } else {
             if (pagoMensual < 1000) {
                 Swal.fire({
@@ -132,6 +139,16 @@ export default function CPlano() {
         setPagoMensual(calcularPagoMensual);
         }
     }
+
+
+
+    //Este metodo: handleCantidadInicialChange se agregó
+    const handleCantidadInicialChange = (e) => {
+        const valor = e.target.value ? parseFloat(e.target.value) : ''; // Permite campo vacío
+        setCantidadInicial(valor); // Actualiza con el valor numérico o vacío
+    };
+
+    
     return (
         <>
             <div className="bg-dark-subtle rounded-5 text-center p-3">
@@ -187,7 +204,7 @@ export default function CPlano() {
                                     <div className="col p-1">
                                         {formData.areaLote}
                                     </div>
-                                    <div className="col bg-dark-subtle rounded p-1 fw-bold border border-secondary">
+                                    <div className="col bg-dark-subtle rounded p-1 fw-bold border border-secondary" style={{ backgroundColor: '#ffcc6c', color: 'black' }}>
                                         S/. {formData.precioFormato}
                                     </div>
 
@@ -206,14 +223,14 @@ export default function CPlano() {
                                                     </label>
                                                 </div>
                                             </div>
-                                            <div className="col-md-6 pt-1">
+                                            {/* <div className="col-md-6 pt-1">
                                                 <div className="form-check">
                                                     <input className="form-check-input" type="radio" name="financimiento" value="conIntereses" onChange={(e) => setFinanciamiento(e.target.value)} />
                                                     <label className="form-check-label" >
                                                         Financiamiento con intereses
                                                     </label>
                                                 </div>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                     <div className="col-md-6 border border-top-0 ">
@@ -238,7 +255,8 @@ export default function CPlano() {
                                                 <label className="col-form-label">Inicial</label>
                                             </div>
                                             <div className="col-auto">
-                                                <input type="number" className="form-control" placeholder="Mínimo: S/. 10,000" onChange={(e) => setCantidadInicial(parseFloat(e.target.value))} />
+                                                {/* <input type="number" className="form-control" placeholder="Mínimo: S/. 10,000" onChange={(e) => setCantidadInicial(parseFloat(e.target.value))} /> */}
+                                                <input type="number" className="form-control" value={cantidadInicial} onChange={handleCantidadInicialChange}placeholder="Mínimo: S/. 10,000"/>
                                             </div>
                                         </div>
                                     </div>
