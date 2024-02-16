@@ -57,7 +57,7 @@ const Contactame = () => {
         setEditItemId(id);
         setLgShow(true);
 
-        fetch(`http://localhost:3001/pgcontactame/${id}`)
+        fetch(`http://localhost:3002/pgcontactame/${id}`)
             .then((response) => response.json())
             .then((data) => {
                 setFormData({
@@ -109,7 +109,7 @@ const Contactame = () => {
                     text: "Su archivo ha sido eliminado.",
                     icon: "success"
                 });
-                fetch(`http://localhost:3001/pgcontactame/${id}`, {
+                fetch(`http://localhost:3002/pgcontactame/${id}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
@@ -119,7 +119,7 @@ const Contactame = () => {
                     .then((response) => response.json())
                     .then((data) => {
                         console.log('Datos guardados:', data);
-                        fetch('http://localhost:3001/pgcontactame')
+                        fetch('http://localhost:3002/pgcontactame')
                             .then((response) => response.json())
                             .then((menusData) => {
                                 setDatos(menusData);

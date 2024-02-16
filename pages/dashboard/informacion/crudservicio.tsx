@@ -41,7 +41,19 @@ const CrudServicio = () => {
             .catch(error => console.error('Error al obtener datos:', error));
     }, []);
 
+    const handleRegistrarClick = () => {
+        setLgShow(true)
+        setFormData({
+            id: '',
+            categoria: 'informacion',
+            titulo: '',
+            texto: '',
+            imagen: '',
+            estado: ''
 
+    });
+
+    }
 
     const handleEditClick = (id) => {
         setEditItemId(id);
@@ -89,11 +101,12 @@ const CrudServicio = () => {
                 .then((response) => response.json())
                 .then((data) => {
                     console.log('Datos actualizados:', data);
+                    window.location.reload();
                 })
                 .catch((error) => {
                     console.error('Error al actualizar datos:', error);
                 });
-
+                
             setEditItemId(null);
         } else {
             fetch('http://localhost:3002/serviciosES', {
@@ -106,14 +119,16 @@ const CrudServicio = () => {
                 .then((response) => response.json())
                 .then((data) => {
                     console.log('Datos guardados:', data);
+                    window.location.reload();
                 })
+                
                 .catch((error) => {
                     console.error('Error al guardar datos:', error);
                 });
         }
     };
 
-   const handleDeleteClick = (id) => {
+    const handleDeleteClick = (id) => {
         setIdToDelete(id);
 
         const swalWithBootstrapButtons = Swal.mixin({
@@ -152,6 +167,7 @@ const CrudServicio = () => {
                             .then((response) => response.json())
                             .then((menusData) => {
                                 setDatos(menusData);
+                                window.location.reload();
                             })
                             .catch((error) => {
                                 console.error('Error al actualizar menus:', error);
@@ -186,13 +202,6 @@ const CrudServicio = () => {
         });
     }
 
-
-
-
-    
-    
-
-    
     return (
         <>
 
@@ -211,7 +220,7 @@ const CrudServicio = () => {
                                         <input type='search' placeholder='Nueva busqueda' className='form-control' onChange={(event) => setSearchTerm(event.target.value)}></input>
                                     </div>
                                     <div className='col'>
-                                        <Button onClick={() => setLgShow(true)}>REGISTRAR</Button>{' '}
+                                        <Button onClick={() => handleRegistrarClick()}>REGISTRAR</Button>{' '}
                                     </div>
                                 </div>
                                 <br />

@@ -153,6 +153,18 @@ const Infoubicacion = () => {
 
     };
 
+    const handleCleanClick = () => {
+        setFormData({
+            id: "",
+            boton1: "",
+            ruta1: "",
+            boton2: "",
+            ruta2: "",
+            iframe: "",
+            titulo: ""
+        });
+    }
+
     return (
         <>
             <Row className="mb-5 m-1 py-2">
@@ -261,7 +273,8 @@ const Infoubicacion = () => {
                                         <Col md={12} xs={12}>
                                             <Button className="btn btn-primary" type="submit" onClick={() => handleSaveClick()}>GUARDAR</Button>
                                             &nbsp;
-                                            <Button className="btn btn-primary" type="reset" >LIMPIAR</Button>
+                                            <Button className="btn btn-primary" type="reset" 
+                                            onClick={()=>handleCleanClick()}>LIMPIAR</Button>
                                         </Col>
                                     </Row>
 

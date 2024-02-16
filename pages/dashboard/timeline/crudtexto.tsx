@@ -68,7 +68,12 @@ const Crudtexto = () => {
                 console.log(`Información ${selectedId ? 'actualizada' : 'guardada'} con éxito.`);
                 fetch('http://localhost:3002/pginformacion')
                     .then(response => response.json())
-                    .then(data => setDatos(data))
+                    .then(data => {
+                        
+                        const filtrado = data.filter(fila => fila.categoria === 'timeline');
+                        setDatos(filtrado)
+                    })
+                    
                     .catch(error => console.error('Error al obtener datos:', error));
                     window.location.reload();
             } else {

@@ -32,10 +32,10 @@ const Crudempresa = () => {
     };
 
     const handleSubmit = async () => {
-       // e.preventDefault();
-        alert("aaa")
+        
+        
         try {
-            let apiUrl = `http://localhost:3002/pgempresa/${selectedId}`;
+            let apiUrl = `http://localhost:3002/pgempresa`;
             let method = 'POST';
             if (selectedId) {
                 apiUrl += `/${selectedId}`;
@@ -52,7 +52,7 @@ const Crudempresa = () => {
                     content: quill.root.innerHTML,
                 }),
             });
-
+            window.location.reload();
             if (response.ok) {
                 console.log(`Información ${selectedId ? 'actualizada' : 'guardada'} con éxito.`);
                 fetch('http://localhost:3002/pgempresa')

@@ -50,7 +50,7 @@ const Crudubicacion = () => {
         setLgShow(true);
         setFormData({
             id: '',
-            categoria: '',
+            categoria: 'ubicacion',
             titulo: '',
             texto: '',
             estado: '',
@@ -113,6 +113,7 @@ const Crudubicacion = () => {
                 .then((response) => response.json())
                 .then((data) => {
                     console.log('Datos actualizados:', data);
+                    window.location.reload();
                 })
                 .catch((error) => {
                     console.error('Error al actualizar datos:', error);
@@ -129,6 +130,7 @@ const Crudubicacion = () => {
                 .then((response) => response.json())
                 .then((data) => {
                     console.log('Datos guardados:', data);
+                    window.location.reload();
                 })
                 .catch((error) => {
                     console.error('Error al guardar datos:', error);
@@ -174,6 +176,7 @@ const Crudubicacion = () => {
                             .then((response) => response.json())
                             .then((menusData) => {
                                 setDatos(menusData);
+                                window.location.reload();
                             })
                             .catch((error) => {
                                 console.error('Error al actualizar menus:', error);
