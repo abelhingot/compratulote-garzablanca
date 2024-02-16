@@ -105,7 +105,7 @@ const Plano = () => {
 
     const handleSaveClick = () => {
         if (editItemId) {
-            fetch(`http://localhost:3001/pgconfiplanobg/${editItemId}`, {
+            fetch(`http://localhost:3002/pgconfiplanobg/${editItemId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -122,7 +122,7 @@ const Plano = () => {
 
             setEditItemId(null);
         } else {
-            fetch('http://localhost:3001/pgconfiplanobg', {
+            fetch('http://localhost:3002/pgconfiplanobg', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -165,7 +165,7 @@ const Plano = () => {
                     text: "Su archivo ha sido eliminado.",
                     icon: "success"
                 });
-                fetch(`http://localhost:3001/pgconfiplanobg/${id}`, {
+                fetch(`http://localhost:3002/pgconfiplanobg/${id}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
@@ -175,7 +175,7 @@ const Plano = () => {
                     .then((response) => response.json())
                     .then((data) => {
                         console.log('Datos guardados:', data);
-                        fetch('http://localhost:3001/pgconfiplanobg')
+                        fetch('http://localhost:3002/pgconfiplanobg')
                             .then((response) => response.json())
                             .then((menusData) => {
                                 setDatos(menusData);

@@ -27,6 +27,7 @@ const GBbanner = () => {
         (fila.titulo.toLowerCase().includes(searchTerm.toLowerCase()) || fila.subtitulo.toLowerCase().includes(searchTerm.toLowerCase()) || fila.categoria.toLowerCase().includes(searchTerm.toLowerCase())));
 
     useEffect(() => {
+        
         fetch('/db.json')
             .then(response => response.json())
             .then(json => {
@@ -35,6 +36,9 @@ const GBbanner = () => {
                 )
             .catch(error => console.error('Error al obtener datos:', error));
     }, []);
+
+
+
 
     const handleEditClick = (id) => {
         setEditItemId(id);
@@ -73,7 +77,7 @@ const GBbanner = () => {
 
     const handleSaveClick = () => {
         if (editItemId) {
-            fetch(`http://localhost:3001/pgslidergb/${editItemId}`, {
+            fetch(`http://localhost:3002/pgslidergb/${editItemId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -89,7 +93,7 @@ const GBbanner = () => {
                 });
             setEditItemId(null);
         } else {
-            fetch('http://localhost:3001/pgslidergb', {
+            fetch('http://localhost:3002/pgslidergb', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -131,7 +135,7 @@ const GBbanner = () => {
                     text: "Su archivo ha sido eliminado.",
                     icon: "success"
                 });
-                fetch(`http://localhost:3001/pgslidergb/${id}`, {
+                fetch(`http://localhost:3002/pgslidergb/${id}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
@@ -141,7 +145,7 @@ const GBbanner = () => {
                     .then((response) => response.json())
                     .then((data) => {
                         console.log('Datos guardados:', data);
-                        fetch('http://localhost:3001/pgslidergb')
+                        fetch('http://localhost:3002/pgslidergb')
                             .then((response) => response.json())
                             .then((menusData) => {
                                 setDatos(menusData);

@@ -56,9 +56,9 @@ const Navbar = () => {
         }
     };
 
-   /* const handleSaveClick = () => {
+   const handleSaveClick = () => {
         if (editItemId) {
-            fetch(`http://localhost:3000/pgmenugb/${editItemId}`, { // Corrección aquí
+            fetch(`http://localhost:3002/pgmenugb/${editItemId}`, { // Corrección aquí
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -78,7 +78,7 @@ const Navbar = () => {
                 });
             setEditItemId(null);
         } else {
-            fetch('http://localhost:3000/pgmenugb', {
+            fetch('http://localhost:3002/pgmenugb', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -96,41 +96,9 @@ const Navbar = () => {
                     console.error('Error al guardar datos:', error);
                 });
         }
-    };*/
+    };
 
-const handleSaveClick = () => {
-    if (editItemId) {
-        // Actualizar datos localmente
-        const updatedData = datos.map(item => {
-            if (item.id === editItemId) {
-                return formData; // Actualizar el elemento con el mismo ID con los nuevos datos
-            } else {
-                return item; // Mantener los demás elementos sin cambios
-            }
-        });
-        
-        // Actualizar el estado con los datos actualizados
-        setDatos(updatedData);
-        setEditItemId(null); // Restablecer el ID de edición
-        
-        // Enviar los datos actualizados al servidor para guardar en la base de datos
-        fetch(`http://localhost:3001/pgmenugb/${editItemId}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Datos actualizados en la base de datos:', data);
-            // Aquí puedes manejar la respuesta del servidor si es necesario
-        })
-        .catch(error => {
-            console.error('Error al actualizar datos en la base de datos:', error);
-        });
-    }
-};
+
 
 
 
@@ -159,8 +127,8 @@ const handleSaveClick = () => {
                     text: "Su archivo ha sido eliminado.",
                     icon: "success"
                 });
-                fetch(`http://localhost:3001/pgmenugb/${id}`, {
-                    method: 'DELETE',//{}
+                fetch(`http://localhost:3002/pgmenugb/${id}`, {
+                    method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
                     },
@@ -169,7 +137,7 @@ const handleSaveClick = () => {
                     .then((response) => response.json())
                     .then((data) => {
                         console.log('Datos guardados:', data);
-                        fetch(`http://localhost:3001/pgmenugb`)
+                        fetch(`http://localhost:3002/pgmenugb`)
                             .then((response) => response.json())
                             .then((menusData) => {
                                 setDatos(menusData);
@@ -207,8 +175,7 @@ const handleSaveClick = () => {
         });
     }
     return (
-        <>
-            <DefaultDashboardLayout>
+        <DefaultDashboardLayout>
                 <br />
                 <Row className="mb-5 m-1">
                     <Col xl={12} lg={12} md={12} xs={12}>
@@ -324,7 +291,6 @@ const handleSaveClick = () => {
                     </Modal>
                 </Fragment>
             </DefaultDashboardLayout>
-        </>
     )
 }
 

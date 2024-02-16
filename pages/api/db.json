@@ -588,8 +588,8 @@
       "id": "11",
       "categoria": "ubicacion",
       "titulo": "Video Ubicación",
-      "texto": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh eu",
-      "estado": "Dato Ubicación 01",
+      "texto": "",
+      "estado": "Video Ubicac",
       "imagen": "https://drive.google.com/file/d/1fnEkeaF0eTiUJa9D0e85uY3lUhAGiXVu/preview"
     },
     {
@@ -607,6 +607,30 @@
       "texto": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh eu",
       "estado": "Dato Ubicación 03",
       "imagen": "a"
+    },
+    {
+      "id": 11,
+      "categoria": "ubicacion",
+      "titulo": "Video Ubicación",
+      "texto": "",
+      "estado": "Video Ubicación",
+      "imagen": "https://drive.google.com/file/d/1fnEkeaF0eTiUJa9D0e85uY3lUhAGiXVu/preview"
+    },
+    {
+      "id": 11,
+      "categoria": "ubicacion",
+      "titulo": "Video Ubicación",
+      "texto": "",
+      "estado": "Video Ubicació",
+      "imagen": "https://drive.google.com/file/d/1fnEkeaF0eTiUJa9D0e85uY3lUhAGiXVu/preview"
+    },
+    {
+      "id": 11,
+      "categoria": "ubicacion",
+      "titulo": "Video Ubicación",
+      "texto": "",
+      "estado": "Video Ubicaci",
+      "imagen": "https://drive.google.com/file/d/1fnEkeaF0eTiUJa9D0e85uY3lUhAGiXVu/preview"
     }
   ],
   "informacionES": [
@@ -2670,7 +2694,7 @@
   "pgubicaciongb": [
     {
       "id": "1",
-      "boton1": "¿Cómo llegar?",
+      "boton1": "¿Cómo llegar?aaa",
       "ruta1": "https://www.google.com/maps/dir//Garza+Blanca+Country+Club+Pimentel+14000/@-6.7949956,-79.8953896,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x904cefda99af3ee9:0xd0f78f7cd563d5fe",
       "boton2": "Google Maps",
       "ruta2": "Frente al Club House",
@@ -2716,7 +2740,7 @@
     {
       "id": "1",
       "href": "/images/icons/logoGarzaB1.png",
-      "texto": "logo"
+      "texto": "Logo"
     },
     {
       "id": "2",
@@ -2752,7 +2776,7 @@
   "pgslidergb": [
     {
       "id": "IA01",
-      "titulo": "Garza Blan",
+      "titulo": "Garza Blanca Country Club",
       "subtitulo": "Te damos la bienvenida al gran Country Club",
       "categoria": "informacion",
       "imagen": "/images/icons/bannerprincipal.png",
@@ -2788,6 +2812,38 @@
       "subtitulo": "Empresa",
       "categoria": "empresa",
       "imagen": "/images/bannerpaginas/servicios.png",
+      "href": "https://drive.google.com/file/d/1PQu-sPMaYC6RHjsY3UY_6LKEQMUY_E0n/preview"
+    },
+    {
+      "id": "IA01",
+      "titulo": "Garza Blanca Country Club",
+      "subtitulo": "Te damos la bienvenida al gran Country Club",
+      "categoria": "informacion",
+      "imagen": "/images/icons/bannerprincipal.png",
+      "href": "https://drive.google.com/file/d/1PQu-sPMaYC6RHjsY3UY_6LKEQMUY_E0n/preview"
+    },
+    {
+      "id": "IA01",
+      "titulo": "Garza Blanca Country Club",
+      "subtitulo": "Te damos la bienvenida al gran Country Club",
+      "categoria": "informacion",
+      "imagen": "/images/icons/bannerprincipal.png",
+      "href": "https://drive.google.com/file/d/1PQu-sPMaYC6RHjsY3UY_6LKEQMUY_E0n/preview"
+    },
+    {
+      "id": "IA01",
+      "titulo": "Garza Blanca Country Club",
+      "subtitulo": "Te damos la bienvenida al gran Country Club",
+      "categoria": "informacion",
+      "imagen": "/images/icons/bannerprincipal.pn",
+      "href": "https://drive.google.com/file/d/1PQu-sPMaYC6RHjsY3UY_6LKEQMUY_E0n/preview"
+    },
+    {
+      "id": "IA01",
+      "titulo": "Garza Blanca Country Club",
+      "subtitulo": "Te damos la bienvenida al gran Country Club",
+      "categoria": "informacion",
+      "imagen": "/images/icons/bannerprincipal.pni",
       "href": "https://drive.google.com/file/d/1PQu-sPMaYC6RHjsY3UY_6LKEQMUY_E0n/preview"
     }
   ]

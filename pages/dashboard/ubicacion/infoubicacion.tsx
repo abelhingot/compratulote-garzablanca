@@ -59,7 +59,7 @@ const Infoubicacion = () => {
 
     const handleSaveClick = () => {
         if (editItemId) {
-            fetch(`http://localhost:3001/pgubicaciongb/${editItemId}`, {
+            fetch(`http://localhost:3002/pgubicaciongb/${editItemId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ const Infoubicacion = () => {
 
             setEditItemId(null);
         } else {
-            fetch('http://localhost:3001/pgubicaciongb', {
+            fetch('http://localhost:3002/pgubicaciongb', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -118,7 +118,7 @@ const Infoubicacion = () => {
                     text: "Su archivo ha sido eliminado.",
                     icon: "success"
                 });
-                fetch(`http://localhost:3001/pgubicaciongb/${id}`, {
+                fetch(`http://localhost:3002/pgubicaciongb/${id}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
@@ -128,7 +128,7 @@ const Infoubicacion = () => {
                     .then((response) => response.json())
                     .then((data) => {
                         console.log('Datos guardados:', data);
-                        fetch('http://localhost:3001/pgubicaciongb')
+                        fetch('http://localhost:3002/pgubicaciongb')
                             .then((response) => response.json())
                             .then((menusData) => {
                                 setDatos(menusData);

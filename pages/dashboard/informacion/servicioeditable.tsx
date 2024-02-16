@@ -60,6 +60,19 @@ const Servicioeditable = () => {
         }
     };
 
+    useEffect(() => {
+        const verificador = window.location.pathname.split('/');
+        const rptAPI = verificador[verificador.length - 1];
+        fetch('/db.json')
+            .then(response => response.json())
+            .then(json => {
+                const data: any[] = json.pginformacion;
+                const filtrado = data.filter(fila => fila.categoria === rptAPI);
+                setDatos(filtrado);
+                setBanners(rptAPI);
+            })
+            .catch(error => console.error('Tenemos un error', error));
+    }, []);
 
     const handleLinkClick = (id, content, recurso1, recurso2, categoria, title) => {
         setRecurso1(recurso1);
@@ -73,10 +86,12 @@ const Servicioeditable = () => {
         }
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const handleSubmit = async () => {
+        //e.preventDefault();
         try {
-            const response = await fetch(`http://localhost:3001/pginformacionvs/${selectedId}`, {
+            
+            
+            const response = await fetch(`http://localhost:3002/pginformacion/${selectedId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -90,11 +105,12 @@ const Servicioeditable = () => {
                     title: title
                 }),
             });
+            
 
             if (response.ok) {
                 const verificador = window.location.pathname.split('/');
                 const rptAPI = verificador[verificador.length - 1];
-                fetch('http://localhost:3001/pginformacionvs')
+                fetch('http://localhost:3002/pginformacion')
                     .then(response => response.json())
                     .then(data => {
                         const filtrado = data.filter(fila => fila.categoria === rptAPI);
@@ -110,30 +126,18 @@ const Servicioeditable = () => {
         }
     };
 
-    useEffect(() => {
-        const verificador = window.location.pathname.split('/');
-        const rptAPI = verificador[verificador.length - 1];
-        fetch('/db.json')
-            .then(response => response.json())
-            .then(json => {
-                const data: any[] = json.pginformacion;
-                const filtrado = data.filter(fila => fila.categoria === rptAPI);
-                setDatos(filtrado);
-                setBanners(rptAPI);
-            })
-            .catch(error => console.error('Tenemos un error', error));
-    }, []);
+
 
     const procesarContenidoQuill = (contenidoQuill) => {
         return contenidoQuill;
     };
     const handleDeleteClick = (id) => {
-        fetch(`http://localhost:3001/pginformacion/${id}`, {
+        fetch(`http://localhost:3002/pginformacion/${id}`, {
             method: 'DELETE',
         })
             .then(response => {
                 if (response.ok) {
-                    fetch('http://localhost:3001/pginformacion')
+                    fetch('http://localhost:3002/pginformacion')
                         .then(response => response.json())
                         .then(data => setDatos(data))
                         .catch(error => console.error('Error al obtener datos:', error));
@@ -284,7 +288,7 @@ const Servicioeditable = () => {
                                         </Row>
                                         <Row className="mb-3">
                                             <div className="col-md-12 col-12 text-end">
-                                                <Button className='btn btn-primary m-1' type='submit' onClick={()=>handleSubmit}>Guardar</Button>
+                                                <Button className='btn btn-primary m-1' type='submit' onClick={()=>handleSubmit()}>Guardar</Button>
                                                 <Button className='btn btn-primary m-1' type='reset' onClick={()=>handleCleanClick()}>Limpiar</Button>
                                             </div>
                                         </Row>

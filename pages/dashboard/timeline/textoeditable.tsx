@@ -31,11 +31,11 @@ const Textoeditable = () => {
         }
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const handleSubmit = async () => {
+       // e.preventDefault();
 
         try {
-            let apiUrl = 'http://localhost:3001/pgtimeline';
+            let apiUrl = 'http://localhost:3002/pgtimeline';
             let method = 'POST';
             if (selectedId) {
                 apiUrl += `/${selectedId}`;
@@ -55,7 +55,7 @@ const Textoeditable = () => {
 
             if (response.ok) {
                 console.log(`Información ${selectedId ? 'actualizada' : 'guardada'} con éxito.`);
-                fetch('http://localhost:3001/pgtimeline')
+                fetch('http://localhost:3002/pgtimeline')
                     .then(response => response.json())
                     .then(data => setDatos(data))
                     .catch(error => console.error('Error al obtener datos:', error));
@@ -98,12 +98,12 @@ useEffect(() => {
         return contenidoQuill
     };
     const handleDeleteClick = (id) => {
-        fetch(`http://localhost:3001/pgtimeline/${id}`, {
+        fetch(`http://localhost:3002/pgtimeline/${id}`, {
             method: 'DELETE',
         })
             .then(response => {
                 if (response.ok) {
-                    fetch('http://localhost:3001/pgtimeline')
+                    fetch('http://localhost:3002/pgtimeline')
                         .then(response => response.json())
                         .then(data => setDatos(data))
                         .catch(error => console.error('Error al obtener datos:', error));
@@ -201,7 +201,7 @@ useEffect(() => {
                                         </Row>
                                         <Row className="mb-3">
                                             <div className="col-md-12 col-12 text-end">
-                                                <Button className='btn btn-primary m-1' type='submit' onClick={()=>handleSubmit}>Guardar</Button>
+                                                <Button className='btn btn-primary m-1' type='submit' onClick={()=>handleSubmit()}>Guardar</Button>
                                                 <Button className='btn btn-primary m-1' type='reset' onClick={()=>handleCleanClick()}>Limpiar</Button>
                                             </div>
                                         </Row>

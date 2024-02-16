@@ -103,7 +103,7 @@ const Crudubicacion = () => {
 
     const handleSaveClick = () => {
         if (editItemId) {
-            fetch(`http://localhost:3001/serviciosES/${editItemId}`, {
+            fetch(`http://localhost:3002/serviciosES/${editItemId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -119,7 +119,7 @@ const Crudubicacion = () => {
                 });
             setEditItemId(null);
         } else {
-            fetch('http://localhost:3001/serviciosES', {
+            fetch('http://localhost:3002/serviciosES', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -160,7 +160,7 @@ const Crudubicacion = () => {
                     text: "Su archivo ha sido eliminado.",
                     icon: "success"
                 });
-                fetch(`http://localhost:3001/serviciosES/${id}`, {
+                fetch(`http://localhost:3002/serviciosES/${id}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
@@ -170,7 +170,7 @@ const Crudubicacion = () => {
                     .then((response) => response.json())
                     .then((data) => {
                         console.log('Datos guardados:', data);
-                        fetch('http://localhost:3001/serviciosES')
+                        fetch('http://localhost:3002/serviciosES')
                             .then((response) => response.json())
                             .then((menusData) => {
                                 setDatos(menusData);

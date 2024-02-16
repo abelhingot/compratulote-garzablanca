@@ -11,6 +11,7 @@ const Crudempresa = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [insertText, setInsertText] = useState('');
+    const [banners, setBanners] = useState('');
     const { quill, quillRef } = useQuill({
         modules: {
             toolbar: toolbar,
@@ -30,11 +31,11 @@ const Crudempresa = () => {
         }
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
+    const handleSubmit = async () => {
+       // e.preventDefault();
+        alert("aaa")
         try {
-            let apiUrl = 'http://localhost:3001/pgempresa';
+            let apiUrl = `http://localhost:3002/pgempresa/${selectedId}`;
             let method = 'POST';
             if (selectedId) {
                 apiUrl += `/${selectedId}`;
@@ -54,7 +55,7 @@ const Crudempresa = () => {
 
             if (response.ok) {
                 console.log(`Información ${selectedId ? 'actualizada' : 'guardada'} con éxito.`);
-                fetch('http://localhost:3001/pgempresa')
+                fetch('http://localhost:3002/pgempresa')
                     .then(response => response.json())
                     .then(data => setDatos(data))
                     .catch(error => console.error('Error al obtener datos:', error));
@@ -65,6 +66,44 @@ const Crudempresa = () => {
             console.error('Error de red:', error);
         }
     };
+
+
+  /*  const handleSubmit = async () => {
+        //e.preventDefault();
+        try {
+            
+            console.log('Enviando solicitud al servidor...');
+            const response = await fetch(`http://localhost:3002/pgempresa/${selectedId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    title: title,
+                    content: quill.root.innerHTML,
+                }),
+            });
+            console.log('Respuesta del servidor recibida:', response);
+
+            if (response.ok) {
+                const verificador = window.location.pathname.split('/');
+                const rptAPI = verificador[verificador.length - 1];
+                fetch('http://localhost:3002/pgempresa')
+                    .then(response => response.json())
+                    .then(data => {
+                        const filtrado = data.filter(fila => fila.categoria === rptAPI);
+                        setDatos(filtrado);
+                        setBanners(rptAPI);
+                    })
+                    .catch(error => console.error('Tenemos un error', error));
+            } else {
+                console.error('Error al actualizar la información.');
+            }
+        } catch (error) {
+            console.error('Error de red:', error);
+        }
+    };*/
+
 
     useEffect(() => {
         fetch('/db.json')
@@ -80,12 +119,12 @@ const Crudempresa = () => {
         return contenidoQuill;
     };
     const handleDeleteClick = (id) => {
-        fetch(`http://localhost:3001/pgempresa/${id}`, {
+        fetch(`http://localhost:3002/pgempresa/${id}`, {
             method: 'DELETE',
         })
             .then(response => {
                 if (response.ok) {
-                    fetch('http://localhost:3001/pgempresa')
+                    fetch('http://localhost:3002/pgempresa')
                         .then(response => response.json())
                         .then(data => setDatos(data))
                         .catch(error => console.error('Error al obtener datos:', error));
@@ -181,7 +220,7 @@ const Crudempresa = () => {
                                         </Row>
                                         <Row className="mb-3">
                                             <div className="col-md-12 text-end">
-                                                <Button className='btn btn-primary m-1' type='submit' onClick={()=>handleSubmit}>Guardar</Button>
+                                                <Button className='btn btn-primary m-1' type='submit' onClick={()=>handleSubmit()}>Guardar</Button>
                                                 <Button className='btn btn-primary m-1' type='reset' onClick={()=>handleCleanClick()}>Limpiar</Button>
                                             </div>
 

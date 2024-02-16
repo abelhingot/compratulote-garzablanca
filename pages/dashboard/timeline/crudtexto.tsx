@@ -10,6 +10,9 @@ const Crudtexto = () => {
     const [selectedId, setSelectedId] = useState('');
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
+    const [recurso1, setRecurso1] = useState();
+    const [recurso2, setRecurso2] = useState();
+    const [categoria, setCategoria] = useState();
     const [banners, setBanners] = useState('');
     const [insertText, setInsertText] = useState('');
     const { quill, quillRef } = useQuill({
@@ -22,19 +25,24 @@ const Crudtexto = () => {
         setTitle(e.target.value);
     };
 
-    const handleLinkClick = (id, content) => {
+    const handleLinkClick = (id, content,recurso1,recurso2,categoria,title) => {
         setInsertText(content);
         setSelectedId(id);
+        setRecurso1(recurso1);
+        setRecurso2(recurso2);
+        setCategoria(categoria);
+        setTitle(title);
+
         if (quill) {
             quill.clipboard.dangerouslyPasteHTML(content);
         }
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const handleSubmit = async () => {
+      //  e.preventDefault();
 
         try {
-            let apiUrl = 'http://localhost:3001/pginformacion';
+            let apiUrl = 'http://localhost:3002/pginformacion';
             let method = 'POST';
             if (selectedId) {
                 apiUrl += `/${selectedId}`;
@@ -49,15 +57,20 @@ const Crudtexto = () => {
                 body: JSON.stringify({
                     title: title,
                     content: quill.root.innerHTML,
+                    recurso1: recurso1,
+                    recurso2: recurso2,
+                    categoria: categoria,
+                    id: selectedId,
                 }),
             });
 
             if (response.ok) {
                 console.log(`Información ${selectedId ? 'actualizada' : 'guardada'} con éxito.`);
-                fetch('http://localhost:3001/pginformacion')
+                fetch('http://localhost:3002/pginformacion')
                     .then(response => response.json())
                     .then(data => setDatos(data))
                     .catch(error => console.error('Error al obtener datos:', error));
+                    window.location.reload();
             } else {
                 console.error(`Error al ${selectedId ? 'actualizar' : 'guardar'} la información.`);
             }
@@ -90,6 +103,7 @@ const Crudtexto = () => {
             const data: any[] = json.pginformacion;
             const filtrado = data.filter(fila => fila.categoria === rptAPI);
             setDatos(filtrado);
+            
         })
         .catch(error => console.error('Tenemos un error', error));
       }, []);
@@ -104,13 +118,13 @@ const Crudtexto = () => {
         return contenidoQuill;
     };
     const handleDeleteClick = (id) => {
-       fetch(`http://localhost:3001/pginformacion/${id}`, {
+       fetch(`http://localhost:3002/pginformacion/${id}`, {
         
             method: 'DELETE',
         })
             .then(response => {
                 if (response.ok) {
-                    fetch('http://localhost:3001/pginformacion')
+                    fetch('http://localhost:3002/pginformacion')
                         .then(response => response.json())
                         .then(data => setDatos(data))
                         .catch(error => console.error('Error al obtener datos:', error));
@@ -148,7 +162,7 @@ const Crudtexto = () => {
                                 <div className='row'>
                                     <Row className="mb-1 align-items-center justify-content-end">
                                         <div className="col-auto">
-                                            <button type="button" className='bg-white fa-lg text-primary border-0 rounded-3' onClick={() => handleLinkClick(fila.id, fila.content)} ><i className='fe fe-edit fa-md'></i></button>
+                                            <button type="button" className='bg-white fa-lg text-primary border-0 rounded-3' onClick={() => handleLinkClick(fila.id, fila.content, fila.recurso1,fila.recurso2,fila.categoria,fila.title)} ><i className='fe fe-edit fa-md'></i></button>
                                         </div>|
                                         <div className="col-auto">
                                             <button type="button" className='bg-white fa-lg text-danger border-0 rounded-3' onClick={() => confirmDelete(fila.id)}>
@@ -187,7 +201,7 @@ const Crudtexto = () => {
                                         </Row>
                                         <Row className="mb-3">
                                             <div className="col-md-12 col-12 text-end">
-                                                <Button className='btn btn-primary m-1' type='submit' onClick={()=>handleSubmit}>Guardar</Button>
+                                                <Button className='btn btn-primary m-1' type='submit' onClick={()=>handleSubmit()}>Guardar</Button>
                                                 <Button className='btn btn-primary m-1' type='reset' onClick={()=>handleCleanClick()}>Limpiar</Button>
                                             </div>
                                         </Row>
