@@ -5,7 +5,8 @@ export default function CFooter(props: any) {
       <>
             <footer className="bg-dark text-light text-center py-3">
                <div className="container">
-                  <p>Copyright &copy; 2024 Villa Sipan | Desarrollado por Compratulote.pe</p>
+                  {/* <p>Copyright &copy; 2024 Villa Sipan | Desarrollado por Compratulote.pe</p> */}
+                  <p>&copy; Copyright 2024 | Desarrollado por Innovate.pe</p>
                </div>
             </footer>
             <div>
