@@ -183,14 +183,24 @@ export default function EstructuraInicio() {
     };
 
     const calcularCeroIntereses = () => {
-        if (cantidadInicial < 10000) {
+        const minimoInicial = parseFloat(formData.precio) * 0.1; // 10% del valor del lote
+        if (cantidadInicial < minimoInicial) {
             Swal.fire({
                 title: "Verificar el monto inicial",
-                text: "El monto mínimo inicial debe ser mayor",
+                text: "El monto mínimo inicial debe ser mayor al 10% del precio del lote",
                 icon: "warning",
                 confirmButtonColor: "#fdcd68",
                 confirmButtonText: "Aceptar"
             });
+        // const minimoInicial = parseFloat(formData.precio) * 0.1; // 10% del valor del lote
+        // if (cantidadInicial < minimoInicial) {
+        // Swal.fire({
+        //     title: "Verificar el monto inicial",
+        //     text: `El monto mínimo inicial debe ser mayor o igual a S/. ${minimoInicial.toFixed(2)}`,
+        //     icon: "warning",
+        //     confirmButtonColor: "#fdcd68",
+        //     confirmButtonText: "Aceptar"
+        // });
         } else {
             if (pagoMensual < 1000) {
                 Swal.fire({
@@ -229,7 +239,7 @@ export default function EstructuraInicio() {
         if (cantidadInicialIntereses < 6000) {
             Swal.fire({
                 title: "Verificar el monto inicial",
-                text: "El monto mínimo inicial debe ser mayor",
+                text: "El monto mínimo inicial debe ser mayor a 6 000",
                 icon: "warning",
                 confirmButtonColor: "#fdcd68",
                 confirmButtonText: "Aceptar"
@@ -242,6 +252,20 @@ export default function EstructuraInicio() {
             setPagoMensual(calcularPagoMensual);
         }
     }
+
+// Actualiza cantidadInicial cuando el precio del lote cambia
+useEffect(() => {
+    if (formData.precio) {
+        const valorInicial = parseFloat(formData.precio) * 0.1;
+        setCantidadInicial(valorInicial);
+    }
+}, [formData.precio]);
+// Manejador para cambio en el input
+const handleCantidadInicialChange = (e) => {
+    setCantidadInicial(e.target.value ? parseFloat(e.target.value) : 0);
+};
+//Se puede borrar
+
     return (
         <>
             <Row className='bg-white m-0'>
@@ -305,7 +329,7 @@ export default function EstructuraInicio() {
                 <Fragment>
                     <Modal size="xl" show={lgShow} onHide={() => setLgShow(false)} aria-labelledby="example-modal-sizes-title-lg" style={{ backgroundColor: 'rgba(255,255,255,0.5)' }}>
                         <Modal.Header closeButton className='bgProyect'>
-                            <h3 className='fw-bold'> Estado del lote: <span className='text-light'>{formData.estado}</span></h3>
+                            <h3 className='text-light'> Estado del lote: <span className='text-light'>{formData.estado}</span></h3>
                         </Modal.Header>
                         <Modal.Body className='modalPlano'>
 
@@ -335,8 +359,9 @@ export default function EstructuraInicio() {
                                             <div className="col p-1">
                                                 {formData.areaLote}
                                             </div>
-                                            <div className="col bg-dark-subtle rounded p-1 fw-bold border border-secondary">
-                                                S/. {formData.precioFormato}
+                                            {/* <div className="col bg-dark-subtle rounded p-1 fw-bold border border-secondary"> */}
+                                            <div  className="col rounded p-1 fw-bold border border-secondary" style={{ backgroundColor: '#ffcc6c', color: 'black' }}>
+                                              S/. {formData.precioFormato}
                                             </div>
 
                                             <hr className="my-0 border-3 mt-2" />
@@ -354,14 +379,14 @@ export default function EstructuraInicio() {
                                                             </label>
                                                         </div>
                                                     </div>
-                                                    <div className="col-md-6 pt-1">
+                                                    {/* <div className="col-md-6 pt-1">
                                                         <div className="form-check">
                                                             <input className="form-check-input" type="radio" name="financimiento" value="conIntereses" onChange={(e) => setFinanciamiento(e.target.value)} />
                                                             <label className="form-check-label" >
                                                                 Financiamiento con intereses
                                                             </label>
                                                         </div>
-                                                    </div>
+                                                    </div> */}
                                                 </div>
                                             </div>
                                             <div className="col-md-6 border border-top-0 ">
@@ -386,7 +411,22 @@ export default function EstructuraInicio() {
                                                         <label className="col-form-label">Inicial</label>
                                                     </div>
                                                     <div className="col-auto">
-                                                        <input type="number" className="form-control" placeholder="Mínimo: S/. 10,000" onChange={(e) => setCantidadInicial(parseFloat(e.target.value))} />
+                                                        {/* <input type="number" className="form-control" placeholder="Mínimo: S/. 10,000" onChange={(e) => setCantidadInicial(parseFloat(e.target.value))} /> */}
+                                                        {/* <input 
+                type="number" 
+                className="form-control" 
+                placeholder={`Mínimo: S/. ${(parseFloat(formData.precio) * 0.1).toFixed(2)}`}
+                onChange={(e) => setCantidadInicial(parseFloat(e.target.value))} // Permite editar el valor
+                value={cantidadInicial.toFixed(2)} // Muestra el valor actualizado del estado
+            /> */}
+            <input 
+            type="number" 
+            className="form-control" 
+            placeholder={`Mínimo: S/. ${cantidadInicial.toFixed(2)}`} // Muestra el 10% como placeholder
+            onChange={handleCantidadInicialChange}
+            value={cantidadInicial} // Usa el estado para el valor, permitiendo edición libre
+        />
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -417,7 +457,7 @@ export default function EstructuraInicio() {
                                                     <tr className="border-1 border-secondary-subtle">
                                                         <td>{numeroCuotas} meses</td>
                                                         <td>0 %</td>
-                                                        <td>S/. {ultimaCuota.toFixed(2)}</td>
+                                                        <td>S/. {ultimaCuota.toLocaleString('es-PE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
                                                     </tr>
 
                                                 </tbody>
@@ -447,9 +487,10 @@ export default function EstructuraInicio() {
                                                     <div className="col-auto">
                                                         <select className="form-select" onChange={(e) => setCuotasIntereses(parseFloat(e.target.value))}>
                                                             <option value="">Seleccionar las cuotas</option>
-                                                            <option value="36">36</option>
+                                                            <option value="24">24</option>
+                                                            {/* <option value="36">36</option>
                                                             <option value="48">48</option>
-                                                            <option value="60">60</option>
+                                                            <option value="60">60</option> */}
                                                         </select>
                                                     </div>
                                                 </div>

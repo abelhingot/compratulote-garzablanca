@@ -2810,8 +2810,7 @@
       "href": "https://drive.google.com/file/d/1PQu-sPMaYC6RHjsY3UY_6LKEQMUY_E0n/preview"
     }
   ],
-  "pgconfiplanovs": 
-  [
+  "pgconfiplanovs": [
     {
       "id": "LAN1",
       "coordenadas": "147,252,51,301,58,353,154,356,189,338",
@@ -4266,7 +4265,7 @@
   "pginformacionvs": [
     {
       "id": "1",
-      "content": "<p class=\"ql-align-justify\"><span style=\"background-color: transparent;\">Club Privado Villa Sipán, un proyecto residencial exclusivo y privado, garantizando total seguridad gracias a su cerco perimétrico de concreto. Con todas las obras finalizadas, este proyecto permite comenzar la construcción de su hogar de forma inmediata, brindándole la oportunidad de materializar su visión sin demora. Ubicado estrátegicamente, Villa Sipán se sitúa en una zona exclusiva, a espaldas de la Universidad Señor de Sipán y al lado de la urbanización La Ensenada. Ofrecemos lotes disponibles desde </span>90m²&nbsp;y opciones más amplias de 120m². Además, reafirmamos nuestro compromiso con la seguridad jurídica al entregar cada lote con Título de Propiedad registrado en Registros Públicos (SUNARP) de manera INMEDIATA y a sola firma<span style=\"background-color: transparent; color: var(--bs-card-color);\">. </span></p><ul><li>Ofrecemos los siguientes servicios básicos:</li></ul>",
+      "content": "<p class=\"ql-align-justify\"><span style=\"background-color: transparent;\">Club Privado Villa Sipán, un proyecto residencial exclusivo y privado, garantizando total seguridad gracias a su cerco perimétrico de concreto. Con todas las obras finalizadas, este proyecto permite comenzar la construcción de su hogar de forma inmediata, brindándole la oportunidad de materializar su visión sin demora. Ubicado estrátegicamente, Villa Sipán se sitúa en una zona exclusiva, a espaldas de la Universidad Señor de Sipán y al lado de la urbanización La Ensenada. Ofrecemos lotes disponibles desde </span>90m²&nbsp;y opciones más amplias de 120m². Además, reafirmamos nuestro compromiso con la seguridad jurídica al entregar cada lote con Título de Propiedad registrado en Registros Públicos (SUNARP) de manera INMEDIATA y a sola firma<span style=\"color: var(--bs-card-color); background-color: transparent;\">. </span></p><ul><li>Ofrecemos los siguientes servicios básicos:</li></ul>",
       "recurso1": "/images/icons/imagen1vs.jpg,/images/icons/imagen2vs.png,/images/icons/imagen3vs.png",
       "recurso2": "https://drive.google.com/file/d/1b64Shp9da4q5K4sorIMvIRwfxLFzGbAB/preview",
       "categoria": "informacion",
@@ -4316,7 +4315,7 @@
     },
     {
       "title": "Visión",
-      "content": "<p>Nos proyectamos como líderes en el desarrollo inmobiliario de las zonas más exclusivas de Chiclayo, destacándonos por la excelencia en la creación de proyectos inmobiliarios modernos, con estándares de calidad superiores. Aspiramos a ser reconocidos por nuestro compromiso con la innovación, la sostenibilidad y la satisfacción de nuestros clientes, convirtiendo a Procasa Norte Chiclayo SAC en sinónimo de hogares de prestigio y bienestar familiar.</p>",
+      "content": "<p class=\"ql-align-justify\">Nos proyectamos como líderes en el desarrollo inmobiliario de las zonas más exclusivas de Chiclayo, destacándonos por la excelencia en la creación de proyectos inmobiliarios modernos, con estándares de calidad superiores. Aspiramos a ser reconocidos por nuestro compromiso con la innovación, la sostenibilidad y la satisfacción de nuestros clientes, convirtiendo a Procasa Norte Chiclayo SAC en sinónimo de hogares de prestigio y bienestar familiar.</p>",
       "id": "2"
     }
   ],
