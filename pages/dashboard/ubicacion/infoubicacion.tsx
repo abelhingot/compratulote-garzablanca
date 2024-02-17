@@ -62,6 +62,18 @@ const Infoubicacion = () => {
             });
     };
 
+    const handleClearClick = () => {
+        setFormData({
+            id: "",
+            boton1: "",
+            ruta1: "",
+            boton2: "",
+            ruta2: "",
+            iframe: "",
+            titulo: ""
+        });
+    }
+
     const handleSaveClick = () => {
         if (editItemId) {
             fetch(`http://localhost:3001/pgubicacionvs/${editItemId}`, {
@@ -266,7 +278,7 @@ const Infoubicacion = () => {
                                         <Col md={12} xs={12}>
                                             <Button className="btn btn-primary" type="submit" onClick={() => handleSaveClick()}>GUARDAR</Button>
                                             &nbsp;
-                                            <Button className="btn btn-primary" type="reset" >LIMPIAR</Button>
+                                            <Button className="btn btn-primary" type="reset" onClick={() => handleClearClick()}>LIMPIAR</Button>
                                         </Col>
                                     </Row>
 

@@ -118,7 +118,11 @@ const Infoeditable = () => {
                 if (response.ok) {
                     fetch('http://localhost:3001/pginformacionvs')
                         .then(response => response.json())
-                        .then(data => setDatos(data))
+                        // .then(data => setDatos(data))
+                        .then(data => {
+                            const filtrado = data.filter(fila => fila.categoria === 'empresa'); 
+                            setDatos(filtrado);
+                        })
                         .catch(error => console.error('Error al obtener datos:', error));
                 } else {
                     console.error('Error al eliminar el registro.');
@@ -138,11 +142,11 @@ const Infoeditable = () => {
     };
 
     const handleCleanClick =()=>{
-        setRecurso1(null);
-        setRecurso2(null);
-        setInsertText("");
-        setTitle("");
-        setSelectedId("");
+        // setRecurso1(null);
+        // setRecurso2(null);
+        // setInsertText("");
+        // setTitle("");
+        // setSelectedId("");
         if (quill) {
             quill.clipboard.dangerouslyPasteHTML(content);
         }

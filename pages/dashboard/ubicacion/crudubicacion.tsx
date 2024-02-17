@@ -44,7 +44,7 @@ const Crudubicacion = () => {
         setLgShow(true);
         setFormData({
             id: '',
-            categoria: '',
+            categoria: 'ubicacion',
             titulo: '',
             texto: '',
             estado: '',
@@ -151,23 +151,13 @@ const Crudubicacion = () => {
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify(formData),
                 })
-                    .then((response) => response.json())
-                    .then((data) => {
-                        console.log('Datos guardados:', data);
-                        fetch('http://localhost:3001/serviciosES')
-                            .then((response) => response.json())
-                            .then((menusData) => {
-                                setDatos(menusData);
-                            })
-                            .catch((error) => {
-                                console.error('Error al actualizar menus:', error);
-                            });
-                    })
-                    .catch((error) => {
-                        console.error('Error al guardar datos:', error);
-                    });
+                .then(() => {
+                    setDatos(datos.filter((fila) => fila.id !== id));
+                })
+                .catch((error) => {
+                    console.error('Error al eliminar datos:', error);
+                });
             } else if (
                 result.dismiss === Swal.DismissReason.cancel
             ) {
@@ -178,7 +168,6 @@ const Crudubicacion = () => {
                 });
             }
         });
-
     };
     const handleClearClick = () => {
         setFormData({
