@@ -144,8 +144,7 @@ export default function CPlano() {
 
     //Este metodo: handleCantidadInicialChange se agregó
     const handleCantidadInicialChange = (e) => {
-        const valor = e.target.value ? parseFloat(e.target.value) : ''; // Permite campo vacío
-        setCantidadInicial(valor); // Actualiza con el valor numérico o vacío
+        setCantidadInicial(e.target.value ? parseFloat(e.target.value) : 0);
     };
 
     
