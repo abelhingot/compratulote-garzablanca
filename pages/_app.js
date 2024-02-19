@@ -14,7 +14,7 @@ import DefaultDashboardLayout from 'layouts/DefaultDashboardLayout';
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const pageURL = process.env.baseURL + router.pathname;
-  const title = "Dashboard";
+  const title = "Garza Blanca";
   const description = " Nextjs Snippet "
   const keywords = "e"
 
