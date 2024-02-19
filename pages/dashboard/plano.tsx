@@ -335,7 +335,7 @@ const Plano = () => {
                                                     <select className="form-select" value={formData.color} onChange={(e) => handleInputChange('color', e.target.value)}>
                                                         <option value="">Seleccionar la categoria del estado</option>
                                                         <option value="rgba(220, 53, 70, 0.504)">VENDIDO</option>
-                                                        <option value="rgba(77, 203, 92, 0.497)">DISPONIBLE</option>
+                                                        <option value="rgba(255, 255, 255, 0.522)">DISPONIBLE</option>
                                                         <option value="rgba(99, 115, 129, 0.51)">RESERVADO</option>
                                                         <option value="rgba(176, 136, 51, 0.549)">FINANCIADO</option>
                                                     </select>

@@ -305,7 +305,7 @@ const actualizarCantidadInicial = (precioLote) => {
                                         </div>
                                         <div className="col-md-3 text-center py-2">
                                             <span className=''>
-                                                <span className="rounded-circle p-2 border border-secondary bgGreen">
+                                                <span className="rounded-circle p-2 border border-secondary #fff">
                                                     <span className="p-2 " />
                                                 </span>
                                                 <span className="p-2">LOTES DISPONIBLES</span>
