@@ -170,9 +170,9 @@ const Crudtexto = () => {
                                             <button type="button" className='bg-white fa-lg text-primary border-0 rounded-3' onClick={() => handleLinkClick(fila.id, fila.content, fila.recurso1,fila.recurso2,fila.categoria,fila.title)} ><i className='fe fe-edit fa-md'></i></button>
                                         </div>|
                                         <div className="col-auto">
-                                            <button type="button" className='bg-white fa-lg text-danger border-0 rounded-3' onClick={() => confirmDelete(fila.id)}>
+                                            {/*<button type="button" className='bg-white fa-lg text-danger border-0 rounded-3' onClick={() => confirmDelete(fila.id)}>
                                                 <i className="fe fe-trash fa-md"></i>
-                                            </button>
+                    </button>*/}
                                         </div>
                                     </Row>
                                     <hr />

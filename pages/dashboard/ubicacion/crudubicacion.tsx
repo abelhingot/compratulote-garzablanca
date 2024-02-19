@@ -39,7 +39,7 @@ const Crudubicacion = () => {
         fetch('/db.json')
             .then(response => response.json())
             .then(json => {
-                const data: any[] = json.serviciosES;
+                const data: any[] = json.ubicacion;
                 const filtrado = data.filter(fila => fila.categoria === url);
                 setDatos(filtrado);
                 setUbicacion(url);
@@ -83,7 +83,7 @@ const Crudubicacion = () => {
         fetch('/db.json')
             .then((response) => response.json())
             .then((json) => {
-                const data: any[] = json.serviciosES;
+                const data: any[] = json.ubicacion;
 
                 const obj = data.find(x => x.id == id);
                 setFormData({
@@ -103,7 +103,7 @@ const Crudubicacion = () => {
 
     const handleSaveClick = () => {
         if (editItemId) {
-            fetch(`http://localhost:3002/serviciosES/${editItemId}`, {
+            fetch(`http://localhost:3002/ubicacion/${editItemId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -120,7 +120,7 @@ const Crudubicacion = () => {
                 });
             setEditItemId(null);
         } else {
-            fetch('http://localhost:3002/serviciosES', {
+            fetch('http://localhost:3002/ubicacion', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -162,7 +162,7 @@ const Crudubicacion = () => {
                     text: "Su archivo ha sido eliminado.",
                     icon: "success"
                 });
-                fetch(`http://localhost:3002/serviciosES/${id}`, {
+                fetch(`http://localhost:3002/ubicacion/${id}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
@@ -172,7 +172,7 @@ const Crudubicacion = () => {
                     .then((response) => response.json())
                     .then((data) => {
                         console.log('Datos guardados:', data);
-                        fetch('http://localhost:3002/serviciosES')
+                        fetch('http://localhost:3002/ubicacion')
                             .then((response) => response.json())
                             .then((menusData) => {
                                 setDatos(menusData);

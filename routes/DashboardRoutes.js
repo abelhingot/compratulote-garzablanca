@@ -59,18 +59,18 @@ export const DashboardMenu = [
 		icon: 'mail',
 		link: '/dashboard/contactame'
 	},
-	{
+/*	{
 		id: uuid(),
 		title: 'SEGURIDAD',
 		grouptitle: true
-	},
-	{
+	},*/
+	/*{
 		id: uuid(),
 		title: 'User',
 		icon: 'user',
 		link: '/dashboard/menus'
-	},
-	{
+	},*/
+	/*{
 		id: uuid(),
 		title: 'Autentificacion',
 		icon: 'lock',
@@ -79,7 +79,7 @@ export const DashboardMenu = [
 			{ id: uuid(), link: '/authentication/sign-up', name: 'Registrarse' },
 			{ id: uuid(), link: '/authentication/forget-password', name: 'Forget Password' }
 		]
-	},
+	},*/
 	{
 		id: uuid(),
 		title: 'OTROS COMPONENTES',

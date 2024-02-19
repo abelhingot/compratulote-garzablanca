@@ -190,7 +190,7 @@ const Navbar = () => {
                                                     <Image src={fila.href} alt="Logo" style={{ zoom: '0.5' }} />
                                                 ) : fila.texto === 'LogoProcasa' ? (
                                                     <>
-                                                        <Image src={fila.href} alt="LogoProcasa" style={{ margin: '10px',zoom: '0.012' }} />
+                                                        <Image src={fila.href} alt="LogoProcasa" style={{ margin: '10px',zoom: '0.6' }} />
                                                     </>
                                             ) :(
                                                     <a className={`nav-link custom-sombra fs-4 ${selMenu.toLowerCase() === fila.texto.toLowerCase() ? 'text-light active bgProyect mx-2 rounded-5' : 'text-dark'}`} href="#">

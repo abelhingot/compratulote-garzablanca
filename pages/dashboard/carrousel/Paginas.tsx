@@ -33,7 +33,7 @@ const Inicio = () => {
     (fila.categoria.toLowerCase().includes(searchTerm.toLowerCase()) || fila.id.toLowerCase().includes(searchTerm.toLowerCase())));
 
     useEffect(() => {
-        fetch('http://localhost:3001/slider2')
+        fetch('http://localhost:3002/slider2')
             .then(response => response.json())
             .then(data => setDatos(data))
             .catch(error => console.error('Error al obtener datos:', error));
@@ -43,7 +43,7 @@ const Inicio = () => {
         setEditItemId(id);
         setLgShow(true);
 
-        fetch(`http://localhost:3001/slider2/${id}`)
+        fetch(`http://localhost:3002/slider2/${id}`)
             .then((response) => response.json())
             .then((data) => {
                 setFormData({
@@ -61,7 +61,7 @@ const Inicio = () => {
 
     const handleSaveClick = () => {
         if (editItemId) {
-            fetch(`http://localhost:3001/slider2/${editItemId}`, {
+            fetch(`http://localhost:3002/slider2/${editItemId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -71,14 +71,18 @@ const Inicio = () => {
                 .then((response) => response.json())
                 .then((data) => {
                     console.log('Datos actualizados:', data);
+                    
+                
                 })
+                
                 .catch((error) => {
                     console.error('Error al actualizar datos:', error);
                 });
+                 
 
             setEditItemId(null);
         } else {
-            fetch('http://localhost:3001/slider2', {
+            fetch('http://localhost:3002/slider2', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -88,7 +92,11 @@ const Inicio = () => {
                 .then((response) => response.json())
                 .then((data) => {
                     console.log('Datos guardados:', data);
-                })
+                    
+                }
+                
+                )
+               
                 .catch((error) => {
                     console.error('Error al guardar datos:', error);
                 });
@@ -120,7 +128,7 @@ const Inicio = () => {
                     text: "Su archivo ha sido eliminado.",
                     icon: "success"
                 });
-                fetch(`http://localhost:3001/slider2/${id}`, {
+                fetch(`http://localhost:3002/slider2/${id}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
@@ -130,7 +138,7 @@ const Inicio = () => {
                     .then((response) => response.json())
                     .then((data) => {
                         console.log('Datos guardados:', data);
-                        fetch('http://localhost:3001/slider2')
+                        fetch('http://localhost:3002/slider2')
                             .then((response) => response.json())
                             .then((menusData) => {
                                 setDatos(menusData);

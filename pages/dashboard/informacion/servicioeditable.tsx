@@ -182,9 +182,9 @@ const Servicioeditable = () => {
                                             <button type="button" className='bg-white fa-lg text-primary border-0 rounded-3' onClick={() => handleLinkClick(item.id, item.content, item.recurso1, item.recurso2, item.categoria, item.title)} ><i className='fe fe-edit fa-md'></i></button>
                                         </div>|
                                         <div className="col-auto">
-                                            <button type="button" className='bg-white fa-lg text-danger border-0 rounded-3' onClick={() => confirmDelete(item.id)}>
+                                            {/*<button type="button" className='bg-white fa-lg text-danger border-0 rounded-3' onClick={() => confirmDelete(item.id)}>
                                                 <i className="fe fe-trash fa-md"></i>
-                                            </button>
+                                            </button>*/}
                                         </div>
                                     </Row>
                                     <hr />

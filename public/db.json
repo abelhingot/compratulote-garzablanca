@@ -623,9 +623,11 @@
       "texto": "Empresa",
       "imagen": "/images/icons/veredaicono.png",
       "estado": true
-    },
+    }
+  ],
+  "ubicacion": [
     {
-      "id": "60",
+      "id": "1",
       "categoria": "ubicacion",
       "titulo": "Video Ubicación",
       "texto": "",
@@ -633,7 +635,7 @@
       "imagen": "https://drive.google.com/file/d/1fnEkeaF0eTiUJa9D0e85uY3lUhAGiXVu/preview"
     },
     {
-      "id": "61",
+      "id": "2",
       "categoria": "ubicacion",
       "titulo": "Avances de la obra",
       "texto": "",

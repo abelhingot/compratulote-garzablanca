@@ -41,7 +41,7 @@ const Paginas = () => {
         sliderRef.current.slickGoTo(0);
       };
     useEffect(() => {
-        fetch('http://localhost:3001/slider2')
+        fetch('http://localhost:3002/slider2')
             .then(response => response.json())
             .then(data => setDatos(data))
             .catch(error => console.error('Error al obtener datos:', error));
