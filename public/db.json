@@ -707,7 +707,7 @@
     {
       "id": "3",
       "title": "Luz",
-      "content": "<p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\"><span style=\"background-color: transparent;\">﻿</span></p>",
+      "content": "<p><br></p><p class=\"ql-align-justify\"><span style=\"background-color: transparent; color: rgb(0, 0, 0);\">﻿¡Hola! Somos Procasa Norte, una inmobiliaria dedicada a la creación de entornos residenciales exclusivos en las zonas más exclusivas de Chiclayo, Lambayeque. Desde nuestra fundación en 2017, nos destacamos por ofrecer un nuevo estándar de vida a través de proyectos inmobiliarios innovadores. Nos enfocamos en diseñar espacios que integren la naturaleza, la seguridad y la tranquilidad, añadiendo valor a nuestros proyectos con áreas verdes, parques infantiles, piscinas y más.</span></p><p class=\"ql-align-justify\"><span style=\"background-color: transparent; color: rgb(0, 0, 0);\">Nuestros valores definen nuestro compromiso con el bienestar de la familia. Estamos aquí para ofrecerte lotes que se conviertan en el escenario perfecto para tus sueños y tu estilo de vida. ¡Bienvenidos a Procasa Norte!</span><span style=\"background-color: transparent;\">﻿</span></p>",
       "categoria": "empresa",
       "recurso1": "",
       "recurso2": ""
