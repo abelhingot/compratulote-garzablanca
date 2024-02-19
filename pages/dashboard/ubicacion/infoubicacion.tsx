@@ -63,112 +63,127 @@ const Infoubicacion = () => {
     };
 
     const handleClearClick = () => {
-        setFormData({
-            id: "",
-            boton1: "",
-            ruta1: "",
-            boton2: "",
-            ruta2: "",
-            iframe: "",
-            titulo: ""
+        const shouldDelete = window.confirm("¿Estás seguro de que deseas limpiar este registro?");
+        if(shouldDelete){
+            setFormData({
+                id: formData.id,
+                boton1: "",
+                ruta1: "",
+                boton2: "",
+                ruta2: "",
+                iframe: "",
+                titulo: ""
         });
+    }else {
+        // Muestra un mensaje de operación cancelada si el usuario selecciona "Cancelar"
+        Swal.fire({
+            icon: 'error',
+            title: 'Operación cancelada',
+            text: 'No se ha eliminado ningún registro.',
+        });
+    }
     }
 
     const handleSaveClick = () => {
-        if (editItemId) {
-            fetch(`http://localhost:3001/pgubicacionvs/${editItemId}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log('Datos actualizados:', data);
-                })
-                .catch((error) => {
-                    console.error('Error al actualizar datos:', error);
-                });
-
-            setEditItemId(null);
-        } else {
-            fetch('http://localhost:3001/pgubicacionvs', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log('Datos guardados:', data);
-                })
-                .catch((error) => {
-                    console.error('Error al guardar datos:', error);
-                });
+        // Verificación solo para el caso de un nuevo registro (no para la edición)
+        if (!editItemId && datos.some(item => item.id === formData.id)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Ya existe un registro con este ID. Por favor, utiliza un ID diferente.',
+            });
+            return; // Detiene la ejecución de la función aquí si se encuentra un ID duplicado.
         }
-    };
-
-    const handleDeleteClick = (id) => {
-        setIdToDelete(id);
-
-        const swalWithBootstrapButtons = Swal.mixin({
-            customClass: {
-                confirmButton: "btn btn-success",
-                cancelButton: "btn btn-danger"
+    
+        const url = editItemId ? `http://localhost:3001/pgubicacionvs/${editItemId}` : 'http://localhost:3001/pgubicacionvs';
+        const method = editItemId ? 'PUT' : 'POST';
+    
+        fetch(url, {
+            method: method,
+            headers: {
+                'Content-Type': 'application/json',
             },
-            buttonsStyling: false
-        });
-        swalWithBootstrapButtons.fire({
-            title: "¿Seguro de querer eliminar?",
-            text: "Si elimina, no se puede deshacer los cambios",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonText: "Eliminar",
-            cancelButtonText: "Cancelar",
-            reverseButtons: true
-        }).then((result) => {
-            if (result.isConfirmed) {
-                swalWithBootstrapButtons.fire({
-                    title: "Operación Existosa!",
-                    text: "Su archivo ha sido eliminado.",
-                    icon: "success"
-                });
-                fetch(`http://localhost:3001/pgubicacionvs/${id}`, {
-                    method: 'DELETE',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData),
-                })
-                    .then((response) => response.json())
-                    .then((data) => {
-                        console.log('Datos guardados:', data);
-                        fetch('http://localhost:3001/pgubicacionvs')
-                            .then((response) => response.json())
-                            .then((menusData) => {
-                                setDatos(menusData);
-                            })
-                            .catch((error) => {
-                                console.error('Error al actualizar menus:', error);
-                            });
-                    })
-                    .catch((error) => {
-                        console.error('Error al guardar datos:', error);
-                    });
-            } else if (
-                result.dismiss === Swal.DismissReason.cancel
-            ) {
-                swalWithBootstrapButtons.fire({
-                    title: "Operación cancelada",
-                    text: "Archivo aún conservado",
-                    icon: "error"
-                });
+            body: JSON.stringify(formData),
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Datos guardados o actualizados:', data);
+            if (editItemId) {
+                // Es una actualización, reemplaza el elemento editado en el estado
+                setDatos(datos.map(item => item.id === editItemId ? data : item));
+            } else {
+                // Es un nuevo registro, lo añade al estado
+                setDatos([...datos, data]);
             }
+            setLgShow(false); // Cierra el modal
+            setEditItemId(null); // Limpia el ID de edición
+            // handleClearClick(); // Limpia el formulario
+        })
+        .catch((error) => {
+            console.error('Error al guardar o actualizar:', error);
         });
-
     };
+    
+
+    // const handleDeleteClick = (id) => {
+    //     setIdToDelete(id);
+
+    //     const swalWithBootstrapButtons = Swal.mixin({
+    //         customClass: {
+    //             confirmButton: "btn btn-success",
+    //             cancelButton: "btn btn-danger"
+    //         },
+    //         buttonsStyling: false
+    //     });
+    //     swalWithBootstrapButtons.fire({
+    //         title: "¿Seguro de querer eliminar?",
+    //         text: "Si elimina, no se puede deshacer los cambios",
+    //         icon: "warning",
+    //         showCancelButton: true,
+    //         confirmButtonText: "Eliminar",
+    //         cancelButtonText: "Cancelar",
+    //         reverseButtons: true
+    //     }).then((result) => {
+    //         if (result.isConfirmed) {
+    //             swalWithBootstrapButtons.fire({
+    //                 title: "Operación Existosa!",
+    //                 text: "Su archivo ha sido eliminado.",
+    //                 icon: "success"
+    //             });
+    //             fetch(`http://localhost:3001/pgubicacionvs/${id}`, {
+    //                 method: 'DELETE',
+    //                 headers: {
+    //                     'Content-Type': 'application/json',
+    //                 },
+    //                 body: JSON.stringify(formData),
+    //             })
+    //                 .then((response) => response.json())
+    //                 .then((data) => {
+    //                     console.log('Datos guardados:', data);
+    //                     fetch('http://localhost:3001/pgubicacionvs')
+    //                         .then((response) => response.json())
+    //                         .then((menusData) => {
+    //                             setDatos(menusData);
+    //                         })
+    //                         .catch((error) => {
+    //                             console.error('Error al actualizar menus:', error);
+    //                         });
+    //                 })
+    //                 .catch((error) => {
+    //                     console.error('Error al guardar datos:', error);
+    //                 });
+    //         } else if (
+    //             result.dismiss === Swal.DismissReason.cancel
+    //         ) {
+    //             swalWithBootstrapButtons.fire({
+    //                 title: "Operación cancelada",
+    //                 text: "Archivo aún conservado",
+    //                 icon: "error"
+    //             });
+    //         }
+    //     });
+
+    // };
 
     return (
         <>
@@ -193,8 +208,8 @@ const Infoubicacion = () => {
                                     </div>
                                     <div className="col-md-5 col-lg-4 border border-1 py-2">
                                         <Card.Title className='text-end'>
-                                            <button type="button" className='bg-white fa-lg text-primary border-0 rounded-3' onClick={() => handleEditClick(fila.id)} >  <i className="fe fe-edit fa-md"></i>   </button>{' '}|
-                                            <button type="button" className='bg-white fa-lg text-danger border-0 rounded-3' onClick={() => handleDeleteClick(fila.id)}><i className="fe fe-trash fa-md"></i></button>{' '}
+                                            <button type="button" className='bg-white fa-lg text-primary border-0 rounded-3' onClick={() => handleEditClick(fila.id)} ><i className="fe fe-edit fa-md"></i>   </button>{' '}|
+                                            {/* <button type="button" className='bg-white fa-lg text-danger border-0 rounded-3' onClick={() => handleDeleteClick(fila.id)}><i className="fe fe-trash fa-md"></i></button>{' '} */}
                                             <hr />
                                         </Card.Title>
 
@@ -241,7 +256,7 @@ const Infoubicacion = () => {
                                 <Form>
                                     <Row className="mb-3">
                                         <div className="col-sm-6 col-lg-6">
-                                            <input type="text" className="form-control" placeholder="Id" value={formData.id} onChange={(e) => handleInputChange('id', e.target.value)} />
+                                            <input type="text" className="form-control" placeholder="Id" disabled value={formData.id} onChange={(e) => handleInputChange('id', e.target.value)} />
                                         </div>
                                         <div className="col-md-6 col-6">
                                             <input className="form-control" type="text" placeholder="Titulo" value={formData.titulo} onChange={(e) => handleInputChange('titulo', e.target.value)} />

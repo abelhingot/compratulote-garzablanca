@@ -32,6 +32,16 @@ const Plano = () => {
             [field]: value,
         }));
     };
+    //Para el comboBOX
+    const handleEstadoColorChange = (e) => {
+        const color = e.target.value; // Obtiene el valor RGB seleccionado
+        const estado = e.target.options[e.target.selectedIndex].text; // Obtiene el texto de la opción seleccionada
+        setFormData(prevFormData => ({
+            ...prevFormData,
+            color: color,
+            estado: estado, // Actualiza el estado con el texto seleccionado
+        }));
+    };
     const filteredMenus = datos.filter((fila) =>
         (fila.id.toLowerCase().includes(searchTerm.toLowerCase())));
 
@@ -313,9 +323,9 @@ const Plano = () => {
                                                     <input type="text" className="form-control" placeholder="Id" value={formData.id} onChange={(e) => handleInputChange('id', e.target.value)} />
                                                 </div>
 
-                                                <div className="col-md-6 col-6">
+                                                {/* <div className="col-md-6 col-6">
                                                     <input className="form-control" type="text" placeholder="Estado" value={formData.estado} onChange={(e) => handleInputChange('estado', e.target.value)} />
-                                                </div>
+                                                </div> */}
                                             </Row>
                                             <Row className="mb-3">
                                                 <div className="col-sm-4 col-lg-4">
@@ -332,9 +342,9 @@ const Plano = () => {
                                             </Row>
                                             <Row className="mb-3">
                                                 <div className="col-md-12 col-12">
-                                                    <select className="form-select" value={formData.color} onChange={(e) => handleInputChange('color', e.target.value)}>
+                                                    <select className="form-select" value={formData.color} onChange={handleEstadoColorChange}>
                                                         <option value="">Seleccionar la categoria del estado</option>
-                                                        <option value="rgba(220, 53, 70, 0.504)">VENDIDO</option>
+                                                        <option value="rgba(162, 51, 51, 0.486)">VENDIDO</option>
                                                         <option value="rgba(255, 255, 255, 0.522)">DISPONIBLE</option>
                                                         <option value="rgba(99, 115, 129, 0.51)">RESERVADO</option>
                                                         <option value="rgba(176, 136, 51, 0.549)">FINANCIADO</option>

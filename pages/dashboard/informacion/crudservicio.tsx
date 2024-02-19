@@ -66,6 +66,16 @@ const CrudServicio = () => {
     };
 
     const handleSaveClick = () => {
+        // Verifica si ya existe un elemento con el mismo ID en el caso de que sea un registro nuevo.
+        if (!editItemId && datos.some(item => item.id === formData.id)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Ya existe un registro con este ID. Por favor, utiliza un ID diferente.',
+            });
+            return; // Detiene la ejecución de la función aquí si se encuentra un ID duplicado.
+        }
+
         const url = editItemId ? `http://localhost:3001/serviciosES/${editItemId}` : 'http://localhost:3001/serviciosES';
         const method = editItemId ? 'PUT' : 'POST';
     
@@ -88,14 +98,12 @@ const CrudServicio = () => {
             }
             setLgShow(false); // Cierra el modal
             setEditItemId(null); // Resetea el ID de edición
-            handleCleanClick(); // Limpia el formulario
+            // handleCleanClick(); // Limpia el formulario
         });
     };
     
 
     const handleDeleteClick = (id) => {
-        setIdToDelete(id);
-
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: "btn btn-success",
@@ -103,6 +111,7 @@ const CrudServicio = () => {
             },
             buttonsStyling: false
         });
+    
         swalWithBootstrapButtons.fire({
             title: "¿Seguro de querer eliminar?",
             text: "Si elimina, no se puede deshacer los cambios",
@@ -113,36 +122,29 @@ const CrudServicio = () => {
             reverseButtons: true
         }).then((result) => {
             if (result.isConfirmed) {
-                swalWithBootstrapButtons.fire({
-                    title: "Operación Existosa!",
-                    text: "Su archivo ha sido eliminado.",
-                    icon: "success"
-                });
                 fetch(`http://localhost:3001/serviciosES/${id}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify(formData),
                 })
-                    .then((response) => response.json())
-                    .then((data) => {
-                        console.log('Datos guardados:', data);
-                        fetch('http://localhost:3001/serviciosES')
-                            .then((response) => response.json())
-                            .then((menusData) => {
-                                setDatos(menusData);
-                            })
-                            .catch((error) => {
-                                console.error('Error al actualizar menus:', error);
-                            });
-                    })
-                    .catch((error) => {
-                        console.error('Error al guardar datos:', error);
-                    });
-            } else if (
-                result.dismiss === Swal.DismissReason.cancel
-            ) {
+                .then(() => {
+                    // Primero, filtra el elemento eliminado
+                    const datosActualizados = datos.filter((fila) => fila.id !== id);
+                    // Luego, si necesitas filtrar por categoría, lo haces en los datos actualizados
+                    const datosFiltradosPorCategoria = datosActualizados.filter((fila) => fila.categoria === "informacion");
+                    setDatos(datosFiltradosPorCategoria);
+                })
+                .catch((error) => {
+                    console.error('Error al eliminar datos:', error);
+                });
+    
+                swalWithBootstrapButtons.fire({
+                    title: "Operación Exitosa!",
+                    text: "Su archivo ha sido eliminado.",
+                    icon: "success"
+                });
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
                 swalWithBootstrapButtons.fire({
                     title: "Operación cancelada",
                     text: "Archivo aún conservado",
@@ -150,20 +152,47 @@ const CrudServicio = () => {
                 });
             }
         });
-
     };
+    
 
     const handleCleanClick=()=>{
-        setFormData({
-            id: "",
-            categoria: "",
-            titulo: "",
-            texto: "",
-            imagen: "",
-            estado: ""
+        const shouldDelete = window.confirm("¿Estás seguro de que deseas eliminar este registro?");
+        if(shouldDelete){
+            setFormData({
+                id: formData.id,
+                categoria: formData.categoria,
+                titulo: "",
+                texto: "",
+                imagen: "",
+                estado: ""
 
-        });
+            });
+        }else {
+            // Muestra un mensaje de operación cancelada si el usuario selecciona "Cancelar"
+            Swal.fire({
+                icon: 'error',
+                title: 'Operación cancelada',
+                text: 'No se ha eliminado ningún registro.',
+            });
+        }    
     }
+    
+    const handleOpenRegistrarModal = () => {
+        setEditItemId(null); // Asegúrate de limpiar el ID de edición si lo estás usando
+        setFormData({
+            // Inicializa el formulario para un nuevo registro
+            id: '',
+            categoria: 'informacion', // Establece 'informacion' como valor por defecto para la categoría
+            titulo: '',
+            texto: '',
+            imagen: '',
+            estado: '' // Puedes establecer un valor por defecto para el estado si lo necesitas
+        });
+        setLgShow(true); // Hace visible el modal
+    };
+    
+    
+    
     return (
         <>
 
@@ -182,9 +211,11 @@ const CrudServicio = () => {
                                         <input type='search' placeholder='Nueva busqueda' className='form-control' onChange={(event) => setSearchTerm(event.target.value)}></input>
                                     </div>
                                     <div className='col'>
-                                        <Button onClick={() => setLgShow(true)}>REGISTRAR</Button>{' '}
+                                        {/* <Button onClick={() => setLgShow(true)}>REGISTRAR</Button>{' '} */}
+                                        {/*  Y en tu botón, utiliza esta nueva función para el evento onClick */}
+                                        <Button onClick={handleOpenRegistrarModal}>REGISTRAR</Button>{' '}
                                     </div>
-                                </div>
+                                </div>  
                                 <br />
                                 <Table hover responsive className="scroll text-nowrap">
                                     <thead >
@@ -249,7 +280,7 @@ const CrudServicio = () => {
                                             <input type="text" className="form-control" placeholder="Titulo" value={formData.titulo} onChange={(e) => handleInputChange('titulo', e.target.value)} />
                                         </div>
                                         <div className="col-md-6 col-6">
-                                            <input type="text" className="form-control" placeholder="Categoria" value={formData.categoria} onChange={(e) => handleInputChange('titulo', e.target.value)} />
+                                            <input type="text" className="form-control" placeholder="Categoria" disabled value={formData.categoria} onChange={(e) => handleInputChange('titulo', e.target.value)} />
                                         </div>
                                     </Row>
 

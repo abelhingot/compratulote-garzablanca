@@ -33,7 +33,7 @@ const Crudubicacion = () => {
             fetch('../../api/db.json')
                 .then(response => response.json())
                 .then(json => {
-                    const data: any[] = json.serviciosES;
+                    const data: any[] = json.ubicacionArchivos;
                     const filtrado = data.filter(fila => fila.categoria === url);
                     setDatos(filtrado);
                     setUbicacion(url);
@@ -52,29 +52,28 @@ const Crudubicacion = () => {
         });
     }
 
-    const handleEditClick = (id) => {
-        setEditItemId(id);
-        setLgShow(true);
-
-        fetch(`http://localhost:3001/serviciosES/${id}`)
-            .then((response) => response.json())
-            .then((data) => {
-                setFormData({
-                    id: data.id,
-                    categoria: data.categoria,
-                    titulo: data.titulo,
-                    texto: data.texto,
-                    estado: data.estado,
-                    imagen: data.imagen
-                });
-            })
-            .catch((error) => {
-                console.error('Error al obtener datos para editar:', error);
+    const handleEditClick = (elemento) => {
+        // Suponiendo que 'elemento' es el objeto completo que deseas editar
+        if (elemento.categoria === "ubicacion") {
+            setEditItemId(elemento.id);
+            setLgShow(true);
+            setFormData({
+                id: elemento.id,
+                categoria: elemento.categoria,
+                titulo: elemento.titulo,
+                texto: elemento.texto,
+                estado: elemento.estado,
+                imagen: elemento.imagen
             });
+        } else {
+            // Manejar el caso para cuando la categoría no es "ubicacion"
+            console.log("Solo se pueden editar elementos de la categoría 'ubicacion'.");
+        }
     };
+    
     const handleEnviarIdClick = (id) => {
         setEditItemId(id);
-        fetch(`http://localhost:3001/serviciosES/${id}`)
+        fetch(`http://localhost:3001/ubicacionArchivos/${id}`)
             .then((response) => response.json())
             .then((data) => {
                 setFormData({
@@ -91,7 +90,17 @@ const Crudubicacion = () => {
             });
     }
     const handleSaveClick = async () => {
-        const url = editItemId ? `http://localhost:3001/serviciosES/${editItemId}` : 'http://localhost:3001/serviciosES';
+        // Verifica si ya existe un elemento con el mismo ID en el caso de que sea un registro nuevo.
+        if (!editItemId && datos.some(item => item.id === formData.id)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Ya existe un registro con este ID. Por favor, utiliza un ID diferente.',
+            });
+            return; // Detiene la ejecución de la función aquí si se encuentra un ID duplicado.
+        }
+        
+        const url = editItemId ? `http://localhost:3001/ubicacionArchivos/${editItemId}` : 'http://localhost:3001/ubicacionArchivos';
         const method = editItemId ? 'PUT' : 'POST';
     
         try {
@@ -115,7 +124,7 @@ const Crudubicacion = () => {
             // Cierra el modal y limpia el formulario
             setLgShow(false);
             setEditItemId(null);
-            handleClearClick(); // Asumiendo que esta función resetea formData
+            // handleClearClick(); // Asumiendo que esta función resetea formData
         } catch (error) {
             console.error('Error al guardar o actualizar datos:', error);
         }
@@ -146,7 +155,7 @@ const Crudubicacion = () => {
                     text: "Su archivo ha sido eliminado.",
                     icon: "success"
                 });
-                fetch(`http://localhost:3001/serviciosES/${id}`, {
+                fetch(`http://localhost:3001/ubicacionArchivos/${id}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
@@ -170,14 +179,24 @@ const Crudubicacion = () => {
         });
     };
     const handleClearClick = () => {
-        setFormData({
-            id: '',
-            categoria: '',
-            titulo: '',
-            texto: '',
-            estado: '',
-            imagen: ''
-        });
+        const shouldDelete = window.confirm("¿Estás seguro de que deseas eliminar este registro?");
+        if(shouldDelete){
+            setFormData({
+                id: formData.id,
+                categoria: formData.categoria,
+                titulo: '',
+                texto: '',
+                estado: '',
+                imagen: ''
+            });
+        }else {
+            // Muestra un mensaje de operación cancelada si el usuario selecciona "Cancelar"
+            Swal.fire({
+                icon: 'error',
+                title: 'Operación cancelada',
+                text: 'No se ha eliminado ningún registro.',
+            });
+        }
     }
     return (
         <>
@@ -287,7 +306,7 @@ const Crudubicacion = () => {
                                                 <td>{fila.estado}</td>
                                                 <td>{fila.imagen}</td>
                                                 <td>
-                                                    <Button onClick={() => handleEditClick(fila.id)} >  <i className="fe fe-edit fa-lg text-light"></i>   </Button>{' '}
+                                                    <Button onClick={() => handleEditClick(fila)} >  <i className="fe fe-edit fa-lg text-light"></i>   </Button>{' '}
                                                     <Button onClick={() => handleDeleteClick(fila.id)} className='btn-danger'><i className="fe fe-trash fa-lg"></i></Button>{' '}
                                                 </td>
                                             </tr>
@@ -318,7 +337,7 @@ const Crudubicacion = () => {
                                         </div>
 
                                         <div className="col-md-6 col-6">
-                                            <input type="text" className="form-control" placeholder="Categoria" value={formData.categoria} onChange={(e) => handleInputChange('categoria', e.target.value)} />
+                                            <input type="text" className="form-control" placeholder="Categoria" disabled value={formData.categoria} onChange={(e) => handleInputChange('categoria', e.target.value)} />
                                         </div>
                                     </Row>
 

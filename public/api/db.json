@@ -524,108 +524,110 @@
       "id": "3",
       "categoria": "informacion",
       "titulo": "Luz",
-      "texto": "informacion",
-      "estado": true,
-      "imagen": "/images/icons/sol.png"
+      "texto": "",
+      "imagen": "/images/icons/sol.png",
+      "estado": true
     },
     {
       "id": "4",
-      "titulo": "Desagüe",
-      "texto": "ubicacion",
       "categoria": "informacion",
-      "estado": true,
-      "imagen": "/images/icons/desague.png"
+      "titulo": "Desagüe",
+      "texto": "",
+      "imagen": "/images/icons/desague.png",
+      "estado": true
     },
     {
       "id": "5",
       "categoria": "informacion",
       "titulo": "Veredas",
-      "texto": "Plano",
-      "estado": true,
-      "imagen": "/images/icons/icon_Veredas.png"
+      "texto": "",
+      "imagen": "/images/icons/icon_Veredas.png",
+      "estado": true
     },
     {
       "id": "6",
       "categoria": "informacion",
       "titulo": "Pistas",
-      "texto": "TimeLine",
-      "estado": true,
-      "imagen": "/images/icons/icon_Pistas.png"
+      "texto": "",
+      "imagen": "/images/icons/icon_Pistas.png",
+      "estado": true
     },
     {
       "id": "7",
       "categoria": "informacion",
       "titulo": "Cerco perimétrico",
-      "texto": "Empresa",
-      "estado": true,
-      "imagen": "/images/icons/icon_Cerco.png"
+      "texto": "",
+      "imagen": "/images/icons/icon_Cerco.png",
+      "estado": true
     },
     {
       "id": "8",
       "categoria": "informacion",
       "titulo": "Pórtico de ingreso",
-      "texto": "Empresa",
-      "estado": true,
-      "imagen": "/images/icons/icon_Portico.png"
+      "texto": "",
+      "imagen": "/images/icons/icon_Portico.png",
+      "estado": true
     },
     {
       "id": "9",
       "categoria": "informacion",
       "titulo": "Caseta de vigilancia",
-      "texto": "Empresa",
-      "estado": true,
-      "imagen": "/images/icons/icon_CasetaVigilancia.png"
+      "texto": "",
+      "imagen": "/images/icons/icon_CasetaVigilancia.png",
+      "estado": true
     },
     {
       "id": "10",
       "categoria": "informacion",
       "titulo": "Estacionamiento",
-      "texto": "Empresa",
-      "estado": true,
-      "imagen": "/images/icons/icon_Estacionamiento.png"
+      "texto": "",
+      "imagen": "/images/icons/icon_Estacionamiento.png",
+      "estado": true
     },
     {
       "id": "11",
       "categoria": "informacion",
       "titulo": "Parque",
-      "texto": "Empresa",
-      "estado": true,
-      "imagen": "/images/icons/icon_Parque.png"
+      "texto": "",
+      "imagen": "/images/icons/icon_Parque.png",
+      "estado": true
     },
     {
       "id": "12",
       "categoria": "informacion",
       "titulo": "Campo de grass sintético",
-      "texto": "Empresa",
-      "estado": true,
-      "imagen": "/images/icons/icon_CampoFutbol.png"
+      "texto": "",
+      "imagen": "/images/icons/icon_CampoFutbol.png",
+      "estado": true
     },
     {
       "id": "13",
       "categoria": "informacion",
       "titulo": "Picsina",
-      "texto": "Empresa",
-      "estado": true,
-      "imagen": "/images/icons/icon_Piscina.png"
+      "texto": "",
+      "imagen": "/images/icons/icon_Piscina.png",
+      "estado": true
     },
     {
       "id": "14",
       "categoria": "informacion",
       "titulo": "Juegos recreativos para niños",
-      "texto": "Empresa",
-      "estado": true,
-      "imagen": "/images/icons/icon_PatioRecreo.png"
+      "texto": "",
+      "imagen": "/images/icons/icon_PatioRecreo.png",
+      "estado": true
     },
     {
       "id": "15",
       "categoria": "informacion",
       "titulo": "Gimnasio al aire libre",
-      "texto": "Empresa",
-      "estado": true,
-      "imagen": "/images/icons/Icon_Gym.png"
-    },
+      "texto": "",
+      "imagen": "/images/icons/Icon_Gym.png",
+      "estado": true
+    }
+  ],
+  "ubicacionArchivos": [
     {
-      "id": "16",
+      "id": "1",
       "categoria": "ubicacion",
       "titulo": "Villa Sipán - video referencial",
       "texto": "El siguiente video brinda una visión anticipada de lo que está por construirse.",
@@ -633,7 +635,7 @@
       "imagen": "https://www.youtube.com/embed/q6IzqXFS-68?si=qsQoxSYXmuglYY9o"
     },
     {
-      "id": "17",
+      "id": "2",
       "categoria": "ubicacion",
       "titulo": "Vista Aérea",
       "texto": "El siguiente video muestra un pequeño recorrido por Villa Sipán.",
@@ -4265,11 +4267,11 @@
   "pginformacionvs": [
     {
       "id": "1",
-      "content": "<p class=\"ql-align-justify\"><span style=\"background-color: transparent;\">Club Privado Villa Sipán, un proyecto residencial exclusivo y privado, garantizando total seguridad gracias a su cerco perimétrico de concreto. Con todas las obras finalizadas, este proyecto permite comenzar la construcción de su hogar de forma inmediata, brindándole la oportunidad de materializar su visión sin demora. Ubicado estrátegicamente, Villa Sipán se sitúa en una zona exclusiva, a espaldas de la Universidad Señor de Sipán y al lado de la urbanización La Ensenada. Ofrecemos lotes disponibles desde </span>90m²&nbsp;y opciones más amplias de 120m². Además, reafirmamos nuestro compromiso con la seguridad jurídica al entregar cada lote con Título de Propiedad registrado en Registros Públicos (SUNARP) de manera INMEDIATA y a sola firma<span style=\"color: var(--bs-card-color); background-color: transparent;\">. </span></p><ul><li>Ofrecemos los siguientes servicios básicos:</li></ul>",
+      "content": "<p class=\"ql-align-justify\"><span style=\"background-color: transparent;\">Club Privado Villa Sipán, un proyecto residencial exclusivo y privado, garantizando total seguridad gracias a su cerco perimétrico de concreto. Con todas las obras finalizadas, este proyecto permite comenzar la construcción de su hogar de forma inmediata, brindándole la oportunidad de materializar su visión sin demora. Ubicado estrátegicamente, Villa Sipán se sitúa en una zona exclusiva, a espaldas de la Universidad Señor de Sipán y al lado de la urbanización La Ensenada. Ofrecemos lotes disponibles desde </span>90m²&nbsp;y opciones más amplias de 120m². Además, reafirmamos nuestro compromiso con la seguridad jurídica al entregar cada lote con Título de Propiedad registrado en Registros Públicos (SUNARP) de manera INMEDIATA y a sola firma<span style=\"background-color: transparent; color: var(--bs-card-color);\">. </span></p><ul><li>Ofrecemos los siguientes servicios básicos:</li></ul>",
       "recurso1": "/images/icons/imagen1vs.jpg,/images/icons/imagen2vs.png,/images/icons/imagen3vs.png",
       "recurso2": "https://drive.google.com/file/d/1b64Shp9da4q5K4sorIMvIRwfxLFzGbAB/preview",
       "categoria": "informacion",
-      "title": "Titulo para"
+      "title": "Titulo para editar"
     },
     {
       "recurso1": "",
@@ -4284,7 +4286,7 @@
       "recurso2": "",
       "categoria": "empresa",
       "title": "Luz",
-      "content": "<p class=\"ql-align-justify\">¡Hola! Somos Procasa Norte, una inmobiliaria dedicada a la creación de entornos residenciales exclusivos en las zonas más exclusivas de Chiclayo, Lambayeque. Desde nuestra fundación en 2017, nos destacamos por ofrecer un nuevo estándar de vida a través de proyectos inmobiliarios innovadores. Nos enfocamos en diseñar espacios que integren la naturaleza, la seguridad y la tranquilidad, añadiendo valor a nuestros proyectos con áreas verdes, parques infantiles, piscinas y más.</p><p>Nuestros valores definen nuestro compromiso con el bienestar de la familia. Estamos aquí para ofrecerte lotes que se conviertan en el escenario perfecto para tus sueños y tu estilo de vida. ¡Bienvenidos a Procasa Norte!</p>",
+      "content": "<p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">¡Hola! Somos Procasa Norte, una inmobiliaria dedicada a la creación de entornos residenciales exclusivos en las zonas más exclusivas de Chiclayo, Lambayeque. Desde nuestra fundación en 2017, nos destacamos por ofrecer un nuevo estándar de vida a través de proyectos inmobiliarios innovadores. Nos enfocamos en diseñar espacios que integren la naturaleza, la seguridad y la tranquilidad, añadiendo valor a nuestros proyectos con áreas verdes, parques infantiles, piscinas y más.</p><p class=\"ql-align-justify\">Nuestros valores definen nuestro compromiso con el bienestar de la familia. Estamos aquí para ofrecerte lotes que se conviertan en el escenario perfecto para tus sueños y tu estilo de vida. ¡Bienvenidos a Procasa Norte!</p>",
       "id": "3"
     },
     {

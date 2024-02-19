@@ -4,6 +4,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { useQuill } from 'react-quilljs';
 import toolbar from '../../../config/toolbar'
 import 'quill/dist/quill.snow.css'
+import Swal from 'sweetalert2';
 
 const Crudtexto = () => {
     const [datos, setDatos] = useState([]);
@@ -116,20 +117,31 @@ const Crudtexto = () => {
             });
     };
 
-    const confirmDelete = (id) => {
-        const shouldDelete = window.confirm("¿Estás seguro de que deseas eliminar este registro?");
+    // const confirmDelete = (id) => {
+    //     const shouldDelete = window.confirm("¿Estás seguro de que deseas eliminar este registro?");
 
-        if (shouldDelete) {
-            handleDeleteClick(id);
-        }
-    };
+    //     if (shouldDelete) {
+    //         handleDeleteClick(id);
+    //     }
+    // };
 
     const handleCleanClick=()=>{
-        setInsertText("");
-        setSelectedId("");
-        if (quill) {
-            quill.clipboard.dangerouslyPasteHTML(content);
-        }
+        const shouldDelete = window.confirm("¿Estás seguro de que deseas limpiar este registro?");
+        if(shouldDelete){
+            setInsertText("");
+            // setSelectedId("");
+            // const shouldDelete = window.confirm("¿Estás seguro de que deseas eliminar el contenido");
+            if (quill) {
+                quill.clipboard.dangerouslyPasteHTML(content);
+            }
+        }else {
+            // Muestra un mensaje de operación cancelada si el usuario selecciona "Cancelar"
+            Swal.fire({
+                icon: 'error',
+                title: 'Operación cancelada',
+                text: 'No se ha eliminado ningún registro.',
+            });
+        }    
     }
     return (
         <>
@@ -144,9 +156,9 @@ const Crudtexto = () => {
                                             <button type="button" className='bg-white fa-lg text-primary border-0 rounded-3' onClick={() => handleLinkClick(fila)} ><i className='fe fe-edit fa-md'></i></button>
                                         </div>|
                                         <div className="col-auto">
-                                            <button type="button" className='bg-white fa-lg text-danger border-0 rounded-3' onClick={() => confirmDelete(fila.id)}>
+                                            {/* <button type="button" className='bg-white fa-lg text-danger border-0 rounded-3' onClick={() => confirmDelete(fila.id)}>
                                                 <i className="fe fe-trash fa-md"></i>
-                                            </button>
+                                            </button> */}
                                         </div>
                                     </Row>
                                     <hr />
@@ -167,7 +179,7 @@ const Crudtexto = () => {
                                         <Row className="mb-1">
                                             <div className="col-md-12 col-12">
                                                 <label htmlFor='title'>Identificador Único:</label>
-                                                <input type='text' className='p-2 border-0 rounded-2' id='id' value={selectedId} onChange={handleChange}></input>
+                                                <input type='text' className='p-2 border-0 rounded-2' id='id' disabled value={selectedId} onChange={handleChange}></input>
                                             </div>
                                         </Row>
                                         <Row className="mb-3">

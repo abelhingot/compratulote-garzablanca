@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import Link from 'next/link';
 import { Col, Row, Form, Card, Button, Image, Table, Modal, Accordion } from "react-bootstrap";
 import React, { Fragment, useEffect, useState } from 'react';
@@ -127,41 +128,51 @@ const Servicioeditable = () => {
     const procesarContenidoQuill = (contenidoQuill) => {
         return contenidoQuill;
     };
-    const handleDeleteClick = (id) => {
-        fetch(`http://localhost:3001/pginformacionvs/${id}`, {
-            method: 'DELETE',
-        })
-            .then(response => {
-                if (response.ok) {
-                    fetch('http://localhost:3001/pginformacionvs')
-                        .then(response => response.json())
-                        .then(data => setDatos(data))
-                        .catch(error => console.error('Error al obtener datos:', error));
-                } else {
-                    console.error('Error al eliminar el registro.');
-                }
-            })
-            .catch(error => {
-                console.error('Error de red:', error);
-            });
-    };
+    // const handleDeleteClick = (id) => {
+    //     fetch(`http://localhost:3001/pginformacionvs/${id}`, {
+    //         method: 'DELETE',
+    //     })
+    //         .then(response => {
+    //             if (response.ok) {
+    //                 fetch('http://localhost:3001/pginformacionvs')
+    //                     .then(response => response.json())
+    //                     .then(data => setDatos(data))
+    //                     .catch(error => console.error('Error al obtener datos:', error));
+    //             } else {
+    //                 console.error('Error al eliminar el registro.');
+    //             }
+    //         })
+    //         .catch(error => {
+    //             console.error('Error de red:', error);
+    //         });
+    // };
 
-    const confirmDelete = (id) => {
-        const shouldDelete = window.confirm("¿Estás seguro de que deseas eliminar este registro?");
-        if (shouldDelete) {
-            handleDeleteClick(id);
-        }
-    };
+    // const confirmDelete = (id) => {
+    //     const shouldDelete = window.confirm("¿Estás seguro de que deseas eliminar este registro?");
+    //     if (shouldDelete) {
+    //         handleDeleteClick(id);
+    //     }
+    // };
 
     const handleCleanClick =()=>{
-        setRecurso1(null);
-        setRecurso2(null);
-        setCategoria(null);
-        setInsertText("");
-        setTitle("");
-        setSelectedId("");
-        if (quill) {
-            quill.clipboard.dangerouslyPasteHTML(content);
+        const shouldDelete = window.confirm("¿Estás seguro de que deseas eliminar este registro?");
+        if(shouldDelete){
+            setRecurso1(null);
+            setRecurso2(null);
+            // setCategoria(null);
+            setInsertText("");
+            setTitle("");
+            // setSelectedId("");
+            if (quill) {
+                quill.clipboard.dangerouslyPasteHTML(content);
+            }
+        }else {
+            // Muestra un mensaje de operación cancelada si el usuario selecciona "Cancelar"
+            Swal.fire({
+                icon: 'error',
+                title: 'Operación cancelada',
+                text: 'No se ha eliminado ningún registro.',
+            });
         }
     }
 
@@ -177,11 +188,11 @@ const Servicioeditable = () => {
                                         <div className="col-auto">
                                             <button type="button" className='bg-white fa-lg text-primary border-0 rounded-3' onClick={() => handleLinkClick(item.id, item.content, item.recurso1, item.recurso2, item.categoria, item.title)} ><i className='fe fe-edit fa-md'></i></button>
                                         </div>|
-                                        <div className="col-auto">
+                                        {/* <div className="col-auto">
                                             <button type="button" className='bg-white fa-lg text-danger border-0 rounded-3' onClick={() => confirmDelete(item.id)}>
                                                 <i className="fe fe-trash fa-md"></i>
                                             </button>
-                                        </div>
+                                        </div> */}
                                     </Row>
                                     <hr />
                                     <div className='row'>
@@ -238,7 +249,7 @@ const Servicioeditable = () => {
                                         <Row className="mb-3">
                                             <div className="col-md-4 col-4">
                                                 <label htmlFor='title'>Id:</label>
-                                                <input type='text' className='form-control' id='id' value={selectedId} onChange={handleChange}></input>
+                                                <input type='text' className='form-control' id='id' disabled value={selectedId} onChange={handleChange}></input>
                                             </div>
 
                                             <div className="col-md-4 col-4">

@@ -109,7 +109,7 @@ const Textoeditable = () => {
     const handleCleanClick =()=>{
         setTitle("");
         setInsertText("");
-        setSelectedId("");
+        // setSelectedId("");
         if (quill) {
             quill.clipboard.dangerouslyPasteHTML(content);
         }
