@@ -70,9 +70,9 @@ const QuickMenu = () => {
                                 <h5 className="mb-1"> John E. Grainger</h5>
                                 <Link href="#" className="text-inherit fs-6">View my profile</Link>
                             </div>
-                            <div className=" dropdown-divider mt-3 mb-2"></div>
+                          {  /*<div className=" dropdown-divider mt-3 mb-2"></div>*/}
                         </Dropdown.Item>
-                        <Dropdown.Item eventKey="2">
+                       {/* <Dropdown.Item eventKey="2">
                             <i className="fe fe-user me-2"></i> Edit Profile
                         </Dropdown.Item>
                         <Dropdown.Item eventKey="3">
@@ -86,7 +86,7 @@ const QuickMenu = () => {
                         </Dropdown.Item>
                         <Dropdown.Item>
                             <i className="fe fe-power me-2"></i>Sign Out
-                        </Dropdown.Item>
+                        </Dropdown.Item>*/}
                     </Dropdown.Menu>
                 </Dropdown>
             </ListGroup>
@@ -111,14 +111,14 @@ const QuickMenu = () => {
                         align="end"
                         aria-labelledby="dropdownUser"
                     >
-                       { /*<Dropdown.Item as="div" className="px-4 pb-0 pt-2" bsPrefix=' '>
+                       <Dropdown.Item as="div" className="px-4 pb-0 pt-2" bsPrefix=' '>
                             <div className="lh-1 ">
                                 <h5 className="mb-1"> John E. Grainger</h5>
                                 <Link href="#" className="text-inherit fs-6">View my profile</Link>
                             </div>
-                            <div className=" dropdown-divider mt-3 mb-2"></div>
+                          {/*  <div className=" dropdown-divider mt-3 mb-2"></div>*/}
                         </Dropdown.Item>
-                        <Dropdown.Item eventKey="2">
+                       {/* <Dropdown.Item eventKey="2">
                             <i className="fe fe-user me-2"></i> Edit Profile
                         </Dropdown.Item>
                         <Dropdown.Item eventKey="3">
