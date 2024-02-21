@@ -18,7 +18,7 @@ export default function CUbicacion() {
         fetch('./api/db.json')
             .then(response => response.json())
             .then(json => {
-                const data: any[] = json.serviciosES;
+                const data: any[] = json.ubicacionArchivos;
                 const filtrado = data.filter(fila => fila.categoria === url);
                 if (filtrado.length > 0) {
                     const primerResultado = filtrado[0];
@@ -44,7 +44,7 @@ export default function CUbicacion() {
         fetch(`./api/db.json`)
         .then((response) => response.json())
         .then((json) => {
-            const data: any[] = json.serviciosES;
+            const data: any[] = json.ubicacionArchivos;
 
             const obj = data.find(x => x.id == id);
             setFormData({
